@@ -1,0 +1,74 @@
+<%= image_tag  @episodio.imagem, :class => "float-right" %>
+
+<h1><b class="number">#<%=h @episodio.numero %></b> <%=h @episodio.titulo %></h1>
+<p class="ep-icons">
+	<a href="<%=h @episodio.link %>"><img src="/images/icons/attach.png" width="16" height="16" alt="Post Original"></a>
+</p>
+
+<p class="ep-info">
+  <b>Informações:</b>
+  <%=h @episodio.desc %>
+</p>
+
+
+<h2>Frases ilustres:</h2> 
+<ul>
+<% @episodio.quotes.each do |q| %>  
+	<% unless q.quote.nil? %>
+		<li><b><%=h q.user.name %></b>  <%=h q.quote %>  </li>  
+	<% end -%>
+<% end %> 
+</ul>
+
+<% if signed_in? %>
+	<a id="addquoteslink" href="javascript:;" onclick="$('#addquotes').mb_open(); $('#addquotes').mb_centerOnWindow()"><img src="/images/icons/add.png" width="16" height="16" alt="Add">Adicionar Frase</a>
+	<% render(:layout => 'blocks/container',
+		:locals => {:id => "addquotes",
+					:xclass => "add_form" ,
+					:skin => "white",
+					:buttons => "m,c",
+					:icon => "comment-edit-48x48.png",
+					:collapsed => "false",
+					:dock => "addquoteslink",
+					:width => "350",
+					:title => "Adicionar nova Frase",
+					:closed => "true"
+					}) do %>
+
+		<%= render 'quotes/embed_new' %>
+
+	<% end %>
+<% end -%>
+
+<h2>Músicas:</h2> 
+<ul>
+<% @episodio.tracks.each do |q| %> 
+	<% unless q.song.nil? %>
+		<li><b><%=h q.user.name %></b>  <%=h q.song %> <% unless q.link.nil? %> <%= link_to q.link %> <% end -%>  </li>  
+	<% end -%>
+<% end %> 
+</ul>
+
+<% if signed_in? %>
+	<a id="addtrackslink" href="javascript:;" onclick="$('#addtracks').mb_open(); $('#addtracks').mb_centerOnWindow()"><img src="/images/icons/add.png" width="16" height="16" alt="Add">Adicionar Música</a>
+	<% render(:layout => 'blocks/container',
+		:locals => {:id => "addtracks",
+					:xclass => "add_form" ,
+					:skin => "white",
+					:buttons => "m,c",
+					:icon => "browser.png",
+					:collapsed => "false",
+					:dock => "addtrackslink",
+					:width => "350",
+					:title => "Adicionar nova Música",
+					:closed => "true"
+					}) do %>
+
+		<%= render 'tracks/embed_new' %>
+
+	<% end %>
+<% end -%>
+
+
+<%= link_to 'Edit', edit_episodio_path(@episodio) %> |
+<%= link_to 'Back', episodios_path %>

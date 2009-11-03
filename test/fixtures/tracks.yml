@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  time: MyString
+  song: MyString
+  link: MyString
+
+two:
+  time: MyString
+  song: MyString
+  link: MyString

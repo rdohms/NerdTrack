@@ -1,0 +1,44 @@
+<% content_for :head do %>
+
+	<%= javascript_include_tag 'mbContainer.pack' %>
+	<%= javascript_include_tag 'jquery.metadata' %>
+	<%= javascript_include_tag 'ui.core.min' %>
+	<%= javascript_include_tag 'ui.resizable.min' %>
+	<%= javascript_include_tag 'ui.draggable.min' %>
+	
+	<%= stylesheet_link_tag 'mbContainer' %>
+
+	<script>
+		$(document).ready(function(){
+			$(".containerPlus").buildContainers({
+			containment:"document",
+			elementsPath:"/elements/"
+			});
+		});
+	</script>
+
+<% end %>
+
+<div id="<%= id %>" 
+	class="containerPlus <%= xclass %> resizable {skin:'<%= skin %>', buttons:'<%= buttons %>' , icon:'<%= icon %>', collapsed:'<%= collapsed %>' , dock:'<%= dock %>', width:'<%= width %>', closed:'<%= closed %>'}"
+>
+	<div class="no">
+		<div class="ne">
+			<div class="n"><%= title %></div>
+		</div>
+		<div class="o">
+			<div class="e">
+				<div class="c">
+					<div class="content"><%= yield %></div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div class="so">
+				<div class="se">
+					<div class="s"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,18 @@
+<p>
+  <b>Time:</b>
+  <%=h @track.time %>
+</p>
+
+<p>
+  <b>Song:</b>
+  <%=h @track.song %>
+</p>
+
+<p>
+  <b>Link:</b>
+  <%=h @track.link %>
+</p>
+
+
+<%= link_to 'Edit', edit_track_path(@track) %> |
+<%= link_to 'Back', tracks_path %>

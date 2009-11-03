@@ -1,0 +1,21 @@
+
+<% form_for(@quote, @episodio) do |f| %>
+  <%= f.error_messages %>
+
+    <%= f.hidden_field :episodio_id %>
+  <p>
+    <%= f.label :quote %><br />
+    <%= f.text_field :quote %>
+  </p>
+  <p>
+    <%= f.label :time %><br />
+    <%= f.text_field :time %>
+  </p>
+  <p>
+    <%= f.label :autor %><br />
+    <%= f.text_field :autor %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>

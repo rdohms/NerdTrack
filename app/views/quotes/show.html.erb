@@ -1,0 +1,18 @@
+<p>
+  <b>Quote:</b>
+  <%=h @quote.quote %>
+</p>
+
+<p>
+  <b>Time:</b>
+  <%=h @quote.time %>
+</p>
+
+<p>
+  <b>Autor:</b>
+  <%=h @quote.autor %>
+</p>
+
+
+<%= link_to 'Edit', edit_quote_path(@quote) %> |
+<%= link_to 'Back', quotes_path %>

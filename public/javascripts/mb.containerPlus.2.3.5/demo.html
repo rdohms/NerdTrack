@@ -1,0 +1,258 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>mbContainers</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+  <link rel="stylesheet" type="text/css" href="css/mbContainer.css" title="style"  media="screen"/>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="inc/ui.core.min.js"></script>
+  <script type="text/javascript" src="inc/ui.draggable.min.js"></script>
+  <script type="text/javascript" src="inc/ui.resizable.min.js"></script>
+  <script type="text/javascript" src="inc/jquery.metadata.js"></script>
+  <script type="text/javascript" src="inc/mbContainer.js"></script>
+  <script type="text/javascript">
+
+    $(function(){
+      //Console function
+      function wConsole(o, prop){
+        if (!$("#consoleAct").is(':checked')) return;
+        var p={};
+        $.extend(p,prop);
+        var txt = "<b>"+o.find(".n:first").html()+"::  </b>";
+        for (var property in p)
+        {
+          var pr = p [property];
+          txt+= "<br>" + property + " = " + pr ;
+        }
+        txt+="<br><hr>";
+        $("#mb_console").append(txt);
+      }
+
+
+      /*
+      * If you copy this script for your container initialization clear it from all the wconsole scripts.
+       */
+      $(".containerPlus").buildContainers({
+        containment:"document",
+        elementsPath:"elements/",
+        effectDuration:300,
+        mantainOnWindow:true,
+        onResize:function(o){
+          wConsole(o,{
+            resized:true,
+            width: o.outerWidth(),
+            height: o.outerHeight()
+          });
+        },
+        onClose:function(o){
+          wConsole(o,{
+            closed: o.mb_getState("closed")
+          });
+        },
+        onCollapse:function(o){
+          wConsole(o,{
+            collapse: o.mb_getState("collapsed")
+          });
+        },
+        onIconize:function(o){
+          wConsole(o,{
+            iconized: o.mb_getState("iconized")
+          });
+        },
+        onDrag:function(o){
+          wConsole(o,{
+            top: Math.floor(o.offset().top),
+            left: Math.floor(o.offset().left)
+          });
+        },
+        onRestore:function(o){
+          wConsole(o,{
+            restored:o.mb_getState("restored")
+          });
+        }
+
+      });
+    });
+  </script>
+  <style type="text/css">
+    .evidence{
+      color:gray;
+      padding:10px;
+      margin-right:5px;
+      margin-top:5px;
+      -moz-border-radius:10px;
+      -webkit-border-radius:10px;
+    }
+
+    #dock{
+      display:block;
+      padding-top:10px;
+      height:30px;
+    }
+    #dock img{
+      padding-right:10px;
+    }
+
+    #desk{
+      width:100%;
+    }
+
+    #desk td{
+      padding:5px;
+      -moz-border-radius:5px;
+      -webkit-border-radius:5px;
+    }
+    #mb_console{
+      padding:5px;
+      background:gainsboro;
+      -moz-border-radius:5px;
+      -webkit-border-radius:5px;
+      font-size:10px;
+      height:400px;
+      overflow:auto;
+    }
+  </style>
+</head>
+<body>
+<table id="desk"><tr><td valign="top">
+
+  <div class="containerPlus draggable resizable {buttons:'m,i,c', icon:'browser.png', skin:'white', width:'500',iconized:'true', dock:'dock', grid:100}" style="top:100px;left:400px">
+    <div class="no"><div class="ne"><div class="n">preiconized container</div></div>
+      <div class="o"><div class="e"><div class="c">
+        <div class="mbcontainercontent">
+          <div class="evidence">
+            <h3>And this is a preiconized container!</h3>
+            <p>to preiconize containers just add the param <span style="font-weight: bold;">iconized:'true'</span></p>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cras metus. Maecenas justo elit, lacinia sit amet, cursus ut, sagittis sed, eros. Suspendisse potenti. Maecenas nec nisi. Donec vestibulum sollicitudin tellus. Sed consequat pellentesque ante. Vestibulum turpis quam, vulputate nec, nonummy convallis, ultrices congue, ligula. Ut rutrum leo et orci. Proin pharetra. Nam non sem ut eros fringilla ornare. In ullamcorper lorem eget ipsum. Suspendisse semper enim in arcu cursus consectetuer. Suspendisse potenti. Proin libero eros, adipiscing quis, volutpat in, ultrices ut, lacus.</p>
+          <p>Nulla facilisi. Vestibulum vel magna in ante lobortis semper. Integer posuere justo et urna. Vestibulum sit amet sapien ut quam tempor fringilla. Fusce a neque a enim mattis dapibus. Ends with a paragraph element!</p>
+
+        </div>
+      </div></div></div>
+      <div >
+        <div class="so"><div class="se"><div class="s"> </div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="containerPlus draggable resizable {buttons:'m,i,c', icon:'alert.png', skin:'white', width:'500', content:'test.html',dock:'dock',iconized:'true'}" style="top:100px;left:500px">
+    <div class="no"><div class="ne"><div class="n">Ajax content!</div></div>
+      <div class="o"><div class="e"><div class="c">
+        <div class="mbcontainercontent">
+
+          <h3>Attenzione!</h3>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cras metus. Maecenas justo elit, lacinia sit amet, cursus ut, sagittis sed, eros. Suspendisse potenti. Maecenas nec nisi. Donec vestibulum sollicitudin tellus. Sed consequat pellentesque ante. Vestibulum turpis quam, vulputate nec, nonummy convallis, ultrices congue, ligula. Ut rutrum leo et orci. Proin pharetra. Nam non sem ut eros fringilla ornare. In ullamcorper lorem eget ipsum. Suspendisse semper enim in arcu cursus consectetuer. Suspendisse potenti. Proin libero eros, adipiscing quis, volutpat in, ultrices ut, lacus.</p>
+          <p>Nulla facilisi. Vestibulum vel magna in ante lobortis semper. Integer posuere justo et urna. Vestibulum sit amet sapien ut quam tempor fringilla. Fusce a neque a enim mattis dapibus. Ends with a paragraph element!</p>
+
+        </div>
+      </div></div></div>
+      <div >
+        <div class="so"><div class="se"><div class="s"> </div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="containerPlus resizable {buttons:'m,i,c', skin:'white', width:'100%',iconized:'true',dock:'dock'}" >
+    <div class="no"><div class="ne"><div class="n">Container width 100% </div></div>
+      <div class="o"><div class="e"><div class="c">
+        <div class="mbcontainercontent">
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cras metus. Maecenas justo elit, lacinia sit amet, cursus ut, sagittis sed, eros. Suspendisse potenti. Maecenas nec nisi. Donec vestibulum sollicitudin tellus. Sed consequat pellentesque ante. Vestibulum turpis quam, vulputate nec, nonummy convallis, ultrices congue, ligula. Ut rutrum leo et orci. Proin pharetra. Nam non sem ut eros fringilla ornare. In ullamcorper lorem eget ipsum. Suspendisse semper enim in arcu cursus consectetuer. Suspendisse potenti. Proin libero eros, adipiscing quis, volutpat in, ultrices ut, lacus.</p>
+          <p>Nulla facilisi. Vestibulum vel magna in ante lobortis semper. Integer posuere justo et urna. Vestibulum sit amet sapien ut quam tempor fringilla. Fusce a neque a enim mattis dapibus. Ends with a paragraph element!</p>
+        </div>
+
+      </div></div></div>
+      <div >
+        <div class="so"><div class="se"><div class="s"> </div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="containerPlus resizable {buttons:'m,i,c', skin:'default', width:'500', height:'300', handles:'s,e,se', aspectRatio:true, iconized:'true',dock:'dock'}">
+    <div class="no"><div class="ne"><div class="n">resizable container with aspectRatio active</div></div>
+      <div class="o"><div class="e"><div class="c">
+        <div class="mbcontainercontent">
+          <div class="evidence">
+            <h3>This container resizes mantaining the aspectRatio!</h3>
+            <p>This is a contextualized container and can be resized only vertically;</p>
+            <p>it has a width and a height defined;</p>
+            <p>can be collapsed and can be closed;</p>
+            <p>it has the "default" skin;</p>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cras metus. Maecenas justo elit, lacinia sit amet, cursus ut, sagittis sed, eros. Suspendisse potenti. Maecenas nec nisi. Donec vestibulum sollicitudin tellus. Sed consequat pellentesque ante. Vestibulum turpis quam, vulputate nec, nonummy convallis, ultrices congue, ligula. Ut rutrum leo et orci. Proin pharetra. Nam non sem ut eros fringilla ornare. In ullamcorper lorem eget ipsum. Suspendisse semper enim in arcu cursus consectetuer. Suspendisse potenti. Proin libero eros, adipiscing quis, volutpat in, ultrices ut, lacus.</p>
+        </div>
+      </div></div></div>
+      <div >
+        <div class="so"><div class="se"><div class="s"> </div></div></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="containerPlus draggable resizable {buttons:'m', skin:'default', width:'500' }" style="top:300px; left:10%">
+    <div class="no"><div class="ne"><div class="n">Dock</div></div>
+      <div class="o"><div class="e"><div class="c">
+        <div class="mbcontainercontent">
+          <div id="dock"> </div><div style="clear:both;"></div>
+          <hr><br>
+          <b>Now you can choose where the iconized containers are stored!</b>
+          <p>this is an example, but you can define whatever DOM element you want as your dock; and each iconizable container can have its one or none (in that case it's iconized at left:0 of its parent)!</p>
+          <b>preminimize a container</b>
+          <p>to preminimize containers just add the param <span style="font-weight: bold;">collapsed:'true'</span></p>
+          <p>You can verify the state of this container by pressing the button at the end of this page.</p>
+          <p>to verify the state of a container you have a metod <span style="font-weight: bold;">$.fn.mb_getState(attr)</span>; you can pass the attribute to verify (ex: collapsed or iconized) and it returns <span
+                  style="font-weight: bold;">true</span> or <span style="font-weight: bold;">false</span></p>
+
+        </div>
+      </div></div></div>
+      <div >
+        <div class="so"><div class="se"><div class="s"> </div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="demoContainer" class="containerPlus draggable resizable {buttons:'m,i,c', icon:'chart.png', skin:'black', width:'500',dock:'dock',closed:'true'}" style="top:250px;left:400px">
+    <div class="no"><div class="ne"><div class="n">container Demo</div></div>
+      <div class="o"><div class="e"><div class="c">
+        <div class="mbcontainercontent">
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cras metus. Maecenas justo elit, lacinia sit amet, cursus ut, sagittis sed, eros. Suspendisse potenti. Maecenas nec nisi. Donec vestibulum sollicitudin tellus. Sed consequat pellentesque ante. Vestibulum turpis quam, vulputate nec, nonummy convallis, ultrices congue, ligula. Ut rutrum leo et orci. Proin pharetra. Nam non sem ut eros fringilla ornare. In ullamcorper lorem eget ipsum. Suspendisse semper enim in arcu cursus consectetuer. Suspendisse potenti. Proin libero eros, adipiscing quis, volutpat in, ultrices ut, lacus.</p>
+        </div>
+      </div></div></div>
+      <div >
+        <div class="so"><div class="se"><div class="s"> </div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <img src="valid-xhtml10.png" alt="vaildW3c"/>
+
+
+  <p style="position:fixed; bottom:0; display:block;width:100%; height:30px; padding:20px">
+    <button onclick="alert(' is iconized? '+$('#demoContainer').mb_getState('iconized')+'\n is collapsed? '+$('#demoContainer').mb_getState('collapsed')+'\n is closed? '+$('#demoContainer').mb_getState('closed'));">get container state</button>
+    <button id="close" onclick="$('#demoContainer').mb_close(); $('#open , #open_change').fadeIn(); $(this).hide();" style="display:none;">close container</button>
+    <button id="open" onclick="$('#demoContainer').mb_open(); $('#close').fadeIn(); $(this).hide(); $('#open_change').hide();" >open container </button>
+    <button id="open_change" onclick="$('#demoContainer').mb_open('test.html');$(this).remove();"  style="display:none;">open container and change content </button>
+    <button id="toggle" onclick="$('#demoContainer').mb_toggle();">expand / collapse container</button>
+    <button id="iconize" onclick="$('#demoContainer').mb_iconize();">iconize / restore container</button>
+    <button id="fullscreen" onclick="$('#demoContainer').mb_fullscreen();">fullscreen</button>
+    <button id="center" onclick="$('#demoContainer').mb_centerOnWindow(true);">center on window</button>
+    <button id="resize" onclick="$('#demoContainer').mb_resizeTo(600,600);">resize to 600 x 600</button>
+  </p>
+
+</td><td valign="top" style="background:silver; width:300px">
+  <p><input type="checkbox" value="" id="consoleAct"/>console</p>
+  <div id="mb_console"> </div><br>
+  <button onclick="$('#mb_console').html('');">clear console</button>
+</td></tr></table>
+
+
+<div style="padding:6px;position:absolute;z-index:1000; bottom:10px; right:10px; -webkit-border-radius:7px;-moz-border-radius:7px;border:2px solid white; background:#000;text-align:center;color:white;">
+  Please support my work<br>with a free donation!<br><br>
+  <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=V6ZS8JPMZC446&amp;lc=GB&amp;item_name=mb%2eideas&amp;item_number=MBIDEAS&amp;currency_code=EUR&amp;bn=PP%2dDonationsBF%3abtn_donateCC_LG_global%2egif%3aNonHosted">
+    <img alt="PayPal" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG_global.gif" border="0">
+  </a>
+</div>
+
+</body>
+</html>

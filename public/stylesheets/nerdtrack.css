@@ -1,0 +1,92 @@
+BODY{
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+	background:#CCDEE8 none repeat scroll 0 0;
+	color:#333333;
+	font-family:Arial;
+	font-size-adjust:none;
+	font-stretch:normal;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:normal;
+	margin:0 auto;
+	width: 1024px;
+}
+
+#container{
+	background-color: #FFFFFF;
+	width: 988px;
+	float: left;
+}
+
+#loginbar{
+	background-color: #369;
+	color: #FFFFFF;
+	padding: 7px;
+	text-align: right;
+	font-size: .9em;
+}
+
+#loginbar a{ color: #FFFFFF; } 
+
+#header{
+	width:988px;
+	height:85px;
+	background-color: #69C;
+	border-bottom: 5px solid #369;
+}
+
+#content{
+	padding: 10px;
+	min-heigth: 200px;
+}
+
+#footer{
+	
+}
+
+A IMG{
+	border: 0px;
+}
+
+
+/** 
+* SHOW Episodio
+*/
+
+H1{
+	
+}
+
+.number{
+	font-weight: bolder;
+	font: 150% "Arial Black", "Trebuchet MS", Verdana, sans-serif;
+	color: #369;
+}
+
+.ep-icons{
+	margin-top: -20px;
+}
+.ep-icons a{ }	
+.ep-icons img{ border: 0px; }
+
+.ep-info{
+	
+}
+
+.float-left{
+	float: left;
+}
+
+.float-right{
+	float: right;
+}
+
+
+
+.add_form{
+	width: 350px;
+	position: absolute;
+}
