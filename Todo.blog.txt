@@ -1,0 +1,7 @@
+Title: Todo
+
+- ajeitar layout com mais de uma entrada
+- redirecionamento no cadastro de frase/musica
+- spin buttons
+- main page
+- admin links

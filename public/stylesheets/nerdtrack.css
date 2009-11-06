@@ -57,10 +57,23 @@ A IMG{
 }
 
 #footer{
-	
+	text-align: center;
+	background:#CCDEE8 none repeat scroll 0 0;
+	padding-top: 10px;
+	border-top: 3px solid #369;
 }
 
+#footer P{
+	margin: 0px; padding: 0px;
+}
 
+#footer .copy{
+	font-size: .7em;
+}
+
+#footer .icons{
+	
+}
 
 
 /** 
@@ -92,13 +105,15 @@ H2{
 }
 
 .quote_list         { list-style:none;}
-.quote_list .time   { float: left; color: #AAA; font-size: 1em; padding:5px 5px; height: 35px; }
+.quote_list LI      { clear: both; padding: 0 0 10px 0;}
+.quote_list .time   { float: left; color: #AAA; font-size: 1em; padding:5px 5px; height: 30px; }
 .quote_list .quote	{ }
 .quote_list .quote B{ font-size: 1.5em; }
 .quote_list .credit { font-size: 0.7em; }
 
 .song_list         { list-style:none;}
-.song_list .time   { float: left; color: #AAA; font-size: 1em; padding:5px 5px; height: 35px; }
+.song_list LI      { clear: both;  padding: 0 0 10px 0;}
+.song_list .time   { float: left; color: #AAA; font-size: 1em; padding:5px 5px; height: 30px; }
 .song_list .song   { }
 .song_list .song B { font-size: 1.5em; }
 .song_list .credit { font-size: 0.7em; }
@@ -111,6 +126,9 @@ H2{
 	float: right;
 }
 
+.clear{
+	{ clear: both;}
+}
 .add_form{
 	width: 350px;
 	position: absolute;

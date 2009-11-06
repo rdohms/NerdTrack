@@ -5389,3 +5389,1079 @@ Rendered blocks/_container (6.9ms)
 Rendered tracks/_embed_new (3.5ms)
 Rendered blocks/_container (6.4ms)
 Completed in 67ms (View: 42, DB: 2) | 200 OK [http://0.0.0.0/episodios/1]
+
+
+Processing EpisodiosController#index (for 127.0.0.1 at 2009-11-03 23:40:34) [GET]
+  [4;36;1mEpisodio Load (0.6ms)[0m   [0;1mSELECT * FROM "episodios" [0m
+Rendering template within layouts/geral
+Rendering episodios/index
+  [4;35;1mUser Load (16.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+Completed in 64ms (View: 38, DB: 17) | 200 OK [http://0.0.0.0/]
+
+
+Processing EpisodiosController#new (for 127.0.0.1 at 2009-11-03 23:40:37) [GET]
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+Rendering template within layouts/geral
+Rendering episodios/new
+Completed in 54ms (View: 37, DB: 1) | 200 OK [http://0.0.0.0/episodios/new]
+
+
+Processing EpisodiosController#index (for 127.0.0.1 at 2009-11-03 23:40:50) [GET]
+  [4;35;1mEpisodio Load (0.6ms)[0m   [0mSELECT * FROM "episodios" [0m
+Rendering template within layouts/geral
+Rendering episodios/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+Completed in 105ms (View: 97, DB: 1) | 200 OK [http://0.0.0.0/episodios]
+
+
+Processing EpisodiosController#show (for 127.0.0.1 at 2009-11-03 23:40:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEpisodio Load (0.3ms)[0m   [0mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+Rendering template within layouts/geral
+Rendering episodios/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mQuote Load (0.4ms)[0m   [0mSELECT * FROM "quotes" WHERE ("quotes".episodio_id = 1) [0m
+  [4;36;1mUser Load (2.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered quotes/_embed_new (4.0ms)
+Rendered blocks/_container (21.5ms)
+  [4;35;1mTrack Load (0.4ms)[0m   [0mSELECT * FROM "tracks" WHERE ("tracks".episodio_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered tracks/_embed_new (3.8ms)
+Rendered blocks/_container (8.1ms)
+Completed in 135ms (View: 95, DB: 4) | 200 OK [http://0.0.0.0/episodios/1]
+
+
+Processing EpisodiosController#show (for 127.0.0.1 at 2009-11-03 23:43:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEpisodio Load (0.4ms)[0m   [0mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+Rendering template within layouts/geral
+Rendering episodios/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mQuote Load (0.4ms)[0m   [0mSELECT * FROM "quotes" WHERE ("quotes".episodio_id = 1) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered quotes/_embed_new (4.5ms)
+Rendered blocks/_container (11.8ms)
+  [4;35;1mTrack Load (0.4ms)[0m   [0mSELECT * FROM "tracks" WHERE ("tracks".episodio_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered tracks/_embed_new (3.8ms)
+Rendered blocks/_container (7.1ms)
+Completed in 227ms (View: 171, DB: 2) | 200 OK [http://0.0.0.0/episodios/1]
+
+
+Processing EpisodiosController#edit (for 127.0.0.1 at 2009-11-03 23:54:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (24.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mEpisodio Load (0.4ms)[0m   [0;1mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+Rendering template within layouts/geral
+Rendering episodios/edit
+Completed in 118ms (View: 70, DB: 25) | 200 OK [http://0.0.0.0/episodios/1/edit]
+
+
+Processing EpisodiosController#show (for 127.0.0.1 at 2009-11-03 23:56:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEpisodio Load (0.4ms)[0m   [0mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+Rendering template within layouts/geral
+Rendering episodios/show
+  [4;36;1mUser Load (16.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mQuote Load (0.3ms)[0m   [0mSELECT * FROM "quotes" WHERE ("quotes".episodio_id = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered quotes/_embed_new (3.5ms)
+Rendered blocks/_container (6.4ms)
+  [4;35;1mTrack Load (0.3ms)[0m   [0mSELECT * FROM "tracks" WHERE ("tracks".episodio_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered tracks/_embed_new (4.2ms)
+Rendered blocks/_container (10.6ms)
+Completed in 210ms (View: 78, DB: 18) | 200 OK [http://0.0.0.0/episodios/1]
+
+
+Processing QuotesController#create (for 127.0.0.1 at 2009-11-03 23:57:42) [POST]
+  Parameters: {"commit"=>"Criar", "authenticity_token"=>"zwfXxGtb56Aki4JvZ1J2BPT9od9lrsEZCYBNpSnS01s=", "quote"=>{"episodio_id"=>"1", "autor"=>"Bart Simpson", "time"=>"01:10:34", "quote"=>"Ai caramba!"}}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mEpisodio Load (0.3ms)[0m   [0;1mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+  [4;36;1mQuote Create (19.3ms)[0m   [0;1mINSERT INTO "quotes" ("episodio_id", "created_at", "autor", "updated_at", "time", "user_id", "quote") VALUES(1, '2009-11-04 01:57:42', 'Bart Simpson', '2009-11-04 01:57:42', '01:10:34', 12, 'Ai caramba!')[0m
+Redirected to http://0.0.0.0:3000/quotes/2
+Completed in 145ms (DB: 20) | 302 Found [http://0.0.0.0/quotes]
+
+
+Processing QuotesController#show (for 127.0.0.1 at 2009-11-03 23:57:42) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mQuote Load (0.3ms)[0m   [0mSELECT * FROM "quotes" WHERE ("quotes"."id" = 2) [0m
+Rendering template within layouts/quotes
+Rendering quotes/show
+Completed in 125ms (View: 29, DB: 0) | 200 OK [http://0.0.0.0/quotes/2]
+
+
+Processing QuotesController#index (for 127.0.0.1 at 2009-11-03 23:57:46) [GET]
+  [4;36;1mQuote Load (1.2ms)[0m   [0;1mSELECT * FROM "quotes" [0m
+Rendering template within layouts/quotes
+Rendering quotes/index
+Completed in 25ms (View: 18, DB: 1) | 200 OK [http://0.0.0.0/quotes]
+
+
+Processing EpisodiosController#show (for 127.0.0.1 at 2009-11-03 23:57:54) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEpisodio Load (0.2ms)[0m   [0mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+Rendering template within layouts/geral
+Rendering episodios/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mQuote Load (0.4ms)[0m   [0mSELECT * FROM "quotes" WHERE ("quotes".episodio_id = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered quotes/_embed_new (3.6ms)
+Rendered blocks/_container (6.9ms)
+  [4;36;1mTrack Load (0.4ms)[0m   [0;1mSELECT * FROM "tracks" WHERE ("tracks".episodio_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered tracks/_embed_new (3.7ms)
+Rendered blocks/_container (10.4ms)
+Completed in 59ms (View: 38, DB: 2) | 200 OK [http://0.0.0.0/episodios/1]
+
+
+Processing EpisodiosController#show (for 127.0.0.1 at 2009-11-03 23:57:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEpisodio Load (0.3ms)[0m   [0;1mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+Rendering template within layouts/geral
+Rendering episodios/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mQuote Load (0.4ms)[0m   [0;1mSELECT * FROM "quotes" WHERE ("quotes".episodio_id = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered quotes/_embed_new (3.3ms)
+Rendered blocks/_container (7.5ms)
+  [4;35;1mTrack Load (0.3ms)[0m   [0mSELECT * FROM "tracks" WHERE ("tracks".episodio_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered tracks/_embed_new (2.8ms)
+Rendered blocks/_container (5.6ms)
+Completed in 144ms (View: 32, DB: 2) | 200 OK [http://0.0.0.0/episodios/1]
+
+
+Processing EpisodiosController#show (for 127.0.0.1 at 2009-11-04 12:14:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEpisodio Load (4.7ms)[0m   [0mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+Rendering template within layouts/geral
+Rendering episodios/show
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mQuote Load (0.4ms)[0m   [0mSELECT * FROM "quotes" WHERE ("quotes".episodio_id = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered quotes/_embed_new (3.4ms)
+Rendered blocks/_container (14.1ms)
+  [4;36;1mTrack Load (21.5ms)[0m   [0;1mSELECT * FROM "tracks" WHERE ("tracks".episodio_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered tracks/_embed_new (2.9ms)
+Rendered blocks/_container (5.9ms)
+Completed in 421ms (View: 298, DB: 28) | 200 OK [http://0.0.0.0/episodios/1]
+
+
+Processing EpisodiosController#show (for 127.0.0.1 at 2009-11-04 12:15:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEpisodio Load (0.3ms)[0m   [0;1mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+Rendering template within layouts/geral
+Rendering episodios/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mQuote Load (0.4ms)[0m   [0;1mSELECT * FROM "quotes" WHERE ("quotes".episodio_id = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered quotes/_embed_new (3.0ms)
+Rendered blocks/_container (6.3ms)
+  [4;35;1mTrack Load (0.3ms)[0m   [0mSELECT * FROM "tracks" WHERE ("tracks".episodio_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered tracks/_embed_new (4.8ms)
+Rendered blocks/_container (7.9ms)
+Completed in 72ms (View: 42, DB: 2) | 200 OK [http://0.0.0.0/episodios/1]
+
+
+Processing EpisodiosController#show (for 127.0.0.1 at 2009-11-04 12:18:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEpisodio Load (0.3ms)[0m   [0mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+Rendering template within layouts/geral
+Rendering episodios/show
+  [4;36;1mUser Load (23.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mQuote Load (0.4ms)[0m   [0mSELECT * FROM "quotes" WHERE ("quotes".episodio_id = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered quotes/_embed_new (4.9ms)
+Rendered blocks/_container (10.2ms)
+  [4;36;1mTrack Load (0.5ms)[0m   [0;1mSELECT * FROM "tracks" WHERE ("tracks".episodio_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered tracks/_embed_new (3.2ms)
+Rendered blocks/_container (7.0ms)
+Completed in 124ms (View: 76, DB: 26) | 200 OK [http://0.0.0.0/episodios/1]
+
+
+Processing EpisodiosController#show (for 127.0.0.1 at 2009-11-05 16:09:21) [GET]
+  Parameters: {"id"=>"1"}
+
+
+Processing EpisodiosController#show (for 127.0.0.1 at 2009-11-05 16:09:36) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEpisodio Load (0.2ms)[0m   [0;1mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+Rendering template within layouts/geral
+Rendering episodios/show
+  [4;35;1mUser Load (17.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mQuote Load (0.7ms)[0m   [0;1mSELECT * FROM "quotes" WHERE ("quotes".episodio_id = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered quotes/_embed_new (91.1ms)
+Rendered blocks/_container (112.2ms)
+  [4;35;1mTrack Load (0.4ms)[0m   [0mSELECT * FROM "tracks" WHERE ("tracks".episodio_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered tracks/_embed_new (35.0ms)
+Rendered blocks/_container (42.1ms)
+Completed in 443ms (View: 345, DB: 19) | 200 OK [http://0.0.0.0/episodios/1]
+
+
+Processing EpisodiosController#show (for 127.0.0.1 at 2009-11-05 16:11:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEpisodio Load (0.3ms)[0m   [0mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+Rendering template within layouts/geral
+Rendering episodios/show
+  [4;36;1mUser Load (45.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mQuote Load (0.6ms)[0m   [0mSELECT * FROM "quotes" WHERE ("quotes".episodio_id = 1) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered quotes/_embed_new (5.4ms)
+Rendered blocks/_container (11.3ms)
+  [4;36;1mTrack Load (0.4ms)[0m   [0;1mSELECT * FROM "tracks" WHERE ("tracks".episodio_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered tracks/_embed_new (9.2ms)
+Rendered blocks/_container (12.1ms)
+Completed in 262ms (View: 159, DB: 48) | 200 OK [http://0.0.0.0/episodios/1]
+
+
+Processing EpisodiosController#show (for 127.0.0.1 at 2009-11-05 16:12:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEpisodio Load (0.3ms)[0m   [0;1mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+Rendering template within layouts/geral
+Rendering episodios/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mQuote Load (0.5ms)[0m   [0;1mSELECT * FROM "quotes" WHERE ("quotes".episodio_id = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mUser Load (2.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered quotes/_embed_new (2.9ms)
+Rendered blocks/_container (7.0ms)
+  [4;35;1mTrack Load (0.4ms)[0m   [0mSELECT * FROM "tracks" WHERE ("tracks".episodio_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered tracks/_embed_new (2.8ms)
+Rendered blocks/_container (5.6ms)
+Completed in 97ms (View: 51, DB: 5) | 200 OK [http://0.0.0.0/episodios/1]
+
+
+Processing EpisodiosController#show (for 127.0.0.1 at 2009-11-05 16:12:13) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEpisodio Load (0.4ms)[0m   [0mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+Rendering template within layouts/geral
+Rendering episodios/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mQuote Load (0.4ms)[0m   [0mSELECT * FROM "quotes" WHERE ("quotes".episodio_id = 1) [0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered quotes/_embed_new (6.2ms)
+Rendered blocks/_container (9.3ms)
+  [4;36;1mTrack Load (0.4ms)[0m   [0;1mSELECT * FROM "tracks" WHERE ("tracks".episodio_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered tracks/_embed_new (2.9ms)
+Rendered blocks/_container (8.9ms)
+Completed in 106ms (View: 42, DB: 3) | 200 OK [http://0.0.0.0/episodios/1]
+
+
+Processing EpisodiosController#show (for 127.0.0.1 at 2009-11-05 16:40:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEpisodio Load (0.3ms)[0m   [0;1mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+Rendering template within layouts/geral
+Rendering episodios/show
+  [4;35;1mUser Load (42.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mQuote Load (0.4ms)[0m   [0;1mSELECT * FROM "quotes" WHERE ("quotes".episodio_id = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered quotes/_embed_new (5.9ms)
+Rendered blocks/_container (24.5ms)
+  [4;35;1mTrack Load (0.4ms)[0m   [0mSELECT * FROM "tracks" WHERE ("tracks".episodio_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered tracks/_embed_new (3.3ms)
+Rendered blocks/_container (6.8ms)
+Completed in 236ms (View: 95, DB: 44) | 200 OK [http://0.0.0.0/episodios/1]
+
+
+Processing TracksController#create (for 127.0.0.1 at 2009-11-05 16:41:50) [POST]
+  Parameters: {"commit"=>"Criar", "track"=>{"episodio_id"=>"1", "time"=>"00:32:00", "link"=>"www.php.net", "song"=>"Rain drops - John Singer"}, "authenticity_token"=>"zwfXxGtb56Aki4JvZ1J2BPT9od9lrsEZCYBNpSnS01s="}
+  [4;35;1mUser Load (61.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mEpisodio Load (0.4ms)[0m   [0;1mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+  [4;36;1mTrack Create (202.8ms)[0m   [0;1mINSERT INTO "tracks" ("episodio_id", "created_at", "updated_at", "time", "user_id", "link", "song") VALUES(1, '2009-11-05 18:41:50', '2009-11-05 18:41:50', '00:32:00', 12, 'www.php.net', 'Rain drops - John Singer')[0m
+Redirected to http://0.0.0.0:3000/episodios/1
+Completed in 890ms (DB: 265) | 302 Found [http://0.0.0.0/tracks]
+
+
+Processing EpisodiosController#show (for 127.0.0.1 at 2009-11-05 16:41:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEpisodio Load (0.2ms)[0m   [0mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+Rendering template within layouts/geral
+Rendering episodios/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mQuote Load (0.4ms)[0m   [0mSELECT * FROM "quotes" WHERE ("quotes".episodio_id = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered quotes/_embed_new (3.1ms)
+Rendered blocks/_container (13.5ms)
+  [4;36;1mTrack Load (0.5ms)[0m   [0;1mSELECT * FROM "tracks" WHERE ("tracks".episodio_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered tracks/_embed_new (3.4ms)
+Rendered blocks/_container (6.5ms)
+Completed in 155ms (View: 132, DB: 2) | 200 OK [http://0.0.0.0/episodios/1]
+
+
+Processing EpisodiosController#show (for 127.0.0.1 at 2009-11-05 16:42:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEpisodio Load (0.3ms)[0m   [0mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+Rendering template within layouts/geral
+Rendering episodios/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mQuote Load (0.4ms)[0m   [0mSELECT * FROM "quotes" WHERE ("quotes".episodio_id = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered quotes/_embed_new (3.0ms)
+Rendered blocks/_container (6.0ms)
+  [4;36;1mTrack Load (0.4ms)[0m   [0;1mSELECT * FROM "tracks" WHERE ("tracks".episodio_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered tracks/_embed_new (2.7ms)
+Rendered blocks/_container (5.5ms)
+Completed in 65ms (View: 37, DB: 2) | 200 OK [http://0.0.0.0/episodios/1]
+
+
+Processing EpisodiosController#show (for 127.0.0.1 at 2009-11-05 16:47:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEpisodio Load (0.8ms)[0m   [0mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+Rendering template within layouts/geral
+Rendering episodios/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mQuote Load (0.5ms)[0m   [0mSELECT * FROM "quotes" WHERE ("quotes".episodio_id = 1) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered quotes/_embed_new (3.2ms)
+Rendered blocks/_container (18.2ms)
+  [4;36;1mTrack Load (0.5ms)[0m   [0;1mSELECT * FROM "tracks" WHERE ("tracks".episodio_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered tracks/_embed_new (3.8ms)
+Rendered blocks/_container (6.8ms)
+Completed in 152ms (View: 100, DB: 3) | 200 OK [http://0.0.0.0/episodios/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-05 16:47:40) [GET]
+
+ActionController::RoutingError (No route matches "/images/.images/icons/page_edit.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing EpisodiosController#show (for 127.0.0.1 at 2009-11-05 16:48:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEpisodio Load (0.3ms)[0m   [0mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+Rendering template within layouts/geral
+Rendering episodios/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mQuote Load (0.9ms)[0m   [0mSELECT * FROM "quotes" WHERE ("quotes".episodio_id = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered quotes/_embed_new (3.4ms)
+Rendered blocks/_container (6.1ms)
+  [4;36;1mTrack Load (0.4ms)[0m   [0;1mSELECT * FROM "tracks" WHERE ("tracks".episodio_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered tracks/_embed_new (3.0ms)
+Rendered blocks/_container (6.1ms)
+Completed in 67ms (View: 39, DB: 3) | 200 OK [http://0.0.0.0/episodios/1]
+
+
+Processing EpisodiosController#edit (for 127.0.0.1 at 2009-11-05 16:48:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mEpisodio Load (0.4ms)[0m   [0;1mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+Rendering template within layouts/geral
+Rendering episodios/edit
+Completed in 80ms (View: 63, DB: 1) | 200 OK [http://0.0.0.0/episodios/1/edit]
+
+
+Processing EpisodiosController#show (for 127.0.0.1 at 2009-11-05 16:55:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEpisodio Load (0.3ms)[0m   [0mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+Rendering template within layouts/geral
+Rendering episodios/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mQuote Load (0.4ms)[0m   [0mSELECT * FROM "quotes" WHERE ("quotes".episodio_id = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered quotes/_embed_new (5.5ms)
+Rendered blocks/_container (16.6ms)
+  [4;36;1mTrack Load (0.6ms)[0m   [0;1mSELECT * FROM "tracks" WHERE ("tracks".episodio_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered tracks/_embed_new (4.3ms)
+Rendered blocks/_container (8.6ms)
+Completed in 254ms (View: 222, DB: 2) | 200 OK [http://0.0.0.0/episodios/1]
+
+
+Processing EpisodiosController#show (for 127.0.0.1 at 2009-11-05 16:55:36) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEpisodio Load (0.3ms)[0m   [0;1mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+Rendering template within layouts/geral
+Rendering episodios/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mQuote Load (0.4ms)[0m   [0;1mSELECT * FROM "quotes" WHERE ("quotes".episodio_id = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered quotes/_embed_new (93.4ms)
+Rendered blocks/_container (121.1ms)
+  [4;35;1mTrack Load (0.5ms)[0m   [0mSELECT * FROM "tracks" WHERE ("tracks".episodio_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered tracks/_embed_new (21.2ms)
+Rendered blocks/_container (28.2ms)
+Completed in 262ms (View: 192, DB: 2) | 200 OK [http://0.0.0.0/episodios/1]
+
+
+Processing EpisodiosController#show (for 127.0.0.1 at 2009-11-05 17:01:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEpisodio Load (0.3ms)[0m   [0;1mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+Rendering template within layouts/geral
+Rendering episodios/show
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mQuote Load (0.5ms)[0m   [0;1mSELECT * FROM "quotes" WHERE ("quotes".episodio_id = 1) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered quotes/_embed_new (5.0ms)
+Rendered blocks/_container (9.0ms)
+  [4;35;1mTrack Load (0.5ms)[0m   [0mSELECT * FROM "tracks" WHERE ("tracks".episodio_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered tracks/_embed_new (5.2ms)
+Rendered blocks/_container (8.4ms)
+
+ActionView::TemplateError (Missing template episodios/_footer.erb in view path app/views:vendor/gems/thoughtbot-clearance-0.8.2/app/views) on line #38 of app/views/layouts/geral.html.erb:
+35: 		</div>
+36: 		
+37: 		<div id="footer">
+38: 			<%= render :partial => 'footer' %>
+39: 		</div>
+40: 	</div>
+41: </body>
+
+    app/views/layouts/geral.html.erb:38
+    app/controllers/episodios_controller.rb:25:in `show'
+
+Rendered rescues/_trace (50.5ms)
+Rendered rescues/_request_and_response (19.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EpisodiosController#show (for 127.0.0.1 at 2009-11-05 17:02:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEpisodio Load (0.3ms)[0m   [0;1mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+Rendering template within layouts/geral
+Rendering episodios/show
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mQuote Load (0.4ms)[0m   [0;1mSELECT * FROM "quotes" WHERE ("quotes".episodio_id = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered quotes/_embed_new (3.0ms)
+Rendered blocks/_container (5.8ms)
+  [4;35;1mTrack Load (0.4ms)[0m   [0mSELECT * FROM "tracks" WHERE ("tracks".episodio_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered tracks/_embed_new (3.6ms)
+Rendered blocks/_container (7.1ms)
+Rendered layouts/_footer (1.7ms)
+Completed in 175ms (View: 140, DB: 2) | 200 OK [http://0.0.0.0/episodios/1]
+
+
+Processing EpisodiosController#show (for 127.0.0.1 at 2009-11-05 17:03:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEpisodio Load (0.3ms)[0m   [0;1mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+Rendering template within layouts/geral
+Rendering episodios/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mQuote Load (0.4ms)[0m   [0;1mSELECT * FROM "quotes" WHERE ("quotes".episodio_id = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered quotes/_embed_new (3.0ms)
+Rendered blocks/_container (6.2ms)
+  [4;35;1mTrack Load (0.4ms)[0m   [0mSELECT * FROM "tracks" WHERE ("tracks".episodio_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered tracks/_embed_new (2.7ms)
+Rendered blocks/_container (5.3ms)
+Rendered layouts/_footer (1.5ms)
+Completed in 130ms (View: 103, DB: 2) | 200 OK [http://0.0.0.0/episodios/1]
+
+
+Processing EpisodiosController#show (for 127.0.0.1 at 2009-11-06 10:49:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEpisodio Load (35.6ms)[0m   [0;1mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+Rendering template within layouts/geral
+Rendering episodios/show
+  [4;35;1mUser Load (26.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mQuote Load (0.4ms)[0m   [0;1mSELECT * FROM "quotes" WHERE ("quotes".episodio_id = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered quotes/_embed_new (16.2ms)
+Rendered blocks/_container (47.4ms)
+  [4;35;1mTrack Load (1.1ms)[0m   [0mSELECT * FROM "tracks" WHERE ("tracks".episodio_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered tracks/_embed_new (3.3ms)
+Rendered blocks/_container (6.0ms)
+
+ActionView::TemplateError (undefined method `add_episodio_path' for #<ActionView::Base:0x1043a6790>) on line #4 of app/views/layouts/_footer.html.erb:
+1: &copyright; 2009 - Danilo &amp; Rafael Dohms
+2: <% if current_user.admin? %>
+3: 	
+4: 		<%= link_to image_tag("icons/page_edit.png"), add_episodio_path(@episodio) %> | 
+5: 		<%= link_to image_tag("icons/page_edit.png"), list_users_path(@episodio) %> | 
+6: 	
+7: 		<%= link_to image_tag("icons/page_edit.png"), edit_episodio_path(@episodio) %>
+
+    app/views/layouts/_footer.html.erb:4
+    app/views/layouts/geral.html.erb:38
+    app/controllers/episodios_controller.rb:25:in `show'
+
+Rendered rescues/_trace (57.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EpisodiosController#index (for 127.0.0.1 at 2009-11-06 10:49:47) [GET]
+  [4;36;1mEpisodio Load (0.8ms)[0m   [0;1mSELECT * FROM "episodios" [0m
+Rendering template within layouts/geral
+Rendering episodios/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+
+ActionView::TemplateError (undefined method `add_episodio_path' for #<ActionView::Base:0x104175930>) on line #4 of app/views/layouts/_footer.html.erb:
+1: &copyright; 2009 - Danilo &amp; Rafael Dohms
+2: <% if current_user.admin? %>
+3: 	
+4: 		<%= link_to image_tag("icons/page_edit.png"), add_episodio_path(@episodio) %> | 
+5: 		<%= link_to image_tag("icons/page_edit.png"), list_users_path(@episodio) %> | 
+6: 	
+7: 		<%= link_to image_tag("icons/page_edit.png"), edit_episodio_path(@episodio) %>
+
+    app/views/layouts/_footer.html.erb:4
+    app/views/layouts/geral.html.erb:38
+    app/controllers/episodios_controller.rb:10:in `index'
+
+Rendered rescues/_trace (58.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EpisodiosController#index (for 127.0.0.1 at 2009-11-06 10:50:13) [GET]
+  [4;36;1mEpisodio Load (0.6ms)[0m   [0;1mSELECT * FROM "episodios" [0m
+Rendering template within layouts/geral
+Rendering episodios/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+ERROR: compiling _run_erb_app47views47layouts47_footer46html46erb_locals_footer_object RAISED compile error
+/Users/rdohms/dev/rails/nerdtrack/app/views/layouts/_footer.html.erb:8: syntax error, unexpected kEND, expecting ')'
+;  end 
+      ^
+/Users/rdohms/dev/rails/nerdtrack/app/views/layouts/_footer.html.erb:12: syntax error, unexpected kEND, expecting ')'
+Function body:           def _run_erb_app47views47layouts47_footer46html46erb_locals_footer_object(local_assigns)
+            old_output_buffer = output_buffer;footer = local_assigns[:footer];object = local_assigns[:object];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "&copyright; 2009 - Danilo &amp; Rafael Dohms\n"
+;  if current_user.admin? ; @output_buffer.concat "\n\t\n\t\t"
+
+; @output_buffer.concat(( #link_to image_tag("icons/page_edit.png"), add_episodio_path(@episodio) ).to_s); @output_buffer.concat " | \n\t\t"
+; @output_buffer.concat(( #link_to image_tag("icons/page_edit.png"), list_users_path(@episodio) ).to_s); @output_buffer.concat " | \n\t\n\t\t"
+
+; @output_buffer.concat(( link_to image_tag("icons/page_edit.png"), edit_episodio_path(@episodio) ).to_s); @output_buffer.concat "\n"
+;  end 
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/rdohms/dev/rails/nerdtrack/app/views/layouts/_footer.html.erb:12:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable_partial.rb:20:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/Users/rdohms/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/rdohms/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable_partial.rb:19:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/partials.rb:184:in `render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:262:in `render'
+/Users/rdohms/dev/rails/nerdtrack/app/views/layouts/geral.html.erb:38:in `_run_erb_app47views47layouts47geral46html46erb'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:34:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:34:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:301:in `with_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:30:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:260:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:347:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:257:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1250:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:951:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/rdohms/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/rdohms/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/rdohms/dev/rails/nerdtrack/app/controllers/episodios_controller.rb:10:in `index'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1331:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/rdohms/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/rdohms/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/rdohms/dev/rails/nerdtrack/app/views/layouts/_footer.html.erb:8: syntax error, unexpected kEND, expecting ')'
+;  end 
+      ^
+/Users/rdohms/dev/rails/nerdtrack/app/views/layouts/_footer.html.erb:12: syntax error, unexpected kEND, expecting ')') on line #8 of app/views/layouts/_footer.html.erb:
+5: 		<%= #link_to image_tag("icons/page_edit.png"), list_users_path(@episodio) %> | 
+6: 	
+7: 		<%= link_to image_tag("icons/page_edit.png"), edit_episodio_path(@episodio) %>
+8: <% end -%>
+
+    app/views/layouts/_footer.html.erb:12:in `compile!'
+    app/views/layouts/geral.html.erb:38
+    app/controllers/episodios_controller.rb:10:in `index'
+
+Rendered rescues/_trace (134.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EpisodiosController#index (for 127.0.0.1 at 2009-11-06 10:50:14) [GET]
+  [4;36;1mEpisodio Load (0.6ms)[0m   [0;1mSELECT * FROM "episodios" [0m
+Rendering template within layouts/geral
+Rendering episodios/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+ERROR: compiling _run_erb_app47views47layouts47_footer46html46erb_locals_footer_object RAISED compile error
+/Users/rdohms/dev/rails/nerdtrack/app/views/layouts/_footer.html.erb:8: syntax error, unexpected kEND, expecting ')'
+;  end 
+      ^
+/Users/rdohms/dev/rails/nerdtrack/app/views/layouts/_footer.html.erb:12: syntax error, unexpected kEND, expecting ')'
+Function body:           def _run_erb_app47views47layouts47_footer46html46erb_locals_footer_object(local_assigns)
+            old_output_buffer = output_buffer;footer = local_assigns[:footer];object = local_assigns[:object];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "&copyright; 2009 - Danilo &amp; Rafael Dohms\n"
+;  if current_user.admin? ; @output_buffer.concat "\n\t\n\t\t"
+
+; @output_buffer.concat(( #link_to image_tag("icons/page_edit.png"), add_episodio_path(@episodio) ).to_s); @output_buffer.concat " | \n\t\t"
+; @output_buffer.concat(( #link_to image_tag("icons/page_edit.png"), list_users_path(@episodio) ).to_s); @output_buffer.concat " | \n\t\n\t\t"
+
+; @output_buffer.concat(( link_to image_tag("icons/page_edit.png"), edit_episodio_path(@episodio) ).to_s); @output_buffer.concat "\n"
+;  end 
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/rdohms/dev/rails/nerdtrack/app/views/layouts/_footer.html.erb:12:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable_partial.rb:20:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/Users/rdohms/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/rdohms/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable_partial.rb:19:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/partials.rb:184:in `render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:262:in `render'
+/Users/rdohms/dev/rails/nerdtrack/app/views/layouts/geral.html.erb:38:in `_run_erb_app47views47layouts47geral46html46erb'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:34:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:34:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:301:in `with_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:30:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:260:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:347:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:257:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1250:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:951:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/rdohms/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/rdohms/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/rdohms/dev/rails/nerdtrack/app/controllers/episodios_controller.rb:10:in `index'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1331:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/rdohms/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/rdohms/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/rdohms/dev/rails/nerdtrack/app/views/layouts/_footer.html.erb:8: syntax error, unexpected kEND, expecting ')'
+;  end 
+      ^
+/Users/rdohms/dev/rails/nerdtrack/app/views/layouts/_footer.html.erb:12: syntax error, unexpected kEND, expecting ')') on line #8 of app/views/layouts/_footer.html.erb:
+5: 		<%= #link_to image_tag("icons/page_edit.png"), list_users_path(@episodio) %> | 
+6: 	
+7: 		<%= link_to image_tag("icons/page_edit.png"), edit_episodio_path(@episodio) %>
+8: <% end -%>
+
+    app/views/layouts/_footer.html.erb:12:in `compile!'
+    app/views/layouts/geral.html.erb:38
+    app/controllers/episodios_controller.rb:10:in `index'
+
+Rendered rescues/_trace (176.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EpisodiosController#index (for 127.0.0.1 at 2009-11-06 10:50:26) [GET]
+  [4;36;1mEpisodio Load (0.7ms)[0m   [0;1mSELECT * FROM "episodios" [0m
+Rendering template within layouts/geral
+Rendering episodios/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+
+ActionView::TemplateError (edit_episodio_url failed to generate from {:controller=>"episodios", :action=>"edit", :id=>nil}, expected: {:controller=>"episodios", :action=>"edit"}, diff: {:id=>nil}) on line #7 of app/views/layouts/_footer.html.erb:
+4: 		<%= link_to image_tag("icons/page_edit.png"), (@episodio) %> | 
+5: 		<%= link_to image_tag("icons/page_edit.png"), (@episodio) %> | 
+6: 	
+7: 		<%= link_to image_tag("icons/page_edit.png"), edit_episodio_path(@episodio) %>
+8: <% end -%>
+
+    (eval):16:in `edit_episodio_path'
+    app/views/layouts/_footer.html.erb:7
+    app/views/layouts/geral.html.erb:38
+    app/controllers/episodios_controller.rb:10:in `index'
+
+Rendered rescues/_trace (165.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EpisodiosController#index (for 127.0.0.1 at 2009-11-06 10:50:50) [GET]
+  [4;36;1mEpisodio Load (0.6ms)[0m   [0;1mSELECT * FROM "episodios" [0m
+Rendering template within layouts/geral
+Rendering episodios/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+Rendered layouts/_footer (1.7ms)
+Completed in 42ms (View: 25, DB: 1) | 200 OK [http://0.0.0.0/episodios]
+
+
+Processing EpisodiosController#index (for 127.0.0.1 at 2009-11-06 10:51:36) [GET]
+  [4;36;1mEpisodio Load (0.6ms)[0m   [0;1mSELECT * FROM "episodios" [0m
+Rendering template within layouts/geral
+Rendering episodios/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+Rendered layouts/_footer (1.9ms)
+Completed in 56ms (View: 48, DB: 1) | 200 OK [http://0.0.0.0/episodios]
+
+
+Processing EpisodiosController#new (for 127.0.0.1 at 2009-11-06 10:51:40) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+Rendering template within layouts/geral
+Rendering episodios/new
+Rendered layouts/_footer (1.0ms)
+Completed in 35ms (View: 18, DB: 0) | 200 OK [http://0.0.0.0/episodios/new]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 10:51:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mUser Load (1.9ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (1.0ms)
+Completed in 128ms (View: 114, DB: 2) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-11-06 10:51:57) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"users"}
+
+ActionController::UnknownAction (No action responded to show. Actions: authenticate, authorize, create, current_user=, deny_access, index, new, sign_in, and sign_out):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 10:53:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (1.5ms)
+Completed in 59ms (View: 46, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 10:54:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (1.8ms)
+Completed in 88ms (View: 47, DB: 2) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 10:56:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (1.5ms)
+Completed in 141ms (View: 126, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 10:56:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (1.0ms)
+Completed in 54ms (View: 41, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 10:57:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (1.4ms)
+Completed in 161ms (View: 149, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 10:57:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mUser Load (1.7ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.9ms)
+Completed in 67ms (View: 42, DB: 2) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 10:58:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (2.4ms)
+Completed in 77ms (View: 52, DB: 2) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 10:58:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.9ms)
+Completed in 60ms (View: 45, DB: 2) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 10:58:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mUser Load (3.9ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.9ms)
+Completed in 91ms (View: 66, DB: 4) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 10:59:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.9ms)
+Completed in 171ms (View: 145, DB: 2) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 10:59:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (1.3ms)
+Completed in 68ms (View: 52, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:00:24) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (2.5ms)
+Completed in 178ms (View: 158, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:00:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.9ms)
+Completed in 58ms (View: 45, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:00:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (1.1ms)
+Completed in 53ms (View: 40, DB: 2) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:01:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.9ms)
+Completed in 50ms (View: 38, DB: 2) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:01:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mUser Load (1.9ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (2.3ms)
+Completed in 74ms (View: 48, DB: 2) | 200 OK [http://0.0.0.0/users]

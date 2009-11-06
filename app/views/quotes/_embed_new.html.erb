@@ -4,18 +4,18 @@
 
     <%= f.hidden_field :episodio_id %>
   <p>
-    <%= f.label :quote %><br />
-    <%= f.text_field :quote %>
-  </p>
-  <p>
-    <%= f.label :time %><br />
+    Quando? (00:00:00)<br />
     <%= f.text_field :time %>
   </p>
   <p>
-    <%= f.label :autor %><br />
+    Frase<br />
+    <%= f.text_field :quote %>
+  </p>
+  <p>
+    Quem falou?<br />
     <%= f.text_field :autor %>
   </p>
   <p>
-    <%= f.submit 'Create' %>
+    <%= f.submit 'Criar' %>
   </p>
 <% end %>

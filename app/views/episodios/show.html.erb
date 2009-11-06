@@ -5,12 +5,12 @@
 	<a href="<%=h @episodio.link %>"><img src="/images/icons/attach.png" width="16" height="16" alt="Post Original"></a>
 	<a href="javascript:;" onclick="$('#addquotes').mb_open(); $('#addquotes').mb_centerOnWindow()"><img src="/images/icons/comment_add.png" width="16" height="16" alt="Adicionar Frase"></a>
 	<a href="javascript:;" onclick="$('#addtracks').mb_open(); $('#addtracks').mb_centerOnWindow()"><img src="/images/icons/music_add.png" width="16" height="16" alt="Adicionar Musica"></a>
-	<% if current_user.admin? %><%= link_to 'Edit', edit_episodio_path(@episodio) %><% end -%>
+	<% if current_user.admin? %><%= link_to image_tag("icons/page_edit.png"), edit_episodio_path(@episodio) %><% end -%>
 </p>
 
 <p class="ep-info">
   <b>Informações:</b><br/>
-  <%=h @episodio.desc %>
+  <%= simple_format(@episodio.desc) %>
 </p>
 
 
@@ -32,7 +32,7 @@
 		:locals => {:id => "addquotes",
 					:xclass => "add_form" ,
 					:skin => "white",
-					:buttons => "m,c",
+					:buttons => "c",
 					:icon => "comment-edit-48x48.png",
 					:collapsed => "false",
 					:width => "350",
@@ -53,7 +53,7 @@
 			<div class="time">[<%=h t.time %>]</div>
 			<div class="song"><b>"<%=h t.song %>"</b><% unless t.link.nil? %> (<a href="<%=h t.link %>"><%=h t.link %></a>)<% end -%></div>
 			<div class="credit"><i>Adicionado por:</i> <%=h t.user.name %></div>
-			<div class="cmd"> [contestar]</div>
+			<div class="cmd">[contestar]</div>
 		</li>
 	<% end -%>
 <% end %> 
@@ -64,7 +64,7 @@
 		:locals => {:id => "addtracks",
 					:xclass => "add_form" ,
 					:skin => "white",
-					:buttons => "m,c",
+					:buttons => "c",
 					:icon => "browser.png",
 					:collapsed => "false",
 					:width => "350",

@@ -47,7 +47,7 @@ class TracksController < ApplicationController
     respond_to do |format|
       if @track.save
         flash[:notice] = 'Track was successfully created.'
-        format.html { redirect_to(@track) }
+        format.html { redirect_to :back }
         format.xml  { render :xml => @track, :status => :created, :location => @track }
       else
         format.html { render :action => "new" }
