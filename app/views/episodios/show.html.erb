@@ -3,25 +3,31 @@
 <h1><b class="number">#<%=h @episodio.numero %></b> <%=h @episodio.titulo %></h1>
 <p class="ep-icons">
 	<a href="<%=h @episodio.link %>"><img src="/images/icons/attach.png" width="16" height="16" alt="Post Original"></a>
+	<a href="javascript:;" onclick="$('#addquotes').mb_open(); $('#addquotes').mb_centerOnWindow()"><img src="/images/icons/comment_add.png" width="16" height="16" alt="Adicionar Frase"></a>
+	<a href="javascript:;" onclick="$('#addtracks').mb_open(); $('#addtracks').mb_centerOnWindow()"><img src="/images/icons/music_add.png" width="16" height="16" alt="Adicionar Musica"></a>
+	<% if current_user.admin? %><%= link_to 'Edit', edit_episodio_path(@episodio) %><% end -%>
 </p>
 
 <p class="ep-info">
-  <b>Informações:</b>
+  <b>Informações:</b><br/>
   <%=h @episodio.desc %>
 </p>
 
 
 <h2>Frases ilustres:</h2> 
-<ul>
+<ul class="quote_list">
 <% @episodio.quotes.each do |q| %>  
 	<% unless q.quote.nil? %>
-		<li><b><%=h q.user.name %></b>  <%=h q.quote %>  </li>  
+		<li>
+			<div class="time">[<%=h q.time %>]</div>
+			<div class="quote"><b>"<%=h q.quote %>"</b> (<%=h q.autor %>)</div>
+			<div class="credit"><i>Adicionado por:</i> <%=h q.user.name %></div>
+		</li>  
 	<% end -%>
 <% end %> 
 </ul>
 
 <% if signed_in? %>
-	<a id="addquoteslink" href="javascript:;" onclick="$('#addquotes').mb_open(); $('#addquotes').mb_centerOnWindow()"><img src="/images/icons/add.png" width="16" height="16" alt="Add">Adicionar Frase</a>
 	<% render(:layout => 'blocks/container',
 		:locals => {:id => "addquotes",
 					:xclass => "add_form" ,
@@ -29,7 +35,6 @@
 					:buttons => "m,c",
 					:icon => "comment-edit-48x48.png",
 					:collapsed => "false",
-					:dock => "addquoteslink",
 					:width => "350",
 					:title => "Adicionar nova Frase",
 					:closed => "true"
@@ -41,16 +46,20 @@
 <% end -%>
 
 <h2>Músicas:</h2> 
-<ul>
-<% @episodio.tracks.each do |q| %> 
-	<% unless q.song.nil? %>
-		<li><b><%=h q.user.name %></b>  <%=h q.song %> <% unless q.link.nil? %> <%= link_to q.link %> <% end -%>  </li>  
+<ul class="song_list">
+<% @episodio.tracks.each do |t| %> 
+	<% unless t.song.nil? %>
+		<li>
+			<div class="time">[<%=h t.time %>]</div>
+			<div class="song"><b>"<%=h t.song %>"</b><% unless t.link.nil? %> (<a href="<%=h t.link %>"><%=h t.link %></a>)<% end -%></div>
+			<div class="credit"><i>Adicionado por:</i> <%=h t.user.name %></div>
+			<div class="cmd"> [contestar]</div>
+		</li>
 	<% end -%>
 <% end %> 
 </ul>
 
 <% if signed_in? %>
-	<a id="addtrackslink" href="javascript:;" onclick="$('#addtracks').mb_open(); $('#addtracks').mb_centerOnWindow()"><img src="/images/icons/add.png" width="16" height="16" alt="Add">Adicionar Música</a>
 	<% render(:layout => 'blocks/container',
 		:locals => {:id => "addtracks",
 					:xclass => "add_form" ,
@@ -58,7 +67,6 @@
 					:buttons => "m,c",
 					:icon => "browser.png",
 					:collapsed => "false",
-					:dock => "addtrackslink",
 					:width => "350",
 					:title => "Adicionar nova Música",
 					:closed => "true"
@@ -70,5 +78,5 @@
 <% end -%>
 
 
-<%= link_to 'Edit', edit_episodio_path(@episodio) %> |
+ |
 <%= link_to 'Back', episodios_path %>

@@ -15,6 +15,18 @@ BODY{
 	width: 1024px;
 }
 
+A{
+	text-decoration: none;
+}
+
+A IMG{
+	border: 0px;
+}
+
+/** 
+* Geral Layout
+*/
+
 #container{
 	background-color: #FFFFFF;
 	width: 988px;
@@ -29,7 +41,8 @@ BODY{
 	font-size: .9em;
 }
 
-#loginbar a{ color: #FFFFFF; } 
+#loginbar a{ color: #FFFFFF; text-decoration: none; } 
+#loginbar a:hover;{ color: #FFFFFF; text-decoration: underline;} 
 
 #header{
 	width:988px;
@@ -47,9 +60,7 @@ BODY{
 	
 }
 
-A IMG{
-	border: 0px;
-}
+
 
 
 /** 
@@ -58,6 +69,10 @@ A IMG{
 
 H1{
 	
+}
+
+H2{
+	color: #CCC;
 }
 
 .number{
@@ -70,11 +85,23 @@ H1{
 	margin-top: -20px;
 }
 .ep-icons a{ }	
-.ep-icons img{ border: 0px; }
+.ep-icons img{ border: 0px; padding: 0 5px 0 5px; }
 
 .ep-info{
 	
 }
+
+.quote_list         { list-style:none;}
+.quote_list .time   { float: left; color: #AAA; font-size: 1em; padding:5px 5px; height: 35px; }
+.quote_list .quote	{ }
+.quote_list .quote B{ font-size: 1.5em; }
+.quote_list .credit { font-size: 0.7em; }
+
+.song_list         { list-style:none;}
+.song_list .time   { float: left; color: #AAA; font-size: 1em; padding:5px 5px; height: 35px; }
+.song_list .song   { }
+.song_list .song B { font-size: 1.5em; }
+.song_list .credit { font-size: 0.7em; }
 
 .float-left{
 	float: left;
@@ -83,8 +110,6 @@ H1{
 .float-right{
 	float: right;
 }
-
-
 
 .add_form{
 	width: 350px;

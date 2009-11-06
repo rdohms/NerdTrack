@@ -1,3 +1,19 @@
+<%
+
+#Parsing params 
+xclass = nil if local_assigns[:xclass].nil? 
+skin = nil if local_assigns[:skin].nil? 
+buttons = nil if local_assigns[:buttons].nil? 
+icon = nil if local_assigns[:icon].nil? 
+collapsed = nil if local_assigns[:collapsed].nil? 
+dock = nil if local_assigns[:dock].nil? 
+width = nil if local_assigns[:width].nil? 
+closed = nil if local_assigns[:closed].nil? 
+title = nil if local_assigns[:title].nil? 
+id = 'nil' if local_assigns[:id].nil? 
+
+%>
+
 <% content_for :head do %>
 
 	<%= javascript_include_tag 'mbContainer.pack' %>
