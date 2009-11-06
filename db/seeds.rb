@@ -5,3 +5,13 @@
 #   
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
+
+#Create Default Admin
+admin = User.create( :email => 'admin@nerdtracker.rafaeldohms.com.br', 
+                     :password => 'n3rdt', 
+                     :password_confirmation => 'n3rdt', 
+                     :admin => 1,
+                     :name => 'NerdBot',
+                     :twitter => 'nerdtracker'
+                  )
+admin.confirm_email!

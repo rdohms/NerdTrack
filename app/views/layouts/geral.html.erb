@@ -18,7 +18,7 @@
 	<div id="container">
 		<div id="loginbar">
 			<% if signed_in? %>
-			<%=h current_user.email %> | <%= link_to 'Logout', session_url, :method => :delete %> 
+			Olá, <%=h current_user.name %> | <%= link_to 'Logout', session_url, :method => :delete %> 
 			<% else %>
 			<%= link_to "Register", :controller => "users", :action => "new" %> | <%= link_to "Login", :controller => "session", :action => "new" %>
 			<% end -%>
