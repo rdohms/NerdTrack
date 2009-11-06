@@ -8608,3 +8608,25 @@ Rendering template within layouts/geral
 Rendering users/index
 Rendered layouts/_footer (0.8ms)
 Completed in 28ms (View: 13, DB: 2) | 200 OK [http://0.0.0.0/users]
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2009-11-06 17:26:35) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"zwfXxGtb56Aki4JvZ1J2BPT9od9lrsEZCYBNpSnS01s=", "controller"=>"clearance/sessions"}
+Redirected to http://0.0.0.0:3000/session/new
+Completed in 71ms (DB: 0) | 302 Found [http://0.0.0.0/session]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-06 17:26:35) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/geral
+Rendering sessions/new
+Rendered layouts/_footer (0.6ms)
+Completed in 149ms (View: 147, DB: 0) | 200 OK [http://0.0.0.0/session/new]
+
+
+Processing EpisodiosController#index (for 127.0.0.1 at 2009-11-06 17:26:38) [GET]
+  [4;36;1mEpisodio Load (0.6ms)[0m   [0;1mSELECT * FROM "episodios" [0m
+Rendering template within layouts/geral
+Rendering episodios/index
+Rendered layouts/_footer (0.1ms)
+Completed in 21ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/]
