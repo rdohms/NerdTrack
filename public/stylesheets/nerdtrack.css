@@ -103,14 +103,12 @@ H2{
 }
 
 .ep-icons{
-	margin-top: -20px;
+	padding: 5px 0;
+	margin: -5px 0 -15px -5px;
 }
 .ep-icons a{ }	
 .ep-icons img{ border: 0px; padding: 0 5px 0 5px; }
 
-.ep-info{
-	
-}
 
 .quote_list         { list-style:none;}
 .quote_list LI      { clear: both; padding: 0 0 10px 0;}
@@ -118,6 +116,7 @@ H2{
 .quote_list .quote	{ }
 .quote_list .quote B{ font-size: 1.5em; }
 .quote_list .credit { font-size: 0.7em; }
+.quote_list .credit A{ color: #569; font-weight:bold; }
 
 .song_list         { list-style:none;}
 .song_list LI      { clear: both;  padding: 0 0 10px 0;}
@@ -125,6 +124,7 @@ H2{
 .song_list .song   { }
 .song_list .song B { font-size: 1.5em; }
 .song_list .credit { font-size: 0.7em; }
+.song_list .credit A{ color: #569; font-weight:bold; }
 
 .float-left{
 	float: left;
