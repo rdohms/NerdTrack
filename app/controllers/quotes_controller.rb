@@ -1,4 +1,8 @@
 class QuotesController < ApplicationController
+  
+  #Block other pages for now
+  before_filter :authorize, :only => [:index, :show, :edit, :update, :destroy]
+  
   # GET /quotes
   # GET /quotes.xml
   def index
@@ -47,7 +51,7 @@ class QuotesController < ApplicationController
     respond_to do |format|
       if @quote.save
         flash[:notice] = 'Quote was successfully created.'
-        format.html { redirect_to(@quote) }
+        format.html { redirect_to :back }
         format.xml  { render :xml => @quote, :status => :created, :location => @quote }
       else
         format.html { render :action => "new" }

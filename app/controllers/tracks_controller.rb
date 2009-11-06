@@ -1,4 +1,8 @@
 class TracksController < ApplicationController
+  
+  #Block other pages for now
+  before_filter :authorize, :only => [:index, :show, :edit, :update, :destroy]
+  
   # GET /tracks
   # GET /tracks.xml
   def index

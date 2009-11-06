@@ -6465,3 +6465,1124 @@ Rendering template within layouts/geral
 Rendering users/index
 Rendered layouts/_footer (2.3ms)
 Completed in 74ms (View: 48, DB: 2) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:21:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #14 of app/views/users/index.html.erb:
+11:   <tr>
+12:     <td><%=h user.name %></td>
+13:     <td><%=h user.admin %></td>
+14:     <td><%= link_to "Toggle Admin", :action => "admintoggle", :id => @user.id %></td>
+15:     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+16:   </tr>
+17: <% end %>
+
+    app/views/users/index.html.erb:14
+    app/views/users/index.html.erb:10:in `each'
+    app/views/users/index.html.erb:10
+    app/controllers/users_controller.rb:9:in `index'
+
+Rendered rescues/_trace (54.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:22:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (1.0ms)
+Completed in 53ms (View: 39, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#admintoggle (for 127.0.0.1 at 2009-11-06 11:22:26) [GET]
+  Parameters: {"action"=>"admintoggle", "id"=>"4", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+
+NameError (uninitialized constant UsersController::Users):
+  app/controllers/users_controller.rb:16:in `admintoggle'
+
+Rendered rescues/_trace (43.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:24:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+ERROR: compiling _run_erb_app47views47users47index46html46erb RAISED compile error
+/Users/rdohms/dev/rails/nerdtrack/app/views/users/index.html.erb:12: syntax error, unexpected kELSE, expecting ')'
+... user.name.nil? user.name else user.email ).to_s); @output_b...
+                              ^
+Function body:           def _run_erb_app47views47users47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Usu\303\241rios</h1>\n\n<table>\n  <tr>\n    <th>Name</th>\n    <th>Admin</th>\n    <th>Link</th>\n  </tr>\n\n"
+
+
+
+
+
+
+
+
+;  @users.each do |user| ; @output_buffer.concat "\n  <tr>\n    <td>"
+
+; @output_buffer.concat((h unless user.name.nil? user.name else user.email ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat((h user.admin ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to "Toggle Admin", :action => "admintoggle", :id => @user.object_id ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete ).to_s); @output_buffer.concat "</td>\n  </tr>\n"
+
+;  end ; @output_buffer.concat "\n</table>\n\n<br />\n"
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/rdohms/dev/rails/nerdtrack/app/views/users/index.html.erb:24:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:260:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:343:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:257:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1250:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:951:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/rdohms/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/rdohms/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/rdohms/dev/rails/nerdtrack/app/controllers/users_controller.rb:9:in `index'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1331:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/rdohms/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/rdohms/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/rdohms/dev/rails/nerdtrack/app/views/users/index.html.erb:12: syntax error, unexpected kELSE, expecting ')'
+... user.name.nil? user.name else user.email ).to_s); @output_b...
+                              ^) on line #12 of app/views/users/index.html.erb:
+9: 
+10: <% @users.each do |user| %>
+11:   <tr>
+12:     <td><%=h unless user.name.nil? user.name else user.email %></td>
+13:     <td><%=h user.admin %></td>
+14:     <td><%= link_to "Toggle Admin", :action => "admintoggle", :id => @user.object_id %></td>
+15:     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    app/views/users/index.html.erb:24:in `compile!'
+    app/controllers/users_controller.rb:9:in `index'
+
+Rendered rescues/_trace (144.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:25:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (2.6ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+ERROR: compiling _run_erb_app47views47users47index46html46erb RAISED compile error
+/Users/rdohms/dev/rails/nerdtrack/app/views/users/index.html.erb:12: syntax error, unexpected tIDENTIFIER, expecting ')'
+...h unless (user.name.nil?) user.name else user.email ).to_s);...
+                              ^
+/Users/rdohms/dev/rails/nerdtrack/app/views/users/index.html.erb:12: syntax error, unexpected kELSE, expecting ')'
+...user.name.nil?) user.name else user.email ).to_s); @output_b...
+                              ^
+Function body:           def _run_erb_app47views47users47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Usu\303\241rios</h1>\n\n<table>\n  <tr>\n    <th>Name</th>\n    <th>Admin</th>\n    <th>Link</th>\n  </tr>\n\n"
+
+
+
+
+
+
+
+
+;  @users.each do |user| ; @output_buffer.concat "\n  <tr>\n    <td>"
+
+; @output_buffer.concat((h unless (user.name.nil?) user.name else user.email ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat((h user.admin ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to "Toggle Admin", :action => "admintoggle", :id => @user.object_id ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete ).to_s); @output_buffer.concat "</td>\n  </tr>\n"
+
+;  end ; @output_buffer.concat "\n</table>\n\n<br />\n"
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/rdohms/dev/rails/nerdtrack/app/views/users/index.html.erb:24:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:260:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:343:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:257:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1250:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:951:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/rdohms/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/rdohms/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/rdohms/dev/rails/nerdtrack/app/controllers/users_controller.rb:9:in `index'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1331:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/rdohms/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/rdohms/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/rdohms/dev/rails/nerdtrack/app/views/users/index.html.erb:12: syntax error, unexpected tIDENTIFIER, expecting ')'
+...h unless (user.name.nil?) user.name else user.email ).to_s);...
+                              ^
+/Users/rdohms/dev/rails/nerdtrack/app/views/users/index.html.erb:12: syntax error, unexpected kELSE, expecting ')'
+...user.name.nil?) user.name else user.email ).to_s); @output_b...
+                              ^) on line #12 of app/views/users/index.html.erb:
+9: 
+10: <% @users.each do |user| %>
+11:   <tr>
+12:     <td><%=h unless (user.name.nil?) user.name else user.email %></td>
+13:     <td><%=h user.admin %></td>
+14:     <td><%= link_to "Toggle Admin", :action => "admintoggle", :id => @user.object_id %></td>
+15:     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    app/views/users/index.html.erb:24:in `compile!'
+    app/controllers/users_controller.rb:9:in `index'
+
+Rendered rescues/_trace (44.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:25:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+ERROR: compiling _run_erb_app47views47users47index46html46erb RAISED compile error
+/Users/rdohms/dev/rails/nerdtrack/app/views/users/index.html.erb:14: syntax error, unexpected kELSE, expecting ')'
+			 else 
+			     ^
+Function body:           def _run_erb_app47views47users47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Usu\303\241rios</h1>\n\n<table>\n  <tr>\n    <th>Name</th>\n    <th>Admin</th>\n    <th>Link</th>\n  </tr>\n\n"
+
+
+
+
+
+
+
+
+;  @users.each do |user| ; @output_buffer.concat "\n  <tr>\n    <td>"
+
+; @output_buffer.concat((h unless (user.name.nil?) 
+				user.name 
+			 else 
+				user.email 
+		 ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat((h user.admin ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to "Toggle Admin", :action => "admintoggle", :id => @user.object_id ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete ).to_s); @output_buffer.concat "</td>\n  </tr>\n"
+
+;  end ; @output_buffer.concat "\n</table>\n\n<br />\n"
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/rdohms/dev/rails/nerdtrack/app/views/users/index.html.erb:28:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:260:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:343:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:257:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1250:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:951:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/rdohms/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/rdohms/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/rdohms/dev/rails/nerdtrack/app/controllers/users_controller.rb:9:in `index'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1331:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/rdohms/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/rdohms/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Users/rdohms/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/rdohms/dev/rails/nerdtrack/app/views/users/index.html.erb:14: syntax error, unexpected kELSE, expecting ')'
+			 else 
+			     ^) on line #14 of app/views/users/index.html.erb:
+11:   <tr>
+12:     <td><%=h unless (user.name.nil?) 
+13: 				user.name 
+14: 			 else 
+15: 				user.email 
+16: 		 %></td>
+17:     <td><%=h user.admin %></td>
+
+    app/views/users/index.html.erb:28:in `compile!'
+    app/controllers/users_controller.rb:9:in `index'
+
+Rendered rescues/_trace (43.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:29:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.9ms)
+Completed in 62ms (View: 49, DB: 2) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:32:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.9ms)
+Completed in 55ms (View: 40, DB: 2) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#admintoggle (for 127.0.0.1 at 2009-11-06 11:32:13) [GET]
+  Parameters: {"action"=>"admintoggle", "id"=>"4", "controller"=>"users"}
+  [4;36;1mUser Load (3.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+
+ActionView::MissingTemplate (Missing template users/admintoggle.erb in view path app/views:vendor/gems/thoughtbot-clearance-0.8.2/app/views):
+  app/controllers/users_controller.rb:20:in `admintoggle'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:33:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.9ms)
+Completed in 53ms (View: 36, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#admintoggle (for 127.0.0.1 at 2009-11-06 11:33:33) [GET]
+  Parameters: {"action"=>"admintoggle", "id"=>"4", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.save):
+  app/controllers/users_controller.rb:21:in `admintoggle'
+  app/controllers/users_controller.rb:20:in `admintoggle'
+
+Rendered rescues/_trace (96.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#admintoggle (for 127.0.0.1 at 2009-11-06 11:33:44) [GET]
+  Parameters: {"action"=>"admintoggle", "id"=>"4", "controller"=>"users"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+3@gmail.com' AND "users".id <> 4) LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-06 13:33:44', "admin" = 't' WHERE "id" = 4[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 386ms (DB: 2) | 302 Found [http://0.0.0.0/users/admintoggle/4]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:33:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.7ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.9ms)
+Completed in 49ms (View: 36, DB: 2) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#admintoggle (for 127.0.0.1 at 2009-11-06 11:33:49) [GET]
+  Parameters: {"action"=>"admintoggle", "id"=>"4", "controller"=>"users"}
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+3@gmail.com' AND "users".id <> 4) LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-06 13:33:49', "admin" = 'f' WHERE "id" = 4[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 27ms (DB: 2) | 302 Found [http://0.0.0.0/users/admintoggle/4]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:33:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (2.9ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.9ms)
+Completed in 65ms (View: 43, DB: 3) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#admintoggle (for 127.0.0.1 at 2009-11-06 11:34:13) [GET]
+  Parameters: {"action"=>"admintoggle", "id"=>"4", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+3@gmail.com' AND "users".id <> 4) LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-06 13:34:13', "admin" = 't' WHERE "id" = 4[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 21ms (DB: 1) | 302 Found [http://0.0.0.0/users/admintoggle/4]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:34:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.9ms)
+Completed in 50ms (View: 37, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#admintoggle (for 127.0.0.1 at 2009-11-06 11:34:17) [GET]
+  Parameters: {"action"=>"admintoggle", "id"=>"4", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+3@gmail.com' AND "users".id <> 4) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-06 13:34:17', "admin" = 'f' WHERE "id" = 4[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 17ms (DB: 1) | 302 Found [http://0.0.0.0/users/admintoggle/4]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:34:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.9ms)
+Completed in 128ms (View: 114, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#admintoggle (for 127.0.0.1 at 2009-11-06 11:34:18) [GET]
+  Parameters: {"action"=>"admintoggle", "id"=>"4", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+3@gmail.com' AND "users".id <> 4) LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-06 13:34:18', "admin" = 't' WHERE "id" = 4[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 18ms (DB: 1) | 302 Found [http://0.0.0.0/users/admintoggle/4]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:34:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.9ms)
+Completed in 47ms (View: 35, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:34:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.9ms)
+Completed in 56ms (View: 42, DB: 2) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:35:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.8ms)
+Completed in 58ms (View: 40, DB: 3) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#admintoggle (for 127.0.0.1 at 2009-11-06 11:35:36) [GET]
+  Parameters: {"action"=>"admintoggle", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms@gmail.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-06 13:35:36', "admin" = 't' WHERE "id" = 1[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 19ms (DB: 1) | 302 Found [http://0.0.0.0/users/admintoggle/1]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:35:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (2.8ms)
+Completed in 175ms (View: 161, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#admintoggle (for 127.0.0.1 at 2009-11-06 11:35:41) [GET]
+  Parameters: {"action"=>"admintoggle", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms@gmail.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-06 13:35:41', "admin" = 'f' WHERE "id" = 1[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 16ms (DB: 1) | 302 Found [http://0.0.0.0/users/admintoggle/1]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:35:41) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.9ms)
+Completed in 51ms (View: 38, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#admintoggle (for 127.0.0.1 at 2009-11-06 11:35:42) [GET]
+  Parameters: {"action"=>"admintoggle", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms@gmail.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-06 13:35:42', "admin" = 't' WHERE "id" = 1[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 16ms (DB: 1) | 302 Found [http://0.0.0.0/users/admintoggle/1]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:35:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.9ms)
+Completed in 139ms (View: 127, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#admintoggle (for 127.0.0.1 at 2009-11-06 11:35:43) [GET]
+  Parameters: {"action"=>"admintoggle", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms@gmail.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-06 13:35:43', "admin" = 'f' WHERE "id" = 1[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 75ms (DB: 1) | 302 Found [http://0.0.0.0/users/admintoggle/1]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:35:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (2.3ms)
+Completed in 81ms (View: 58, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#admintoggle (for 127.0.0.1 at 2009-11-06 11:35:47) [GET]
+  Parameters: {"action"=>"admintoggle", "id"=>"4", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+3@gmail.com' AND "users".id <> 4) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-06 13:35:47', "admin" = 'f' WHERE "id" = 4[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 17ms (DB: 1) | 302 Found [http://0.0.0.0/users/admintoggle/4]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:35:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (1.0ms)
+Completed in 166ms (View: 48, DB: 2) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#admintoggle (for 127.0.0.1 at 2009-11-06 11:35:48) [GET]
+  Parameters: {"action"=>"admintoggle", "id"=>"4", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+3@gmail.com' AND "users".id <> 4) LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-06 13:35:48', "admin" = 't' WHERE "id" = 4[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 49ms (DB: 1) | 302 Found [http://0.0.0.0/users/admintoggle/4]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:35:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.8ms)
+Completed in 47ms (View: 35, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#admintoggle (for 127.0.0.1 at 2009-11-06 11:35:49) [GET]
+  Parameters: {"action"=>"admintoggle", "id"=>"4", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+3@gmail.com' AND "users".id <> 4) LIMIT 1[0m
+  [4;35;1mUser Update (84.9ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-06 13:35:49', "admin" = 'f' WHERE "id" = 4[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 153ms (DB: 86) | 302 Found [http://0.0.0.0/users/admintoggle/4]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:35:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (5.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (1.0ms)
+Completed in 192ms (View: 77, DB: 6) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#admintoggle (for 127.0.0.1 at 2009-11-06 11:35:52) [GET]
+  Parameters: {"action"=>"admintoggle", "id"=>"3", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+2@gmail.com' AND "users".id <> 3) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-06 13:35:52', "admin" = 'f' WHERE "id" = 3[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 16ms (DB: 1) | 302 Found [http://0.0.0.0/users/admintoggle/3]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:35:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.9ms)
+Completed in 46ms (View: 35, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#admintoggle (for 127.0.0.1 at 2009-11-06 11:35:57) [GET]
+  Parameters: {"action"=>"admintoggle", "id"=>"5", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+4@gmail.com' AND "users".id <> 5) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-06 13:35:57', "admin" = 't' WHERE "id" = 5[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 16ms (DB: 1) | 302 Found [http://0.0.0.0/users/admintoggle/5]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:35:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.9ms)
+Completed in 51ms (View: 37, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#admintoggle (for 127.0.0.1 at 2009-11-06 11:35:58) [GET]
+  Parameters: {"action"=>"admintoggle", "id"=>"5", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+4@gmail.com' AND "users".id <> 5) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-06 13:35:58', "admin" = 'f' WHERE "id" = 5[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 17ms (DB: 1) | 302 Found [http://0.0.0.0/users/admintoggle/5]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:35:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.8ms)
+Completed in 54ms (View: 40, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#admintoggle (for 127.0.0.1 at 2009-11-06 11:36:00) [GET]
+  Parameters: {"action"=>"admintoggle", "id"=>"6", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+5@gmail.com' AND "users".id <> 6) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-06 13:36:00', "admin" = 't' WHERE "id" = 6[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 16ms (DB: 1) | 302 Found [http://0.0.0.0/users/admintoggle/6]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:36:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.9ms)
+Completed in 50ms (View: 38, DB: 2) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#admintoggle (for 127.0.0.1 at 2009-11-06 11:36:01) [GET]
+  Parameters: {"action"=>"admintoggle", "id"=>"6", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+5@gmail.com' AND "users".id <> 6) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-06 13:36:01', "admin" = 'f' WHERE "id" = 6[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 16ms (DB: 1) | 302 Found [http://0.0.0.0/users/admintoggle/6]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:36:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.8ms)
+Completed in 47ms (View: 35, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#admintoggle (for 127.0.0.1 at 2009-11-06 11:36:02) [GET]
+  Parameters: {"action"=>"admintoggle", "id"=>"7", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 7) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+6@gmail.com' AND "users".id <> 7) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-06 13:36:02', "admin" = 't' WHERE "id" = 7[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 97ms (DB: 1) | 302 Found [http://0.0.0.0/users/admintoggle/7]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:36:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (1.0ms)
+Completed in 60ms (View: 43, DB: 2) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#admintoggle (for 127.0.0.1 at 2009-11-06 11:36:03) [GET]
+  Parameters: {"action"=>"admintoggle", "id"=>"7", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 7) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+6@gmail.com' AND "users".id <> 7) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-06 13:36:03', "admin" = 'f' WHERE "id" = 7[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 16ms (DB: 1) | 302 Found [http://0.0.0.0/users/admintoggle/7]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:36:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.8ms)
+Completed in 48ms (View: 35, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#admintoggle (for 127.0.0.1 at 2009-11-06 11:36:04) [GET]
+  Parameters: {"action"=>"admintoggle", "id"=>"8", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+7@gmail.com' AND "users".id <> 8) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-06 13:36:04', "admin" = 't' WHERE "id" = 8[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 102ms (DB: 1) | 302 Found [http://0.0.0.0/users/admintoggle/8]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:36:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.9ms)
+Completed in 55ms (View: 39, DB: 2) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#admintoggle (for 127.0.0.1 at 2009-11-06 11:36:05) [GET]
+  Parameters: {"action"=>"admintoggle", "id"=>"8", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+7@gmail.com' AND "users".id <> 8) LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-06 13:36:05', "admin" = 'f' WHERE "id" = 8[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 16ms (DB: 1) | 302 Found [http://0.0.0.0/users/admintoggle/8]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:36:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.9ms)
+Completed in 46ms (View: 34, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:39:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (1.0ms)
+Completed in 82ms (View: 67, DB: 2) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#admintoggle (for 127.0.0.1 at 2009-11-06 11:39:42) [GET]
+  Parameters: {"action"=>"admintoggle", "id"=>"3", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+2@gmail.com' AND "users".id <> 3) LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-06 13:39:42', "admin" = 't' WHERE "id" = 3[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 17ms (DB: 1) | 302 Found [http://0.0.0.0/users/admintoggle/3]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:39:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.9ms)
+Completed in 72ms (View: 55, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#admintoggle (for 127.0.0.1 at 2009-11-06 11:39:44) [GET]
+  Parameters: {"action"=>"admintoggle", "id"=>"3", "controller"=>"users"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+2@gmail.com' AND "users".id <> 3) LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-06 13:39:44', "admin" = 'f' WHERE "id" = 3[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 24ms (DB: 2) | 302 Found [http://0.0.0.0/users/admintoggle/3]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:39:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (1.6ms)
+Completed in 58ms (View: 43, DB: 2) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#admintoggle (for 127.0.0.1 at 2009-11-06 11:39:45) [GET]
+  Parameters: {"action"=>"admintoggle", "id"=>"5", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+4@gmail.com' AND "users".id <> 5) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-06 13:39:45', "admin" = 't' WHERE "id" = 5[0m
+Redirected to http://0.0.0.0:3000/users
+Completed in 16ms (DB: 1) | 302 Found [http://0.0.0.0/users/admintoggle/5]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:39:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.8ms)
+Completed in 70ms (View: 58, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:40:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.9ms)
+Completed in 61ms (View: 46, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:47:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.9ms)
+Completed in 65ms (View: 47, DB: 2) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#destroy (for 127.0.0.1 at 2009-11-06 11:47:43) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"zwfXxGtb56Aki4JvZ1J2BPT9od9lrsEZCYBNpSnS01s=", "id"=>"8", "controller"=>"users"}
+
+ActionController::UnknownAction (No action responded to destroy. Actions: admintoggle, authenticate, authorize, create, current_user=, deny_access, index, new, sign_in, and sign_out):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:52:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (1.0ms)
+Completed in 51ms (View: 32, DB: 2) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:53:22) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (2.2ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+
+ActionView::TemplateError (undefined local variable or method `home' for #<ActionView::Base:0x1040fa9d8>) on line #28 of app/views/layouts/geral.html.erb:
+25: 		</div>
+26: 		
+27: 		<div id="header">
+28: 			<%= link_to image_tag("header.png"), home%>
+29: 		</div>
+30: 		
+31: 		<p style="color: green"><%= flash[:notice] %></p>
+
+    app/views/layouts/geral.html.erb:28
+    app/controllers/users_controller.rb:9:in `index'
+
+Rendered rescues/_trace (131.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-06 11:55:46) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/geral
+Rendering users/index
+Rendered layouts/_footer (0.9ms)
+Completed in 32ms (View: 18, DB: 2) | 200 OK [http://0.0.0.0/users]
+
+
+Processing EpisodiosController#index (for 127.0.0.1 at 2009-11-06 11:55:50) [GET]
+  [4;36;1mEpisodio Load (0.7ms)[0m   [0;1mSELECT * FROM "episodios" [0m
+Rendering template within layouts/geral
+Rendering episodios/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c0c31c6da3e310367d786fc0c010e6cbc535164f') LIMIT 1[0m
+Rendered layouts/_footer (0.8ms)
+Completed in 30ms (View: 22, DB: 1) | 200 OK [http://0.0.0.0/]
