@@ -52,7 +52,7 @@ class TracksController < ApplicationController
     
     respond_to do |format|
       if @track.save
-        flash[:notice] = 'Track was successfully created.'
+        flash[:notice] = 'Música adicionada com sucesso.'
         format.html { redirect_to :back }
         format.xml  { render :xml => @track, :status => :created, :location => @track }
       else

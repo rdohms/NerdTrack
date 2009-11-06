@@ -52,7 +52,7 @@ class QuotesController < ApplicationController
 
     respond_to do |format|
       if @quote.save
-        flash[:notice] = 'Quote was successfully created.'
+        flash[:notice] = 'Frase adicionada com sucesso!'
         format.html { redirect_to :back }
         format.xml  { render :xml => @quote, :status => :created, :location => @quote }
       else
