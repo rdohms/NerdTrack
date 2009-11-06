@@ -1,10 +1,37 @@
+<% content_for :head do %>
+
+	<%= javascript_include_tag 'jquery-spin' %>
+
+	<script>
+		$(document).ready(function(){
+			$.spin.imageBasePath = '/images/spin1/';
+			
+			$('#track_timeh').spin({
+				max: 2,
+				min: 0
+			});
+			$('#track_timem').spin({
+				max: 59,
+				min: 0
+			});
+			$('#track_times').spin({
+				max: 59,
+				min: 0
+			});
+		});
+	</script>
+
+<% end %>
+
 <% form_for(@track, @episodio) do |f| %>
   <%= f.error_messages %>
 
 	<%= f.hidden_field :episodio_id %>
   <p>
     Quando? (00:00:00)<br />
-    <%= f.text_field :time %>
+	<%= text_field_tag 'track_timeh', '', :size => 4, :value => "00" %> :
+	<%= text_field_tag 'track_timem', '', :size => 4, :value => "00" %> :
+	<%= text_field_tag 'track_times', '', :size => 4, :value => "00" %>
   </p>
   <p>
     Música - Artista<br />

@@ -51,6 +51,14 @@ A IMG{
 	border-bottom: 5px solid #369;
 }
 
+#flash_msg{
+	background-color: #FDF3C6;
+	text-align: center;
+	font-weight: bold;
+	color: #D7AA12;
+	padding: 8px;
+}
+
 #content{
 	padding: 10px;
 	min-heigth: 200px;

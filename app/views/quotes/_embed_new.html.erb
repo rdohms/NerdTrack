@@ -1,11 +1,38 @@
 
+<% content_for :head do %>
+
+	<%= javascript_include_tag 'jquery-spin' %>
+
+	<script>
+		$(document).ready(function(){
+			$.spin.imageBasePath = '/images/spin1/';
+			
+			$('#quote_timeh').spin({
+				max: 2,
+				min: 0
+			});
+			$('#quote_timem').spin({
+				max: 59,
+				min: 0
+			});
+			$('#quote_times').spin({
+				max: 59,
+				min: 0
+			});
+		});
+	</script>
+
+<% end %>
+
 <% form_for(@quote, @episodio) do |f| %>
   <%= f.error_messages %>
 
     <%= f.hidden_field :episodio_id %>
   <p>
     Quando? (00:00:00)<br />
-    <%= f.text_field :time %>
+	<%= text_field_tag 'quote_timeh', '', :size => 4, :value => "00" %> :
+	<%= text_field_tag 'quote_timem', '', :size => 4, :value => "00" %> :
+	<%= text_field_tag 'quote_times', '', :size => 4, :value => "00" %>
   </p>
   <p>
     Frase<br />

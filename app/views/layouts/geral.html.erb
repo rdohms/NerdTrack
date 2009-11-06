@@ -28,7 +28,12 @@
 			<%= link_to image_tag("header.png"), root_url %>
 		</div>
 		
-		<p style="color: green"><%= flash[:notice] %></p>
+		<% if flash[:notice] %>
+			<script>
+				setTimeout( function(){ $("#flash_msg").slideUp(); }, 3000);
+			</script>
+		<div id="flash_msg"><%= flash[:notice] %></div>
+		<% end -%>
 		
 		<div id="content">
 			<%= yield %>

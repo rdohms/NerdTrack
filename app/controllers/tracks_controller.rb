@@ -48,6 +48,8 @@ class TracksController < ApplicationController
 
     @track.user_id = current_user.id
 
+    @track.time = "%02d:%02d:%02d" % [ params[:track_timeh], params[:track_timem], params[:track_times] ]
+    
     respond_to do |format|
       if @track.save
         flash[:notice] = 'Track was successfully created.'

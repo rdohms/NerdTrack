@@ -48,6 +48,8 @@ class QuotesController < ApplicationController
 
     @quote.user_id = current_user.id
 
+    @quote.time = "%02d:%02d:%02d" % [ params[:quote_timeh], params[:quote_timem], params[:quote_times] ]
+
     respond_to do |format|
       if @quote.save
         flash[:notice] = 'Quote was successfully created.'
