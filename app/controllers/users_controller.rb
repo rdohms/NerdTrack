@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < Clearance::UsersController
   before_filter :authorize, :only => [:index]
   
   # GET /episodios

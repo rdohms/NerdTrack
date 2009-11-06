@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   layout "geral"
   
   def authorize
-    unless current_user.admin?
+    unless !current_user.nil? && current_user.admin?
       render :text => 'Unauthorized', :status => :unauthorized
     end
   end

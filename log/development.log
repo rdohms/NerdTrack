@@ -4279,3 +4279,357 @@ Rendered blocks/_container (7.0ms)
 Rendered tracks/_embed_new (3.4ms)
 Rendered blocks/_container (6.3ms)
 Completed in 66ms (View: 41, DB: 2) | 200 OK [http://0.0.0.0/episodios/1]
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2009-11-03 18:03:51) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"zwfXxGtb56Aki4JvZ1J2BPT9od9lrsEZCYBNpSnS01s=", "controller"=>"clearance/sessions"}
+Redirected to http://0.0.0.0:3000/session/new
+Completed in 47ms (DB: 0) | 302 Found [http://0.0.0.0/session]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-03 18:03:51) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/geral
+Rendering sessions/new
+Completed in 81ms (View: 76, DB: 0) | 200 OK [http://0.0.0.0/session/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-03 18:03:54) [GET]
+Rendering template within layouts/geral
+Rendering users/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #3 of app/views/users/new.html.erb:
+1: <h2>Sign up</h2>
+2: 
+3: <% semantic_form_for @user do |form| %>
+4:   <%= form.error_messages %>
+5:   <%= render :partial => "/users/inputs", :locals => { :form => form } %>
+6:   <% form.buttons do %>
+
+    vendor/gems/justinfrench-formtastic-0.2.4/rails/./lib/formtastic.rb:1323:in `semantic_form_for'
+    app/views/users/new.html.erb:3
+
+Rendered rescues/_trace (63.4ms)
+Rendered rescues/_request_and_response (7.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-03 18:07:43) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/geral
+Rendering users/new
+Rendered users/_inputs (30.2ms)
+Completed in 198ms (View: 62, DB: 0) | 200 OK [http://0.0.0.0/users/new]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-03 18:13:35) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"index", "authenticity_token"=>"zwfXxGtb56Aki4JvZ1J2BPT9od9lrsEZCYBNpSnS01s=", "controller"=>"users", "user"=>{"name"=>"Teste", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "twitter"=>"rdohms", "email"=>"rdohms+3@gmail.com"}}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.admin?):
+  app/controllers/application_controller.rb:15:in `authorize'
+
+Rendered rescues/_trace (41.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-03 18:34:42) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"index", "authenticity_token"=>"zwfXxGtb56Aki4JvZ1J2BPT9od9lrsEZCYBNpSnS01s=", "controller"=>"users", "user"=>{"name"=>"Teste", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "twitter"=>"rdohms", "email"=>"rdohms+3@gmail.com"}}
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 73ms (View: 73, DB: 0) | 401 Unauthorized [http://0.0.0.0/users]
+
+
+Processing EpisodiosController#index (for 127.0.0.1 at 2009-11-03 18:34:49) [GET]
+  [4;36;1mEpisodio Load (16.0ms)[0m   [0;1mSELECT * FROM "episodios" [0m
+Rendering template within layouts/geral
+Rendering episodios/index
+Completed in 258ms (View: 62, DB: 16) | 200 OK [http://0.0.0.0/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-03 18:35:26) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/geral
+Rendering users/new
+Rendered users/_inputs (11.3ms)
+Completed in 112ms (View: 19, DB: 0) | 200 OK [http://0.0.0.0/users/new]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-11-03 18:35:46) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"index", "authenticity_token"=>"zwfXxGtb56Aki4JvZ1J2BPT9od9lrsEZCYBNpSnS01s=", "controller"=>"users", "user"=>{"name"=>"Teste", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "twitter"=>"rdohms", "email"=>"rdohms+4@gmail.com"}}
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 2ms (View: 1, DB: 0) | 401 Unauthorized [http://0.0.0.0/users]
+
+
+Processing EpisodiosController#show (for 127.0.0.1 at 2009-11-03 18:40:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEpisodio Load (0.3ms)[0m   [0mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+Rendering template within layouts/geral
+Rendering episodios/show
+  [4;36;1mQuote Load (0.4ms)[0m   [0;1mSELECT * FROM "quotes" WHERE ("quotes".episodio_id = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mTrack Load (22.8ms)[0m   [0;1mSELECT * FROM "tracks" WHERE ("tracks".episodio_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 103ms (View: 23, DB: 24) | 200 OK [http://0.0.0.0/episodios/1]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-03 18:40:30) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/geral
+Rendering sessions/new
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/session/new]
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-11-03 18:40:33) [POST]
+  Parameters: {"commit"=>"Sign in", "session"=>{"password"=>"[FILTERED]", "email"=>"rdohms+2@gmail.com"}, "action"=>"create", "authenticity_token"=>"zwfXxGtb56Aki4JvZ1J2BPT9od9lrsEZCYBNpSnS01s=", "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (21.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'rdohms+2@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-03 20:40:33', "remember_token" = 'a44484d4aa9a07a7357df7eb9963df988085003e' WHERE "id" = 3[0m
+Redirected to http://0.0.0.0:3000/
+Completed in 490ms (DB: 22) | 302 Found [http://0.0.0.0/session]
+
+
+Processing EpisodiosController#index (for 127.0.0.1 at 2009-11-03 18:40:33) [GET]
+  [4;36;1mEpisodio Load (0.6ms)[0m   [0;1mSELECT * FROM "episodios" [0m
+Rendering template within layouts/geral
+Rendering episodios/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'a44484d4aa9a07a7357df7eb9963df988085003e') LIMIT 1[0m
+Completed in 29ms (View: 19, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing EpisodiosController#show (for 127.0.0.1 at 2009-11-03 18:40:36) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEpisodio Load (0.2ms)[0m   [0;1mSELECT * FROM "episodios" WHERE ("episodios"."id" = 1) [0m
+Rendering template within layouts/geral
+Rendering episodios/show
+  [4;35;1mQuote Load (0.4ms)[0m   [0mSELECT * FROM "quotes" WHERE ("quotes".episodio_id = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'a44484d4aa9a07a7357df7eb9963df988085003e') LIMIT 1[0m
+Rendered quotes/_embed_new (21.3ms)
+Rendered blocks/_container (82.7ms)
+  [4;36;1mTrack Load (0.4ms)[0m   [0;1mSELECT * FROM "tracks" WHERE ("tracks".episodio_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered tracks/_embed_new (19.2ms)
+Rendered blocks/_container (99.6ms)
+Completed in 310ms (View: 289, DB: 2) | 200 OK [http://0.0.0.0/episodios/1]
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2009-11-03 19:51:57) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"zwfXxGtb56Aki4JvZ1J2BPT9od9lrsEZCYBNpSnS01s=", "controller"=>"clearance/sessions"}
+Redirected to http://0.0.0.0:3000/session/new
+Completed in 24ms (DB: 0) | 302 Found [http://0.0.0.0/session]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-03 19:51:57) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/geral
+Rendering sessions/new
+Completed in 29ms (View: 27, DB: 0) | 200 OK [http://0.0.0.0/session/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-03 19:51:59) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/geral
+Rendering users/new
+Rendered users/_inputs (7.4ms)
+Completed in 109ms (View: 93, DB: 0) | 200 OK [http://0.0.0.0/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-03 19:52:12) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"zwfXxGtb56Aki4JvZ1J2BPT9od9lrsEZCYBNpSnS01s=", "controller"=>"users", "user"=>{"name"=>"Teste", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "twitter"=>"rdohms", "email"=>"rdohms+3@gmail.com"}}
+WARNING: Can't mass-assign these protected attributes: name, twitter
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+3@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Create (48.4ms)[0m   [0mINSERT INTO "users" ("encrypted_password", "salt", "name", "created_at", "updated_at", "admin", "remember_token", "confirmation_token", "email_confirmed", "email", "twitter") VALUES('fbccfbae36238c57f872c82bbe970483e3147a74', 'cbdbe9e49e8d1ac4051b5017500d972f8ac600f7', NULL, '2009-11-03 21:52:12', '2009-11-03 21:52:12', NULL, NULL, '268c000eb915f69b2e9e132668d5df2445d8041d', 'f', 'rdohms+3@gmail.com', NULL)[0m
+Sent mail to rdohms+3@gmail.com
+
+Date: Tue, 3 Nov 2009 19:52:13 -0200
+From: noreply@rafaeldohms.com.br
+To: rdohms+3@gmail.com
+Subject: Account confirmation
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+http://localhost/users/4/confirmation/new?token=268c000eb915f69b2e9e132668d5df2445d8041d
+
+ArgumentError (wrong number of arguments (3 for 2)):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/smtp.rb:525:in `start'
+  vendor/gems/thoughtbot-clearance-0.8.2/app/controllers/clearance/users_controller.rb:15:in `create'
+
+Rendered rescues/_trace (41.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-03 20:05:33) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"zwfXxGtb56Aki4JvZ1J2BPT9od9lrsEZCYBNpSnS01s=", "controller"=>"users", "user"=>{"name"=>"Teste", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "twitter"=>"rdohms", "email"=>"rdohms+3@gmail.com"}}
+WARNING: Can't mass-assign these protected attributes: name, twitter
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+3@gmail.com') LIMIT 1[0m
+Rendering template within layouts/geral
+Rendering users/new
+Rendered users/_inputs (7.9ms)
+Completed in 143ms (View: 48, DB: 0) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-03 20:05:48) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"zwfXxGtb56Aki4JvZ1J2BPT9od9lrsEZCYBNpSnS01s=", "controller"=>"users", "user"=>{"name"=>"Teste", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "twitter"=>"rdohms", "email"=>"rdohms+4@gmail.com"}}
+WARNING: Can't mass-assign these protected attributes: name, twitter
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+4@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Create (16.0ms)[0m   [0;1mINSERT INTO "users" ("encrypted_password", "salt", "name", "created_at", "updated_at", "admin", "remember_token", "confirmation_token", "email_confirmed", "email", "twitter") VALUES('8bedc8e812b330d687e6ac7e218ff18f98f37754', '88b87588aaa9c868dfebac4046e3cdb5f70e1d9e', NULL, '2009-11-03 22:05:48', '2009-11-03 22:05:48', NULL, NULL, '6c9ff4a483eb058290ee589dca2416d3a3704007', 'f', 'rdohms+4@gmail.com', NULL)[0m
+Sent mail to rdohms+4@gmail.com
+
+Date: Tue, 3 Nov 2009 20:05:48 -0200
+From: noreply@rafaeldohms.com.br
+To: rdohms+4@gmail.com
+Subject: Account confirmation
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+http://localhost/users/5/confirmation/new?token=6c9ff4a483eb058290ee589dca2416d3a3704007
+
+ArgumentError (wrong number of arguments (3 for 2)):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/smtp.rb:525:in `start'
+  vendor/gems/thoughtbot-clearance-0.8.2/app/controllers/clearance/users_controller.rb:15:in `create'
+
+Rendered rescues/_trace (38.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-03 20:07:23) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"zwfXxGtb56Aki4JvZ1J2BPT9od9lrsEZCYBNpSnS01s=", "controller"=>"users", "user"=>{"name"=>"Teste", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "twitter"=>"rdohms", "email"=>"rdohms+4@gmail.com"}}
+WARNING: Can't mass-assign these protected attributes: name, twitter
+  [4;35;1mUser Load (22.4ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+4@gmail.com') LIMIT 1[0m
+Rendering template within layouts/geral
+Rendering users/new
+Rendered users/_inputs (107.5ms)
+Completed in 180ms (View: 143, DB: 22) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-03 20:07:32) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"zwfXxGtb56Aki4JvZ1J2BPT9od9lrsEZCYBNpSnS01s=", "controller"=>"users", "user"=>{"name"=>"xx", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "twitter"=>"x", "email"=>"rdohms+5@gmail.com"}}
+WARNING: Can't mass-assign these protected attributes: name, twitter
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+5@gmail.com') LIMIT 1[0m
+Rendering template within layouts/geral
+Rendering users/new
+Rendered users/_inputs (63.4ms)
+Completed in 166ms (View: 151, DB: 0) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-03 20:07:47) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"zwfXxGtb56Aki4JvZ1J2BPT9od9lrsEZCYBNpSnS01s=", "controller"=>"users", "user"=>{"name"=>"erwer", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "twitter"=>"wrwerwer", "email"=>"rdohms+5@gmail.com"}}
+WARNING: Can't mass-assign these protected attributes: name, twitter
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+5@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Create (12.9ms)[0m   [0;1mINSERT INTO "users" ("encrypted_password", "salt", "name", "created_at", "updated_at", "admin", "remember_token", "confirmation_token", "email_confirmed", "email", "twitter") VALUES('d726fdb1cccf2f776bb9e0c2862ddadcea1072e5', '047499b5d5bfb602dba8d3b4d575522c6cd72208', NULL, '2009-11-03 22:07:47', '2009-11-03 22:07:47', NULL, NULL, '8a9f3fc3b095e4e07a3672d15a5892f04ff21e70', 'f', 'rdohms+5@gmail.com', NULL)[0m
+Sent mail to rdohms+5@gmail.com
+
+Date: Tue, 3 Nov 2009 20:07:47 -0200
+From: noreply@rafaeldohms.com.br
+To: rdohms+5@gmail.com
+Subject: Account confirmation
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+http://localhost/users/6/confirmation/new?token=8a9f3fc3b095e4e07a3672d15a5892f04ff21e70
+
+ArgumentError (wrong number of arguments (3 for 2)):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/smtp.rb:525:in `start'
+  vendor/gems/thoughtbot-clearance-0.8.2/app/controllers/clearance/users_controller.rb:15:in `create'
+
+Rendered rescues/_trace (42.0ms)
+Rendered rescues/_request_and_response (104.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-03 20:14:14) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"zwfXxGtb56Aki4JvZ1J2BPT9od9lrsEZCYBNpSnS01s=", "controller"=>"users", "user"=>{"name"=>"erwer", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "twitter"=>"wrwerwer", "email"=>"rdohms+5@gmail.com"}}
+WARNING: Can't mass-assign these protected attributes: name, twitter
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+5@gmail.com') LIMIT 1[0m
+Rendering template within layouts/geral
+Rendering users/new
+Rendered users/_inputs (10.2ms)
+Completed in 76ms (View: 61, DB: 0) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-03 20:14:27) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"zwfXxGtb56Aki4JvZ1J2BPT9od9lrsEZCYBNpSnS01s=", "controller"=>"users", "user"=>{"name"=>"My Name is", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "twitter"=>"rdohms", "email"=>"rdohms+6@gmail.com"}}
+WARNING: Can't mass-assign these protected attributes: name, twitter
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+6@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Create (34.3ms)[0m   [0mINSERT INTO "users" ("encrypted_password", "salt", "name", "created_at", "updated_at", "admin", "remember_token", "confirmation_token", "email_confirmed", "email", "twitter") VALUES('85f9add6b4c893325eed6c7e17b938503546db84', '260caecbd28c55a38938506caca9afe3f15eb3b7', NULL, '2009-11-03 22:14:27', '2009-11-03 22:14:27', NULL, NULL, '8c41975864fea466dd930fd8854760b16939c1bb', 'f', 'rdohms+6@gmail.com', NULL)[0m
+Sent mail to rdohms+6@gmail.com
+
+Date: Tue, 3 Nov 2009 20:14:27 -0200
+From: noreply@rafaeldohms.com.br
+To: rdohms+6@gmail.com
+Subject: Account confirmation
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+http://localhost/users/7/confirmation/new?token=8c41975864fea466dd930fd8854760b16939c1bb
+
+ArgumentError (wrong number of arguments (3 for 2)):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/smtp.rb:525:in `start'
+  vendor/gems/thoughtbot-clearance-0.8.2/app/controllers/clearance/users_controller.rb:15:in `create'
+
+Rendered rescues/_trace (35.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-03 20:15:01) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"zwfXxGtb56Aki4JvZ1J2BPT9od9lrsEZCYBNpSnS01s=", "controller"=>"users", "user"=>{"name"=>"My Name is", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "twitter"=>"rdohms", "email"=>"rdohms+6@gmail.com"}}
+WARNING: Can't mass-assign these protected attributes: name, twitter
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+6@gmail.com') LIMIT 1[0m
+Rendering template within layouts/geral
+Rendering users/new
+Rendered users/_inputs (38.1ms)
+Completed in 318ms (View: 82, DB: 0) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-03 20:15:15) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"zwfXxGtb56Aki4JvZ1J2BPT9od9lrsEZCYBNpSnS01s=", "controller"=>"users", "user"=>{"name"=>"My Name is", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "twitter"=>"rdohms", "email"=>"rdohms+7@gmail.com"}}
+WARNING: Can't mass-assign these protected attributes: name, twitter
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'rdohms+7@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.6ms)[0m   [0;1mINSERT INTO "users" ("encrypted_password", "salt", "name", "created_at", "updated_at", "admin", "remember_token", "confirmation_token", "email_confirmed", "email", "twitter") VALUES('0cd2c9c5af438a12d9911575e3c7267d37e2ae0a', '978b941bfc8a5113e6922ba64de6e9bd3833ee43', NULL, '2009-11-03 22:15:15', '2009-11-03 22:15:15', NULL, NULL, '75515fbc23eaf2089b0ab1b0937965f77ff9561d', 'f', 'rdohms+7@gmail.com', NULL)[0m
+Sent mail to rdohms+7@gmail.com
+
+Date: Tue, 3 Nov 2009 20:15:15 -0200
+From: noreply@rafaeldohms.com.br
+To: rdohms+7@gmail.com
+Subject: Account confirmation
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+
+http://localhost/users/8/confirmation/new?token=75515fbc23eaf2089b0ab1b0937965f77ff9561d
+Redirected to http://0.0.0.0:3000/session/new
+Completed in 6211ms (DB: 1) | 302 Found [http://0.0.0.0/users]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-03 20:15:21) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/geral
+Rendering sessions/new
+Completed in 83ms (View: 81, DB: 0) | 200 OK [http://0.0.0.0/session/new]
+
+
+Processing Clearance::ConfirmationsController#new (for 127.0.0.1 at 2009-11-03 20:23:07) [GET]
+  Parameters: {"token"=>"[FILTERED]", "action"=>"new", "user_id"=>"8", "controller"=>"clearance/confirmations"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '8') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '8') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '8' AND "users"."confirmation_token" = '75515fbc23eaf2089b0ab1b0937965f77ff9561d') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '8' AND "users"."confirmation_token" = '75515fbc23eaf2089b0ab1b0937965f77ff9561d') LIMIT 1[0m
+  [4;35;1mUser Update (0.9ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-03 22:23:07', "confirmation_token" = NULL, "email_confirmed" = 't' WHERE "id" = 8[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-11-03 22:23:07', "remember_token" = '601ee48524a012223a9ccca108e46b3217638c7e' WHERE "id" = 8[0m
+Redirected to http://0.0.0.0:3000/
+Completed in 460ms (DB: 2) | 302 Found [http://0.0.0.0/users/8/confirmation/new?token=75515fbc23eaf2089b0ab1b0937965f77ff9561d]
+
+
+Processing EpisodiosController#index (for 127.0.0.1 at 2009-11-03 20:23:07) [GET]
+  [4;35;1mEpisodio Load (0.6ms)[0m   [0mSELECT * FROM "episodios" [0m
+Rendering template within layouts/geral
+Rendering episodios/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = '601ee48524a012223a9ccca108e46b3217638c7e') LIMIT 1[0m
+Completed in 78ms (View: 64, DB: 1) | 200 OK [http://0.0.0.0/]

@@ -6,6 +6,8 @@ RAILS_GEM_VERSION = '2.3.4' unless defined? RAILS_GEM_VERSION
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
+DO_NOT_REPLY = "noreply@rafaeldohms.com.br"
+
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
@@ -48,14 +50,5 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
   
-  DO_NOT_REPLY = "noreply@rafaeldohms.com.br"
-  
-  #Email
-#  ActionMailer::Base.smtp_settings = {
-#    :address => "smtp.bsb.terra.com.br",
-#    :port => 25,
-#    :authentication => :login,
-#    :user_name => "dooms",
-#    :password => "xxxx"
-#  }
+
 end

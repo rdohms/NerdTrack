@@ -26,3 +26,19 @@ config.action_view.cache_template_loading            = true
 
 # Enable threaded mode
 # config.threadsafe!
+
+#Email
+DO_NOT_REPLY = "noreply@rafaeldohms.com.br"
+
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  :address => "smtp.gmail.com",
+  :port => 587,
+  :domain => "gmail.com",
+  :user_name => "sys@rafaeldohms.com.br",
+  :password => "xxxx",
+  :authentication => :login,
+  :enable_starttls_auto => true #This line is must to ensure the tls for Gmail
+}
+config.action_mailer.default_content_type = "text/html"
