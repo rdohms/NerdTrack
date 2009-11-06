@@ -27,6 +27,8 @@ config.action_view.cache_template_loading            = true
 # Enable threaded mode
 # config.threadsafe!
 
+HOST="nerdtracker.rafaeldohms.com.br"
+
 #Email
 DO_NOT_REPLY = "noreply@rafaeldohms.com.br"
 
