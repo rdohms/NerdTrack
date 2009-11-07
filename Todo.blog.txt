@@ -1,6 +1,0 @@
-Title: Todo
-
-- redirecionamento no cadastro de frase/musica
-- spin buttons
-- main page
-- admin links
