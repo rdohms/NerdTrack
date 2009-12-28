@@ -1,0 +1,9 @@
+
+Obrigado por se cadastrar no Projeto Nerdtrack!
+
+Utilize o link abaixo para confirmar seu login e comece a participar!
+
+<%= new_user_confirmation_url(
+      :user_id => @user,
+      :token   => @user.confirmation_token,
+      :encode  => false) %>

@@ -2,9 +2,9 @@ base:
 
 development:
   inherit: base
-  contact_email: "rafael@rafaeldohms.com.br, listas@rafaeldohms.com.br"
+  contact_email: "sys@rafaeldohms.com.br"
 
   
 production:
   inherit: development
-  contact_email: "rafael@rafaeldohms.com.br, listas@rafaeldohms.com.br"
+  contact_email: "rafael@rafaeldohms.com.br, danilo@rafaeldohms.com.br"
