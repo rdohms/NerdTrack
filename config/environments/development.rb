@@ -17,7 +17,7 @@ HOST = "localhost"
 
 DO_NOT_REPLY = "noreply@rafaeldohms.com.br"
 
-CONTATO_EMAIL = "rafael@rafaeldohms.com.br, listas@rafaeldohms.com.br"
+CONTATO_EMAIL = ["rafael@rafaeldohms.com.br","listas@rafaeldohms.com.br"]
   
 #Email
 config.action_mailer.raise_delivery_errors = true
