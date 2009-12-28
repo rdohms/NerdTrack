@@ -36,5 +36,3 @@ CONTATO_EMAIL = ["rafael@rafaeldohms.com.br","listas@rafaeldohms.com.br"]
 config.action_mailer.raise_delivery_errors = true
 config.action_mailer.delivery_method = :smtp
 config.action_mailer.default_content_type = "text/html"
-
-config.contact_emails = ["rafael@rafaeldohms.com.br","listas@rafaeldohms.com.br"]
