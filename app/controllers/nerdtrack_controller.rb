@@ -14,7 +14,7 @@ class NerdtrackController < ApplicationController
   def sendmail
     if Notifications.deliver_contact(params[:contato])
        flash[:notice] = "Email enviado com sucesso!"
-       redirect_to(contact_path)
+       redirect_to(contato_path)
      else
        flash.now[:error] = "Erro ao enviar email!"
        render :index
