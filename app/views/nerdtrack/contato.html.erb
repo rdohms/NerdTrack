@@ -1,2 +1,13 @@
-<h1>Nerdtrack#contato</h1>
-<p>Find me in app/views/nerdtrack/contato.html.erb</p>
+<h1>Nerdtrack &gt;&gt; Contato</h1>
+
+<p>Caso tenha encontrado um bug, reporte-o aqui.</p>
+<p>Tem alguma sugestão, reclamação? Então preencha o formulário abaixo</p>
+
+<% semantic_form_for :contato, :url => { :action => 'sendmail' } do |f| %>
+	<%= f.input :name, :label => 'Nome' %>
+	<%= f.input :email, :label => 'Email'%>
+	<%= f.input :subject, :label => 'Assunto'%>
+	<%= f.input :body, :label => 'Mensagem', :as => :text %>
+	
+	<%= f.commit_button 'Enviar'%>
+<% end %>

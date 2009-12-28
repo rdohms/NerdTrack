@@ -7,8 +7,18 @@ class NerdtrackController < ApplicationController
 
   def contato
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # contato.html.erb
     end
   end
 
+  def sendmail
+    if Notifications.deliver_contact(params[:contato])
+       flash[:notice] = "Email enviado com sucesso!"
+       redirect_to(contact_path)
+     else
+       flash.now[:error] = "Erro ao enviar email!"
+       render :index
+     end
+
+  end
 end
