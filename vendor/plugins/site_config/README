@@ -1,0 +1,38 @@
+Site configuration made easy!
+
+Install the plugin:
+
+  script/plugin install git://github.com/cheald/site_config.git
+  
+Edit your config/site_config.yml with your desired preferences. One key is special: "inherit". This will cause 
+a given environment to inherit settings from another environment, unless overridden.
+
+Presume you have the following site_config.yml
+
+  base:
+    foo: bar
+  
+  development:
+    inherit: base
+    barry: white
+  
+  production:
+    inherit: development
+    foo: baz
+	
+You can then call the following in your code:
+
+  config_option(:foo)
+  
+If you're in development, you get "bar" (inherited from base). If you're in production, you get "baz" (local to the production configuration).
+
+If you want to get a config option for an environment other than the one you're running in, config_option takes an optional second parameter.
+
+  config_option(:foo, :development)  	=> "bar"		# Inherited from base
+  config_option(:barry, :development)	=> "white"		# Local
+  config_option(:foo, :production)		=> "baz"		# Local
+  config_option(:barry, :production)	=> "white"		# Inherited from development
+  
+You'll need to restart your app after each change; the config file is only read once in order to maximize performance.
+
+Enjoy!
