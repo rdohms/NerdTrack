@@ -1,13 +1,18 @@
 <h1>Nerdtrack &gt;&gt; Contato</h1>
 
-<p>Caso tenha encontrado um bug, reporte-o aqui.</p>
+<p>Caso tenha encontrado um bug, <%= link_to "reporte-o aqui", "http://dev.rafaeldohms.com.br/projects/nerdtrack/issues/new" %>.</p>
 <p>Tem alguma sugestão, reclamação? Então preencha o formulário abaixo</p>
 
 <% semantic_form_for :contato, :url => { :action => 'sendmail' } do |f| %>
-	<%= f.input :name, :label => 'Nome' %>
-	<%= f.input :email, :label => 'Email'%>
-	<%= f.input :subject, :label => 'Assunto'%>
-	<%= f.input :body, :label => 'Mensagem', :as => :text %>
+
+	<% f.inputs  do %>
+		<%= f.input :name, :label => 'Nome' %>
+		<%= f.input :email, :label => 'Email'%>
+		<%= f.input :subject, :label => 'Assunto'%>
+		<%= f.input :body, :label => 'Mensagem', :as => :text %>
+	<% end -%>
 	
-	<%= f.commit_button 'Enviar'%>
+	<% f.buttons do %>
+		<%= f.commit_button 'Enviar'%>
+	<% end -%>
 <% end %>

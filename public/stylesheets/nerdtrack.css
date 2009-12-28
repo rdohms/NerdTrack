@@ -19,6 +19,10 @@ A{
 	text-decoration: none;
 }
 
+A:hover;{
+	color: #369;
+}
+
 A IMG{
 	border: 0px;
 }
@@ -63,6 +67,9 @@ A IMG{
 	padding: 10px;
 	min-heigth: 200px;
 }
+
+#content A{ color: #369; text-decoration: none; } 
+#content A:hover { text-decoration: underline;}
 
 #footer{
 	text-align: center;
