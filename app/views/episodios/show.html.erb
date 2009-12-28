@@ -3,7 +3,7 @@
 	<%= link_to image_tag("icons/attach.png", :alt => "Post Original"), @episodio.link %>
 	<%= link_to image_tag("icons/comment_add.png", :alt => "Adicionar Frase"), 'javascript:;', :onclick => "$('#addquotes').mb_open(); $('#addquotes').mb_centerOnWindow()" %>
 	<%= link_to image_tag("icons/music_add.png", :alt => "Adicionar Música"), 'javascript:;', :onclick => "$('#addtracks').mb_open(); $('#addtracks').mb_centerOnWindow()" %>
-	<% if current_user.admin? %>
+	<% if !current_user.nil? && current_user.admin? %>
 		<%= link_to image_tag("icons/page_edit.png"), edit_episodio_path(@episodio) %>
 	<% end -%>
 </p>
