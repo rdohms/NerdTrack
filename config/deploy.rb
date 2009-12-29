@@ -48,10 +48,11 @@ namespace :deploy do
 end
 
 #Configure Sym Link for DB config
-after 'deploy:update_code', 'deploy:symlink_db'
+after 'deploy:update_code', 'deploy:symlink_config'
 namespace :deploy do
-  desc "Symlinks the database.yml"
-  task :symlink_db, :roles => :app do
-    run "ln -nfs #{release_path}/config/environments/sensible/database.yml #{release_path}/config/database.yml"
+  desc "Symlinks the config files"
+  task :symlink_config, :roles => :app do
+    run "ln -nfs #{deploy_to}/app/share/config/database.yml  #{release_path}/config/database.yml"
+    run "ln -nfs #{deploy_to}/app/share/config/"+rails_env+" #{release_path}/config/environments/sensible/"+rails_env+".rb"
   end
 end
