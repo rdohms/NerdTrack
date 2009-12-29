@@ -5,6 +5,10 @@ set :project, 'nerdtracker'  # Your application as its called in the repository
 set :application, 'nerdtrack.com.br'  # Your app's location (domain or sub-domain name as setup in panel)
 set :deploy_to, "/home/#{user}/#{application}"
 
+#Define Environment
+set :default_env,  'staging'
+set :rails_env,     ENV['rails_env'] || ENV['RAILS_ENV'] || default_env
+
 # version control config
 set :repository, "https://rdohms@svn.rafaeldohms.com.br/nerdtracker/trunk"
 
@@ -23,10 +27,28 @@ default_run_options[:pty] = true  # Forgo errors when deploying from windows
 set :chmod755, "app config db lib public vendor script script/* public/disp*"
 set :use_sudo, false
 
+#Change Env Setting
+after 'deploy:update_code', 'deploy:migrate_env'
+namespace :deploy do
+  desc "Alter the environment according to plan"
+  task :migrate_env do
+    # if this is a staging deployment, switch the environment to staging, not production
+    if rails_env == "staging"
+     # switch to the staging environment
+     run "sed -i 's/RAILS_ENV = \"[a-z]*\"/RAILS_ENV = \"staging\"/' #{release_path}/config/environment.rb"
+     # migrate the database
+     run "cd #{release_path} && rake RAILS_ENV=staging db:migrate"
+   else
+     # switch to the staging environment
+     run "sed -i 's/RAILS_ENV = \"[a-z]*\"/RAILS_ENV = \"production\"/' #{release_path}/config/environment.rb"
+     # migrate the database
+     run "cd #{release_path} && rake RAILS_ENV=production db:migrate"
+   end
+  end
+end
 
 #Configure Sym Link for DB config
 after 'deploy:update_code', 'deploy:symlink_db'
-
 namespace :deploy do
   desc "Symlinks the database.yml"
   task :symlink_db, :roles => :app do
