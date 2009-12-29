@@ -3,7 +3,7 @@ set :user, 'rdohms'  # Your dreamhost account's username
 set :domain, 'nerdtrack.com.br'  # Dreamhost servername where your account is located 
 set :project, 'nerdtracker'  # Your application as its called in the repository
 set :application, 'nerdtrack.com.br'  # Your app's location (domain or sub-domain name as setup in panel)
-set :applicationdir, "/home/#{user}/#{application}"  # The standard Dreamhost setup
+set :deploy_to, "/home/#{user}/#{application}"
 
 # version control config
 set :repository, "https://rdohms@svn.rafaeldohms.com.br/nerdtracker/trunk"
@@ -14,7 +14,7 @@ role :app, domain
 role :db,  domain, :primary => true
 
 # deploy config
-set :deploy_to, applicationdir
+
 set :deploy_via, :export
 
 # additional settings
