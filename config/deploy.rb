@@ -32,18 +32,7 @@ after 'deploy:update_code', 'deploy:migrate_env'
 namespace :deploy do
   desc "Alter the environment according to plan"
   task :migrate_env do
-    # if this is a staging deployment, switch the environment to staging, not production
-    if rails_env == "staging"
-     # switch to the staging environment
-     run "sed -i 's/RAILS_ENV = \"[a-z]*\"/RAILS_ENV = \"staging\"/' #{release_path}/config/environment.rb"
-     # migrate the database
-     run "cd #{release_path} && rake RAILS_ENV=staging db:migrate"
-   else
-     # switch to the staging environment
-     run "sed -i 's/RAILS_ENV = \"[a-z]*\"/RAILS_ENV = \"production\"/' #{release_path}/config/environment.rb"
-     # migrate the database
-     run "cd #{release_path} && rake RAILS_ENV=production db:migrate"
-   end
+    run "sed -i 's/RAILS_ENV = \"[a-z]*\"/RAILS_ENV = \""+rails_env+"\"/' #{release_path}/config/environment.rb"
   end
 end
 
@@ -54,5 +43,14 @@ namespace :deploy do
   task :symlink_config, :roles => :app do
     run "ln -nfs #{deploy_to}/app/share/config/database.yml  #{release_path}/config/database.yml"
     run "ln -nfs #{deploy_to}/app/share/config/"+rails_env+" #{release_path}/config/environments/sensible/"+rails_env+".rb"
+  end
+end
+
+#Migrate DB
+after 'deploy:symlink_config', 'deploy:migrate_db'
+namespace :deploy do
+  desc "Alter the environment according to plan"
+  task :migrate_db do
+    run "cd #{release_path} && rake RAILS_ENV="+rails_env+" db:migrate"
   end
 end
