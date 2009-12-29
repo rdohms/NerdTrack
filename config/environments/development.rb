@@ -16,8 +16,6 @@ config.action_controller.perform_caching             = false
 HOST = "0.0.0.0"
 
 DO_NOT_REPLY = "noreply@rafaeldohms.com.br"
-
-CONTATO_EMAIL = ["rafael@rafaeldohms.com.br","listas@rafaeldohms.com.br"]
   
 #Email
 config.action_mailer.raise_delivery_errors = true

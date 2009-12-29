@@ -4,6 +4,9 @@ development:
   inherit: base
   contact_email: "sys@rafaeldohms.com.br"
 
+staging:
+  inherit: development
+  contact_email: "sys@rafaeldohms.com.br"
   
 production:
   inherit: development
