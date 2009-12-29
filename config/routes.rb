@@ -43,6 +43,21 @@ ActionController::Routing::Routes.draw do |map|
   
   map.root :controller => 'episodios'
 
+
+  map.sign_out 'sign_out',
+    :controller => 'sessions',
+    :action     => 'destroy',
+    :method     => :delete
+    
+    
+  map.contato 'contato',
+    :controller => 'nerdtrack',
+    :action     => 'contato'
+
+  map.sobre 'sobre',
+    :controller => 'nerdtrack',
+    :action     => 'sobre'
+    
   # See how all your routes lay out with "rake routes"
 
   # Install the default routes as the lowest priority.

@@ -48,6 +48,12 @@ A IMG{
 #loginbar a{ color: #FFFFFF; text-decoration: none; } 
 #loginbar a:hover;{ color: #FFFFFF; text-decoration: underline;} 
 
+#loginbar .version_info{
+	float: left;
+	font-size: .7em;
+	color: #FFF;
+}
+
 #header{
 	width:988px;
 	height:85px;

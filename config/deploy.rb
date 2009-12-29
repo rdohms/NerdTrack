@@ -6,9 +6,7 @@ set :application, 'nerdtrack.com.br'  # Your app's location (domain or sub-domai
 set :applicationdir, "/home/#{user}/#{application}"  # The standard Dreamhost setup
 
 # version control config
-set :scm_username, 'rdohms'
-set :scm_password, 'YOUR_SVN_PASSWORD'
-set :repository, "https://svn.rafaeldohms.com.br/nerdtracker/trunk"
+set :repository, "https://rdohms@svn.rafaeldohms.com.br/nerdtracker/trunk"
 
 # roles (servers)
 role :web, domain
@@ -25,11 +23,13 @@ default_run_options[:pty] = true  # Forgo errors when deploying from windows
 set :chmod755, "app config db lib public vendor script script/* public/disp*"
 set :use_sudo, false
 
+
+#Configure Sym Link for DB config
 after 'deploy:update_code', 'deploy:symlink_db'
 
 namespace :deploy do
   desc "Symlinks the database.yml"
   task :symlink_db, :roles => :app do
-    run "ln -nfs #{deploy_to}/config/environments/sensible/database.yml #{release_path}/config/database.yml"
+    run "ln -nfs #{release_path}/config/environments/sensible/database.yml #{release_path}/config/database.yml"
   end
 end

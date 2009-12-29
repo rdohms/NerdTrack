@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-	<title>NerdTrack</title>
+	<title>NerdTrack [<%= NERDTRACK_VERSION %>]</title>
 	<%= stylesheet_link_tag 'scaffold' %>
 	<%= stylesheet_link_tag 'nerdtrack' %>
 	<%= stylesheet_link_tag 'formtastic' %>
@@ -17,10 +17,11 @@
 <body>
 	<div id="container">
 		<div id="loginbar">
+			<div class="version_info"><%= NERDTRACK_VERSION %></div>
 			<% if signed_in? %>
-			Olá, <%=h current_user.name %> | <%= link_to 'Logout', session_url, :method => :delete %> 
+			Olá, <%=h current_user.name %> | <%= link_to 'Logout', sign_out_path %> 
 			<% else %>
-			<%= link_to "Register", :controller => "users", :action => "new" %> | <%= link_to "Login", :controller => "session", :action => "new" %>
+			<%= link_to "Register", sign_up_path %> | <%= link_to "Login", sign_in_path %>
 			<% end -%>
 		</div>
 		

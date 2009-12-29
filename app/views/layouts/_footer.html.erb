@@ -4,8 +4,9 @@
 			<%= link_to image_tag("icons/group.png"), users_path %>
 	</p>
 <% end -%>
-<p class="copy">&copy; 2009 - Danilo &amp; Rafael Dohms</a></p>
+<p class="copy">&copy; 2009 - Danilo Martins &amp; Rafael Dohms</a> - Versão <%= NERDTRACK_VERSION %></p>
 <p class="">
-	<%= link_to "Sobre", :controller => "nerdtrack", :action => "sobre" %> | 
-	<%= link_to "Contato", :controller => "nerdtrack", :action => "contato" %>
+	<%= link_to "Sobre", sobre_path %> | 
+	<%= link_to "Contato", contato_path %> | 
+	<%= link_to "Blog", "http://blog.nerdtrack.com.br" %>
 </p>

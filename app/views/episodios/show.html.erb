@@ -48,8 +48,15 @@
 		<%= render 'quotes/embed_new' %>
 
 	<% end %>
+	
+	<p>Adicione sua Frase: <%= link_to image_tag("icons/comment_add.png", :alt => "Adicionar Frase"), 'javascript:;', :onclick => "$('#addquotes').mb_open(); $('#addquotes').mb_centerOnWindow()" %></p>
+	
+<% else %>
+	
+	<p><%= link_to "Cadastre-se", sign_up_path %> ou <%= link_to "faça login", sign_up_path %> para enviar sua frase</p>
+	
 <% end -%>
-<p>Adicione sua Frase: <%= link_to image_tag("icons/comment_add.png", :alt => "Adicionar Frase"), 'javascript:;', :onclick => "$('#addquotes').mb_open(); $('#addquotes').mb_centerOnWindow()" %></p>
+
 
 <h2>Músicas:</h2> 
 <ul class="song_list">
@@ -87,8 +94,13 @@
 		<%= render 'tracks/embed_new' %>
 
 	<% end %>
-<% end -%>
-<p>Adicione sua música: <%= link_to image_tag("icons/music_add.png", :alt => "Adicionar Música"), 'javascript:;', :onclick => "$('#addtracks').mb_open(); $('#addtracks').mb_centerOnWindow()" %></p>
+	<p>Adicione sua música: <%= link_to image_tag("icons/music_add.png", :alt => "Adicionar Música"), 'javascript:;', :onclick => "$('#addtracks').mb_open(); $('#addtracks').mb_centerOnWindow()" %></p>
 
- |
-<%= link_to 'Back', episodios_path %>
+<% else %>
+
+	<p><%= link_to "Cadastre-se", sign_up_path %> ou <%= link_to "faça login", sign_up_path %> para enviar sua música</p>
+		
+<% end -%>
+
+
+<%= link_to 'Voltar', episodios_path %>
