@@ -61,7 +61,7 @@ namespace :deploy do
   desc "Alter the robots.txt for demo env so it does not let anyone in"
   task :adjust_robots  do
     if rails_env == "staging"
-      run "echo User-agent: * > #{release_path}/public/robots.txt"
+      run "echo User-agent: \* > #{release_path}/public/robots.txt"
       run "echo Disallow: / >> #{release_path}/public/robots.txt"
     end
   end
