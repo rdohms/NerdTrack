@@ -42,7 +42,7 @@ namespace :deploy do
   desc "Symlinks the config files"
   task :symlink_config, :roles => :app do
     run "ln -nfs #{deploy_to}/app/share/config/database.yml  #{release_path}/config/database.yml"
-    run "ln -nfs #{deploy_to}/app/share/config/"+rails_env+" #{release_path}/config/environments/sensible/"+rails_env+".rb"
+    run "ln -nfs #{deploy_to}/app/share/config/"+rails_env+".rb #{release_path}/config/environments/sensible/"+rails_env+".rb"
   end
 end
 

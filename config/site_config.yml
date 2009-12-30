@@ -10,4 +10,4 @@ staging:
   
 production:
   inherit: development
-  contact_email: "rafael@rafaeldohms.com.br, danilo@rafaeldohms.com.br"
+  contact_email: "contato@nerdtrack.com.br"
