@@ -50,7 +50,19 @@ end
 after 'deploy:symlink_config', 'deploy:migrate_db'
 namespace :deploy do
   desc "Alter the environment according to plan"
-  task :migrate_db do
+  task :migrate_dbecho  do
     run "cd #{release_path} && rake RAILS_ENV="+rails_env+" db:migrate"
+  end
+end
+
+#Adjust robots
+after 'deploy:migrate_dbecho', 'deploy:adjust_robots'
+namespace :deploy do
+  desc "Alter the robots.txt for demo env so it does not let anyone in"
+  task :adjust_robots  do
+    if rails_env == "staging"
+      run "echo User-agent: * > #{release_path}/public/robots.txt"
+      run "echo Disallow: / >> #{release_path}/public/robots.txt"
+    end
   end
 end
