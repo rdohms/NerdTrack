@@ -7,7 +7,7 @@
 #   Major.create(:name => 'Daley', :city => cities.first)
 
 #Create Default Admin
-admin = User.create( :email => 'admin@nerdtracker.rafaeldohms.com.br', 
+admin = User.create( :email => 'admin@nerdtack.com.br', 
                      :password => 'n3rdt', 
                      :password_confirmation => 'n3rdt', 
                      :admin => 1,
