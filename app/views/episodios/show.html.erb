@@ -7,7 +7,7 @@
 		<%= link_to image_tag("icons/page_edit.png"), edit_episodio_path(@episodio) %>
 	<% end -%>
 </p>
-<h1><b class="number">#<%=h @episodio.numero %></b> <%=h @episodio.titulo %></h1>
+<h1><b class="number">#<%=h @episodio.numero %><%=h @episodio.parte %></b> <%=h @episodio.titulo %></h1>
 
 <h2>Informações</h2>
 <div><%= simple_format(@episodio.desc) %></div>

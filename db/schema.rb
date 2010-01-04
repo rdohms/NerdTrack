@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091030185955) do
+ActiveRecord::Schema.define(:version => 20100104013419) do
 
   create_table "episodios", :force => true do |t|
     t.integer  "numero"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20091030185955) do
     t.string   "link"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "parte"
   end
 
   create_table "quotes", :force => true do |t|

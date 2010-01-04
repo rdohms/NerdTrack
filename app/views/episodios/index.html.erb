@@ -3,7 +3,7 @@
 <ul>
 	<% @episodios.each do |episodio| %>
 	<li>
-		<b><%= link_to "#"+episodio.numero.to_s, episodio %></b> <%= link_to episodio.titulo, episodio %>
+		<b><%= link_to "#"+episodio.numero.to_s+episodio.parte.to_s, episodio %></b> <%= link_to episodio.titulo, episodio %>
 	 </li>
 	<% end %>
 </ul>

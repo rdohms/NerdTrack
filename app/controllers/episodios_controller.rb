@@ -5,7 +5,7 @@ class EpisodiosController < ApplicationController
   # GET /episodios
   # GET /episodios.xml
   def index
-    @episodios = Episodio.all(:order => "numero DESC")
+    @episodios = Episodio.all(:order => "numero DESC, parte DESC")
 
     respond_to do |format|
       format.html # index.html.erb
