@@ -16,8 +16,22 @@ class EpisodiosController < ApplicationController
   # GET /episodios/1
   # GET /episodios/1.xml
   def show
-    @episodio = Episodio.find(params[:id])
-
+    
+    #break number appart into numero/parte
+    parts = params[:id].scan(/[a-zA-Z]+|[0-9]+/)
+    
+    #search by number or number+part
+    if parts.size() < 2
+      @episodio = Episodio.first(:conditions => ["numero = ?", parts.shift])
+    else
+      @episodio = Episodio.first(:conditions => ["numero = ?", parts.shift], :conditions => ["parte = ?", parts.shift])
+    end
+    
+    #None found, search by ID
+    if @episodio.nil? 
+      @episodio = Episodio.find(params[:id])
+    end
+    
     #For embedded forms
     @track = @episodio.tracks.build
     @quote = @episodio.quotes.build
