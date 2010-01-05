@@ -1,3 +1,6 @@
+
+<% content_for :title, " - Episódio #"+@episodio.to_param %>
+
 <%= image_tag  @episodio.imagem, :class => "float-right" %>
 <p class="ep-icons">
 	<%= link_to image_tag("icons/attach.png", :alt => "Post Original"), @episodio.link %>
