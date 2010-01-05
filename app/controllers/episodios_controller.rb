@@ -17,20 +17,7 @@ class EpisodiosController < ApplicationController
   # GET /episodios/1.xml
   def show
     
-    #break number appart into numero/parte
-    parts = params[:id].scan(/[a-zA-Z]+|[0-9]+/)
-    
-    #search by number or number+part
-    if parts.size() < 2
-      @episodio = Episodio.first(:conditions => ["numero = ?", parts.shift])
-    else
-      @episodio = Episodio.first(:conditions => ["numero = ?", parts.shift], :conditions => ["parte = ?", parts.shift])
-    end
-    
-    #None found, search by ID
-    if @episodio.nil? 
-      @episodio = Episodio.find(params[:id])
-    end
+    @episodio = get_by_numero(params[:id])
     
     #For embedded forms
     @track = @episodio.tracks.build
@@ -55,7 +42,7 @@ class EpisodiosController < ApplicationController
 
   # GET /episodios/1/edit
   def edit
-    @episodio = Episodio.find(params[:id])
+    @episodio = get_by_numero(params[:id])
   end
 
   # POST /episodios
@@ -78,7 +65,7 @@ class EpisodiosController < ApplicationController
   # PUT /episodios/1
   # PUT /episodios/1.xml
   def update
-    @episodio = Episodio.find(params[:id])
+    @episodio = get_by_numero(params[:id])
 
     respond_to do |format|
       if @episodio.update_attributes(params[:episodio])
@@ -95,12 +82,32 @@ class EpisodiosController < ApplicationController
   # DELETE /episodios/1
   # DELETE /episodios/1.xml
   def destroy
-    @episodio = Episodio.find(params[:id])
+    @episodio = get_by_numero(params[:id])
     @episodio.destroy
 
     respond_to do |format|
       format.html { redirect_to(episodios_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  def get_by_numero(id)
+    #break number appart into numero/parte
+    parts = id.scan(/[a-zA-Z]+|[0-9]+/)
+    
+    #search by number or number+part
+    if parts.size() < 2
+      @episodio = Episodio.first(:conditions => ["numero = ?", parts.shift])
+    else
+      @episodio = Episodio.first(:conditions => ["numero = ?", parts.shift], :conditions => ["parte = ?", parts.shift])
+    end
+    
+    #None found, search by ID
+    if @episodio.nil? 
+      @episodio = Episodio.find(params[:id])
+    end
+
+    #Return found Episodio
+    @episodio
   end
 end
