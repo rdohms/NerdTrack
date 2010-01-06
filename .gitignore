@@ -2,3 +2,5 @@
 /log/*.log
 /config/database.yml
 /config/environments/sensible/*.rb
+/db/*.sqlite3
+/public/sitemap.xml
