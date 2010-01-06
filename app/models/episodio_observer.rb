@@ -16,7 +16,7 @@ class EpisodioObserver < ActiveRecord::Observer
           episodio = newepisodio
         end
         
-        builder.url { |node| node.loc("http://"+HOST+"/"+episodio.to_param); node.changefreq("daily"); }
+        builder.url { |node| node.loc("http://"+HOST+"/episodios/"+episodio.to_param); node.changefreq("daily"); }
       end
     end
   
