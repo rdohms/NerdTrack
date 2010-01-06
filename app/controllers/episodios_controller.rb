@@ -99,7 +99,7 @@ class EpisodiosController < ApplicationController
     if parts.size() < 2
       @episodio = Episodio.first(:conditions => ["numero = ?", parts.shift])
     else
-      @episodio = Episodio.first(:conditions => ["numero = ?", parts.shift], :conditions => ["parte = ?", parts.shift])
+      @episodio = Episodio.first(:conditions => ["numero = ? AND parte = ?", parts.shift, parts.shift])
     end
     
     #None found, search by ID
