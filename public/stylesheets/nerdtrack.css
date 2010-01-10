@@ -71,7 +71,8 @@ A IMG{
 
 #content{
 	padding: 10px;
-	min-heigth: 200px;
+	min-heigth: 350px;
+	height: 350px;
 }
 
 #content A{ color: #369; text-decoration: none; } 
@@ -154,3 +155,22 @@ H2{
 	width: 350px;
 	position: absolute;
 }
+
+/*  
+* INDEX Episodios 
+*/
+#stats {
+	float:right;
+	width: 130px;
+}
+
+#stats H1{
+	font-size: 1.3em;
+	margin: 0 0 8px 0;
+	padding:0;
+	border-bottom: 1px solid #569;
+	color: #569;
+}
+
+#stats UL{ list-style:none; margin: 0; padding: 0; }
+#stats UL LI { clear: both;  padding: 0 0 0px 0;}
