@@ -5,7 +5,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :episodios
 
-  map.resources :users 
+  map.resources :users, :only => [:index, :admintoggle, :new, :create] 
 
   # The priority is based upon order of creation: first created -> highest priority.
 
@@ -43,6 +43,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.root :controller => 'episodios'
 
+  # See how all your routes lay out with "rake routes"
 
   map.sign_out 'sign_out',
     :controller => 'sessions',
@@ -57,9 +58,8 @@ ActionController::Routing::Routes.draw do |map|
   map.sobre 'sobre',
     :controller => 'nerdtrack',
     :action     => 'sobre'
-    
-  # See how all your routes lay out with "rake routes"
 
+  
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing or commenting them out if you're using named routes and resources.

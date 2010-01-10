@@ -1,8 +1,15 @@
 <% form.inputs do %>
-  <%= form.input :name %>
-  <%= form.input :email %>
-  <%= form.input :twitter, :required => false %>
-  <%= form.input :password %>
-  <%= form.input :password_confirmation, :label => "Confirm password" %>
+	<%= form.input :name, :label => "Nome" %>
+	<%= form.input :email, :label => "Email" %>
+	<%= form.input :twitter, :required => false, :label => "Username no Twitter" %>
+
+
+	<% if op == "edit"%>
+		<%= link_to "Alterar minha senha", :action => "editpasswd" %>
+	<% else %>
+		<%= form.input :password, :label => "Senha" %>
+		<%= form.input :password_confirmation, :label => "Confirmar senha" %>
+	<% end -%>
+
 <% end %>
 

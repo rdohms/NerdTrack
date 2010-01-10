@@ -1,0 +1,16 @@
+<% content_for :title, " - Alterar Senha" %>
+
+<h2>Alterar Senha</h2>
+
+<% semantic_form_for @user, :url => url_for(:controller => 'users', :action => 'updatepasswd') do |form| %>
+	<%= form.error_messages %>
+		<% form.inputs do %>
+			<%= form.input :password, :label => "Nova Senha" %>
+			<%= form.input :password_confirmation, :label => "Confirmar senha" %>
+		<% end %>
+		<% form.buttons do %>
+			<%= form.commit_button "Alterar senha" %>
+		<% end %>
+<% end %>
+
+

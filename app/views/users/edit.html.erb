@@ -1,0 +1,12 @@
+<% content_for :title, " - Alterar Perfil" %>
+
+<h2>Alterar Dados</h2>
+
+<% semantic_form_for @user, :url => url_for(:controller => 'users', :action => 'update') do |form| %>
+  <%= form.error_messages %>
+  <%= render :partial => "/users/inputs", :locals => { :form => form, :op => "edit" } %>
+  <% form.buttons do %>
+    <%= form.commit_button "Alterar" %>
+  <% end %>
+<% end %>
+

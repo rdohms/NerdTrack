@@ -19,7 +19,7 @@
 		<div id="loginbar">
 			<div class="version_info"><%= NERDTRACK_VERSION %></div>
 			<% if signed_in? %>
-			Olá, <%=h current_user.name %> | <%= link_to 'Logout', sign_out_path %> 
+			Olá, <%=h current_user.name %> | <%= link_to "Meu Perfil", :controller => 'users', :action => 'edit' %> | <%= link_to 'Logout', sign_out_path %> 
 			<% else %>
 			<%= link_to "Register", sign_up_path %> | <%= link_to "Login", sign_in_path %>
 			<% end -%>
