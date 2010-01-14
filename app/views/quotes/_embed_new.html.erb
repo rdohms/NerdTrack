@@ -1,4 +1,3 @@
-
 <% content_for :head do %>
 
 	<%= javascript_include_tag 'jquery-spin' %>
@@ -24,15 +23,15 @@
 
 <% end %>
 
-<% form_for(@quote, @episodio) do |f| %>
+<% semantic_form_for(@quote, @episodio) do |f| %>
   <%= f.error_messages %>
 
     <%= f.hidden_field :episodio_id %>
   <p>
     Quando? (00:00:00)<br />
-	<%= text_field_tag 'quote_timeh', '', :size => 4, :value => "00" %> :
-	<%= text_field_tag 'quote_timem', '', :size => 4, :value => "00" %> :
-	<%= text_field_tag 'quote_times', '', :size => 4, :value => "00" %>
+	<%= f.text_field :timeh, :size => 4 %>
+	<%= f.text_field :timem, :size => 4 %>
+	<%= f.text_field :times, :size => 4 %>
   </p>
   <p>
     Frase<br />
@@ -43,6 +42,6 @@
     <%= f.text_field :autor %>
   </p>
   <p>
-    <%= f.submit 'Criar' %>
+    <%= f.submit op %>
   </p>
 <% end %>

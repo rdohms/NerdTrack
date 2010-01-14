@@ -1,23 +1,4 @@
-<h1>New track</h1>
+<h1>Adicionar música</h1>
 
-<% form_for(@track) do |f| %>
-  <%= f.error_messages %>
+<%= render :partial => 'tracks/embed_new', :locals => {:op => "Cadastrar"} %>
 
-  <p>
-    <%= f.label :time %><br />
-    <%= f.text_field :time %>
-  </p>
-  <p>
-    <%= f.label :song %><br />
-    <%= f.text_field :song %>
-  </p>
-  <p>
-    <%= f.label :link %><br />
-    <%= f.text_field :link %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
-
-<%= link_to 'Back', tracks_path %>

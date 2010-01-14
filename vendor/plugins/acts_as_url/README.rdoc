@@ -1,0 +1,60 @@
+= acts_as_url
+
+This acts_as extension adds the protocol (eg 'http://') to a url database column if missing.
+It also validates the url against a regular expression.
+
+== Usage/examples
+
+A common usecase would be in blog comments where you want the user to be able to specify his/her website:
+
+  class Comment < ActiveRecord::Base
+    acts_as_url :website
+  end
+  
+  >> comment = Comment.new
+  => #<Comment:0x245fed8 ... >
+  
+The protocol is added just before the comment is saved to the database (as a before_save callback).
+  >> comment.website = 'example.com/path/to/file.html'
+  => "example.com/path/to/file.html"
+  
+  >> comment.save
+  => true
+  
+  >> comment.website
+  => "http://example.com/path/to/file.html"
+  
+In this case protocol is already given and is therefore not added, however a trailing slash is appended.
+  >> comment.website = 'https://example.org'
+  => "https://example.org"
+  
+  >> comment.save
+  => true
+  
+  >> comment.website
+  => "https://example.org/"
+  
+The url will be validated before it is saved to the database.
+  >> comment.website = 'not a url'
+  => "not a url"
+  
+  >> comment.invalid?
+  => true
+  
+== Options
+
+By default allowed protocols are http and https, but you can set it specificly for an attribute as a hash value (with the attribute as the key):
+  acts_as_url :website, :repository => 'git'
+
+If you want to allow several protocols, you can use an array:
+  acts_as_url :website => ['https', 'http']
+
+Note that the first value in the array will always be the one prepended to the url if a protocol is omitted by the user.
+  >> comment.website = 'www.example.com'
+  => "www.example.com"
+  
+  >> comment.website
+  => "https://www.example.com/"
+
+
+Copyright (c) 2009 Molte Emil Strange Andersen, released under the MIT license

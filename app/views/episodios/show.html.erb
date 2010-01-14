@@ -22,7 +22,10 @@
 	<% unless q.quote.nil? %>
 		<li>
 			<div class="time">[<%=h q.time %>]</div>
-			<div class="quote"><b>"<%=h q.quote %>"</b> (<%=h q.autor %>)</div>
+			<div class="quote">
+				<b>"<%=h q.quote %>"</b> (<%=h q.autor %>)
+				<span class="edit_link"><%= show_edit_quote_link(q) %></span>
+			</div>
 			<div class="credit"><i>Adicionado por:</i> 
 			<% if q.user.twitter.nil? %>
 				<%=h q.user.name %>
@@ -48,7 +51,7 @@
 					:closed => "true"
 					}) do %>
 
-		<%= render 'quotes/embed_new' %>
+		<%= render :partial => 'quotes/embed_new', :locals => {:op => "Cadastrar"} %>
 
 	<% end %>
 	
@@ -67,7 +70,11 @@
 	<% unless t.song.nil? %>
 		<li>
 			<div class="time">[<%=h t.time %>]</div>
-			<div class="song"><b>"<%=h t.song %>"</b><% unless t.link.nil? %> (<a href="<%=h t.link %>"><%=h t.link %></a>)<% end -%></div>
+			<div class="song">
+				<b>"<%=h t.song %>"</b>
+				<% unless t.link.nil? || t.link.empty? %> (<a href="<%=h t.link %>"><%=h t.link %></a>)<% end -%>
+				<span class="edit_link"><%= show_edit_track_link(t) %></span>
+			</div>
 			<div class="credit"><i>Adicionado por:</i> 
 				<% if t.user.twitter.nil? %>
 					<%=h t.user.name %>
@@ -87,14 +94,14 @@
 					:xclass => "add_form" ,
 					:skin => "white",
 					:buttons => "c",
-					:icon => "browser.png",
+					:icon => "music.png",
 					:collapsed => "false",
 					:width => "350",
 					:title => "Adicionar nova Música",
 					:closed => "true"
 					}) do %>
 
-		<%= render 'tracks/embed_new' %>
+		<%= render :partial => 'tracks/embed_new', :locals => {:op => "Cadastrar"} %>
 
 	<% end %>
 	<p>Adicione sua música: <%= link_to image_tag("icons/music_add.png", :alt => "Adicionar Música"), 'javascript:;', :onclick => "$('#addtracks').mb_open(); $('#addtracks').mb_centerOnWindow()" %></p>

@@ -1,24 +1,5 @@
-<h1>Editing track</h1>
+<h1>Editar Música</h1>
 
-<% form_for(@track) do |f| %>
-  <%= f.error_messages %>
+<%= render :partial => 'tracks/embed_new', :locals => {:op => "Alterar"} %>
 
-  <p>
-    <%= f.label :time %><br />
-    <%= f.text_field :time %>
-  </p>
-  <p>
-    <%= f.label :song %><br />
-    <%= f.text_field :song %>
-  </p>
-  <p>
-    <%= f.label :link %><br />
-    <%= f.text_field :link %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @track %> |
-<%= link_to 'Back', tracks_path %>
+<%= link_to 'Back', :back %>

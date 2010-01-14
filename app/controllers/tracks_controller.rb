@@ -1,4 +1,5 @@
 class TracksController < ApplicationController
+  layout "geral"
   
   #Block other pages for now
   before_filter :authorize, :only => [:index, :show, :edit, :update, :destroy]
@@ -47,13 +48,11 @@ class TracksController < ApplicationController
     @track = Track.new(params[:track])
 
     @track.user_id = current_user.id
-
-    @track.time = "%02d:%02d:%02d" % [ params[:track_timeh], params[:track_timem], params[:track_times] ]
     
     respond_to do |format|
       if @track.save
         flash[:notice] = 'Música adicionada com sucesso.'
-        format.html { redirect_to :back }
+        format.html { redirect_to :controller => "episodios", :action => 'show', :id => @track.episodio.to_param }
         format.xml  { render :xml => @track, :status => :created, :location => @track }
       else
         format.html { render :action => "new" }
@@ -69,8 +68,8 @@ class TracksController < ApplicationController
 
     respond_to do |format|
       if @track.update_attributes(params[:track])
-        flash[:notice] = 'Track was successfully updated.'
-        format.html { redirect_to(@track) }
+        flash[:notice] = 'Música alterada com sucesso.'
+        format.html { redirect_to :controller => "episodios", :action => 'show', :id => @track.episodio.to_param }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

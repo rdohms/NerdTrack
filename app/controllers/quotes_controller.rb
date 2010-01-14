@@ -1,4 +1,5 @@
 class QuotesController < ApplicationController
+  layout "geral"
   
   #Block other pages for now
   before_filter :authorize, :only => [:index, :show, :edit, :update, :destroy]
@@ -48,12 +49,10 @@ class QuotesController < ApplicationController
 
     @quote.user_id = current_user.id
 
-    @quote.time = "%02d:%02d:%02d" % [ params[:quote_timeh], params[:quote_timem], params[:quote_times] ]
-
     respond_to do |format|
       if @quote.save
         flash[:notice] = 'Frase adicionada com sucesso!'
-        format.html { redirect_to :back }
+        format.html { redirect_to :controller => "episodios", :action => 'show', :id => @quote.episodio.to_param }
         format.xml  { render :xml => @quote, :status => :created, :location => @quote }
       else
         format.html { render :action => "new" }
@@ -70,7 +69,7 @@ class QuotesController < ApplicationController
     respond_to do |format|
       if @quote.update_attributes(params[:quote])
         flash[:notice] = 'Quote was successfully updated.'
-        format.html { redirect_to(@quote) }
+        format.html { redirect_to :controller => "episodios", :action => 'show', :id => @quote.episodio.to_param }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
