@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   attr_accessible :admin
   
   def cleanup_twitter
-    unless self.twitter.nil?
+    unless self.twitter.nil? || self.twitter.empty?
       self.twitter = self.twitter.scan(/(?:http\:\/\/)?(?:www\.)?(?:twitter\.com)?[\/]?(?:@)?([A-Za-z0-9_-]*)?/)[0].to_s
     end
   end
