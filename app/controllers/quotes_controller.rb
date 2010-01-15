@@ -2,7 +2,7 @@ class QuotesController < ApplicationController
   layout "geral"
   
   #Block other pages for now
-  before_filter :authorize, :only => [:index, :show, :edit, :update, :destroy]
+  before_filter :authorize, :only => [:index, :show, :destroy]
   
   # GET /quotes
   # GET /quotes.xml
@@ -40,6 +40,10 @@ class QuotesController < ApplicationController
   # GET /quotes/1/edit
   def edit
     @quote = Quote.find(params[:id])
+    
+    if current_user.nil? || current_user.id != @quote.user.id
+      render_unauth
+    end
   end
 
   # POST /quotes
@@ -65,6 +69,10 @@ class QuotesController < ApplicationController
   # PUT /quotes/1.xml
   def update
     @quote = Quote.find(params[:id])
+    
+    if current_user.nil? || current_user.id != @quote.user.id
+      render_unauth
+    end
 
     respond_to do |format|
       if @quote.update_attributes(params[:quote])

@@ -2,7 +2,7 @@ class TracksController < ApplicationController
   layout "geral"
   
   #Block other pages for now
-  before_filter :authorize, :only => [:index, :show, :edit, :update, :destroy]
+  before_filter :authorize, :only => [:index, :show, :destroy]
   
   # GET /tracks
   # GET /tracks.xml
@@ -40,6 +40,11 @@ class TracksController < ApplicationController
   # GET /tracks/1/edit
   def edit
     @track = Track.find(params[:id])
+    
+    if current_user.nil? || current_user.id != @track.user.id
+      render_unauth
+    end
+    
   end
 
   # POST /tracks
@@ -65,6 +70,10 @@ class TracksController < ApplicationController
   # PUT /tracks/1.xml
   def update
     @track = Track.find(params[:id])
+
+    if current_user.nil? || current_user.id != @track.user.id
+      render_unauth
+    end
 
     respond_to do |format|
       if @track.update_attributes(params[:track])

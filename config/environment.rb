@@ -4,7 +4,7 @@
 RAILS_GEM_VERSION = '2.3.4' unless defined? RAILS_GEM_VERSION
 
 #Version Info
-NERDTRACK_VERSION = "Beta 0.6"
+NERDTRACK_VERSION = "Beta 0.6.1"
 
 # Define environment
 RAILS_ENV = "development" 
