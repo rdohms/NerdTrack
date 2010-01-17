@@ -1,179 +1,85 @@
-BODY{
-	-moz-background-clip:border;
-	-moz-background-inline-policy:continuous;
-	-moz-background-origin:padding;
-	background:#CCDEE8 none repeat scroll 0 0;
-	color:#333333;
-	font-family:Arial;
-	font-size-adjust:none;
-	font-stretch:normal;
-	font-style:normal;
-	font-variant:normal;
-	font-weight:normal;
-	line-height:normal;
-	margin:0 auto;
-	width: 1024px;
-}
+/* reset */
+html,body,div,span,applet,object,iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+a,abbr,acronym,address,big,cite,code,
+del,dfn,em,font,img,ins,kbd,q,s,samp,
+small,strike,strong,sub,sup,tt,var,
+b,u,i,center,
+dl,dt,dd,ol,ul,li,
+fieldset,form,label,legend,
+table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
+body{line-height:1;}
+ol,ul{list-style:none;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,
+q:before,q:after{content:'';content:none;}
+:focus{outline:0;}
+ins{text-decoration:none;}
+del{text-decoration:line-through;}
+table{border-collapse:collapse;border-spacing:0;}
 
-A{
-	text-decoration: none;
-}
+/* estrutura */
+body { background: #242A32; color:#fff; font: 12px 'Lucida Grande',Verdana,Arial,Sans-Serif;}
+a, a:visited {text-decoration: none;}
+a:hover {text-decoration: underline;}
+p {margin: 1em 0;}
 
-A:hover;{
-	color: #369;
-}
+.centerSite {width: 1000px; margin: 0px auto; position: relative;}
+.float-right {float: right;}
 
-A IMG{
-	border: 0px;
-}
+#top {background:url(../images/top.gif) repeat-x; height:10px;}
+#header {background: #171a1f;}
+#header .version_info {position: absolute; top: 140px; left: 190px;}
+#headerimg {background: #171a1f url(../images/nerdtrack.gif) no-repeat center left; height: 200px;}
+#headerimg p { text-indent:-9999em}
+#headerimg a {display: block; height: 200px;}
 
-/** 
-* Geral Layout
-*/
+#loginbar {background: #242A32; height: 30px;}
+#loginbar ul.botoes {float: right;}
+#loginbar .botoes li {float: left;}
+#loginbar .botoes li, #loginbar .logado {background: #171a1f; margin: 0px 5px;-moz-border-radius-bottomleft: 10px; -webkit-border-radius-bottom-left: 10px; border-bottom-left-radius: 10px;-moz-border-radius-bottomright: 10px; -webkit-border-radius-bottom-right: 10px; border-bottom-right-radius: 10px;}
+#loginbar .logado {padding: 3px 10px; float: right;}
+#loginbar .botoes a {display: block; padding: 3px 10px; text-decoration:none; }
+#loginbar .botoes a:hover {color: #fff; padding: 3px 10px 7px;}
 
-#container{
-	background-color: #FFFFFF;
-	width: 988px;
-	float: left;
-}
+#nav, #nav li {float: left;}
+#nav li {}
+#nav a {display: block; padding: 3px 10px; text-decoration:none; margin: 6px 5px 0;background: #2f353c;-moz-border-radius-topleft: 10px; -webkit-border-radius-top-left: 10px; border-top-left-radius: 10px;-moz-border-radius-topright: 10px; -webkit-border-radius-top-right: 10px; border-top-right-radius: 10px}
+#nav a:hover {color: #fff; padding: 7px 10px 3px; margin: 2px 5px 0;}
 
-#loginbar{
-	background-color: #369;
-	color: #FFFFFF;
-	padding: 7px;
-	text-align: right;
-	font-size: .9em;
-}
+#container {background: #2f353c; padding: 10px; overflow: auto;}
+#info, #stats, #flash_msg  {background: #242A32;  width: 300px;}
+.content, .contentfull, .contenthalf {background: #fff; width: 610px; color: #000; overflow: auto;}
+#flash_msg, .contentfull {width: 960px;}
+.contenthalf {width: 455px; float: left;}
+.m10 {margin-right: 10px;}
+#info, #stats, .content, .contentfull, .contenthalf, #flash_msg {padding: 20px; -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; margin-bottom: 10px;}
 
-#loginbar a{ color: #FFFFFF; text-decoration: none; } 
-#loginbar a:hover;{ color: #FFFFFF; text-decoration: underline;} 
+.content a, .contentfull a, .contenthalf a, #flash_msg a {color: #0E3C61;}
 
-#loginbar .version_info{
-	float: left;
-	font-size: .7em;
-	color: #FFF;
-}
+#footer  {text-align: center; padding: 10px; clear: both;}
+#footer p, #header p {margin: 0;}
 
-#header{
-	width:988px;
-	height:85px;
-	background-color: #69C;
-	border-bottom: 5px solid #369;
-}
+h1, h2, h3, h4, h5, h6 {font-family: 'Trebuchet MS','Lucida Grande',Verdana,Arial,Sans-Serif; font-weight: bolder;}
 
-#flash_msg{
-	background-color: #FDF3C6;
-	text-align: center;
-	font-weight: bold;
-	color: #D7AA12;
-	padding: 8px;
-}
+h1, h2 {text-transform: uppercase; font-size: 16px; }
+h2 {font-size: 14px;}
+h1, h2, a {color: #0E3C61;}
 
-#content{
-	padding: 10px;
-	min-heigth: 350px;
-}
+.sidebar h1, .sidebar h2 {color: #FFD014;}
+.sidebar a, #footer a, #header a {color: #FFD014;}
 
-#content A{ color: #369; text-decoration: none; } 
-#content A:hover { text-decoration: underline;}
+/* home */
+.sidebar {float: right;}
 
-#footer{
-	text-align: center;
-	background:#CCDEE8 none repeat scroll 0 0;
-	padding-top: 10px;
-	border-top: 3px solid #369;
-}
+.episodios {padding-top: 1em;}
+.episodios li {font-size: 13px; font-weight: bold;}
+.episodios li a {display: block; background: #ccc; color: #333;}
+.episodios li.odd a {background: #eaeaea;}
+.episodios li a:hover {text-decoration: none; background: #2f353c; color: #fff;}
+.episodios li span {display: block; float: left; text-align: right; width: 50px; padding-right: 5px;}
 
-#footer P{
-	margin: 0px; padding: 0px;
-}
-
-#footer .copy{
-	font-size: .7em;
-}
-
-#footer .disclaimer{
-	font-size: .7em;
-}
-
-#footer .icons{
-	
-}
-
-
-/** 
-* SHOW Episodio
-*/
-
-H1{
-	
-}
-
-H2{
-	color: #CCC;
-}
-
-.number{
-	font-weight: bolder;
-	font: 150% "Arial Black", "Trebuchet MS", Verdana, sans-serif;
-	color: #369;
-}
-
-.ep-icons{
-	padding: 5px 0;
-	margin: -5px 0 -15px -5px;
-}
-.ep-icons a{ }	
-.ep-icons img{ border: 0px; padding: 0 5px 0 5px; }
-
-
-.quote_list         { list-style:none;}
-.quote_list LI      { clear: both; padding: 0 0 10px 0;}
-.quote_list .time   { float: left; color: #AAA; font-size: 1em; padding:5px 5px; height: 30px; }
-.quote_list .quote	{ }
-.quote_list .quote B{ font-size: 1.5em; }
-.quote_list .credit { font-size: 0.7em; }
-.quote_list .credit A{ color: #569; font-weight:bold; }
-
-.song_list         { list-style:none;}
-.song_list LI      { clear: both;  padding: 0 0 10px 0;}
-.song_list .time   { float: left; color: #AAA; font-size: 1em; padding:5px 5px; height: 30px; }
-.song_list .song   { }
-.song_list .song B { font-size: 1.5em; }
-.song_list .credit { font-size: 0.7em; }
-.song_list .credit A{ color: #569; font-weight:bold; }
-
-.float-left{
-	float: left;
-}
-
-.float-right{
-	float: right;
-}
-
-.clear{
-	{ clear: both;}
-}
-.add_form{
-	width: 350px;
-	position: absolute;
-}
-
-/*  
-* INDEX Episodios 
-*/
-#stats {
-	float:right;
-	width: 130px;
-}
-
-#stats H1{
-	font-size: 1.3em;
-	margin: 0 0 8px 0;
-	padding:0;
-	border-bottom: 1px solid #569;
-	color: #569;
-}
-
-#stats UL{ list-style:none; margin: 0; padding: 0; }
-#stats UL LI { clear: both;  padding: 0 0 0px 0;}
+/* detalhe */
+.time {color: #aaa; float: left; padding-right: 5px;}
+.song_list li, .quote_list li {margin: 1em 0;}
+.credit {padding-left: 68px;}

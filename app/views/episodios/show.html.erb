@@ -1,21 +1,21 @@
-
+<div class="contentfull">
 <% content_for :title, " - Episódio #"+@episodio.to_param %>
 
 <%= image_tag  @episodio.imagem, :class => "float-right" %>
+<h1><strong class="number">#<%=h @episodio.numero %><%=h @episodio.parte %></strong> <%=h @episodio.titulo %></h1>
+<h2>Informações</h2>
+<div><%= simple_format(@episodio.desc) %></div>
 <p class="ep-icons">
-	<%= link_to image_tag("icons/attach.png", :alt => "Post Original"), @episodio.link %>
-	<%= link_to image_tag("icons/comment_add.png", :alt => "Adicionar Frase"), 'javascript:;', :onclick => "$('#addquotes').mb_open(); $('#addquotes').mb_centerOnWindow()" %>
-	<%= link_to image_tag("icons/music_add.png", :alt => "Adicionar Música"), 'javascript:;', :onclick => "$('#addtracks').mb_open(); $('#addtracks').mb_centerOnWindow()" %>
+	<%= link_to image_tag("icons/attach.png", :alt => "Post Original", :title => "Post Original"), @episodio.link %>
+	<%= link_to image_tag("icons/comment_add.png", :alt => "Adicionar Frase", :title => "Adicionar Frase"), 'javascript:;', :onclick => "$('#addquotes').mb_open(); $('#addquotes').mb_centerOnWindow()" %>
+	<%= link_to image_tag("icons/music_add.png", :alt => "Adicionar Música", :title => "Adicionar Música"), 'javascript:;', :onclick => "$('#addtracks').mb_open(); $('#addtracks').mb_centerOnWindow()" %>
 	<% if !current_user.nil? && current_user.admin? %>
 		<%= link_to image_tag("icons/page_edit.png"), edit_episodio_path(@episodio) %>
 	<% end -%>
 </p>
-<h1><b class="number">#<%=h @episodio.numero %><%=h @episodio.parte %></b> <%=h @episodio.titulo %></h1>
+</div>
 
-<h2>Informações</h2>
-<div><%= simple_format(@episodio.desc) %></div>
-
-
+<div class="contenthalf m10" id="frases">
 <h2>Frases ilustres:</h2> 
 <ul class="quote_list">
 <% @episodio.quotes.each do |q| %>  
@@ -23,10 +23,10 @@
 		<li>
 			<div class="time">[<%=h q.time %>]</div>
 			<div class="quote">
-				<b>"<%=h q.quote %>"</b> (<%=h q.autor %>)
+				<strong>"<%=h q.quote %>"</strong> (<%=h q.autor %>)
 				<span class="edit_link"><%= show_edit_quote_link(q) %></span>
 			</div>
-			<div class="credit"><i>Adicionado por:</i> 
+			<div class="credit"><em>Adicionado por:</em> 
 			<% if q.user.twitter.nil? %>
 				<%=h q.user.name %>
 			<% else %>
@@ -62,8 +62,9 @@
 	<p><%= link_to "Cadastre-se", sign_up_path %> ou <%= link_to "faça login", sign_up_path %> para enviar sua frase</p>
 	
 <% end -%>
+</div>
 
-
+<div class="contenthalf" id="musicas">
 <h2>Músicas:</h2> 
 <ul class="song_list">
 <% @episodio.tracks.each do |t| %> 
@@ -71,11 +72,11 @@
 		<li>
 			<div class="time">[<%=h t.time %>]</div>
 			<div class="song">
-				<b>"<%=h t.song %>"</b>
+				<strong><%=h t.song %></strong>
 				<% unless t.link.nil? || t.link.empty? %> (<a href="<%=h t.link %>"><%=h t.link %></a>)<% end -%>
 				<span class="edit_link"><%= show_edit_track_link(t) %></span>
 			</div>
-			<div class="credit"><i>Adicionado por:</i> 
+			<div class="credit"><em>Adicionado por:</em> 
 				<% if t.user.twitter.nil? %>
 					<%=h t.user.name %>
 				<% else %>
@@ -111,6 +112,13 @@
 	<p><%= link_to "Cadastre-se", sign_up_path %> ou <%= link_to "faça login", sign_up_path %> para enviar sua música</p>
 		
 <% end -%>
+</div>
 
-
+<div class="contentfull">
 <%= link_to 'Voltar', episodios_path %>
+</div>
+
+<script type="text/javascript">
+	var tallest = ($('#frases').height() > $('#musicas').height())? $('#frases').height(): $('#musicas').height();
+	$('#frases, #musicas').css('height', tallest+'px')
+</script>

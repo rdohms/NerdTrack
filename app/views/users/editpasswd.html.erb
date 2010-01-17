@@ -1,5 +1,6 @@
 <% content_for :title, " - Alterar Senha" %>
 
+<div class="contentfull">
 <h2>Alterar Senha</h2>
 
 <% semantic_form_for @user, :url => url_for(:controller => 'users', :action => 'updatepasswd') do |form| %>
@@ -12,5 +13,6 @@
 			<%= form.commit_button "Alterar senha" %>
 		<% end %>
 <% end %>
+</div>
 
 

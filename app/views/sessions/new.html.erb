@@ -1,4 +1,13 @@
-<h2>Sign in</h2>
+<div class="contentfull">
+<h2>Login</h2>
+<ul class="float-right">
+  <li>
+    <%= link_to "Cadastre-se", new_user_path %>
+  </li>
+  <li>
+    <%= link_to "Esqueceu a senha?", new_password_path %>
+  </li>
+</ul>
 
 <% semantic_form_for :session, :url => session_path do |form| %>
   <% form.inputs do %>
@@ -10,12 +19,5 @@
   <% end %>
 <% end %>
 
-<ul>
-  <li>
-    <%= link_to "Sign up", new_user_path %>
-  </li>
-  <li>
-    <%= link_to "Forgot password?", new_password_path %>
-  </li>
-</ul>
+</div>
 

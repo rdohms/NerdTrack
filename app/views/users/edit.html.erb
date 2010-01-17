@@ -1,5 +1,6 @@
 <% content_for :title, " - Alterar Perfil" %>
 
+<div class="contentfull">
 <h2>Alterar Dados</h2>
 
 <% semantic_form_for @user, :url => url_for(:controller => 'users', :action => 'update') do |form| %>
@@ -9,4 +10,4 @@
     <%= form.commit_button "Alterar" %>
   <% end %>
 <% end %>
-
+</div>

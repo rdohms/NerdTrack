@@ -1,14 +1,15 @@
 <% content_for :title, " - Episódios" %>
 <%= render(:layout => 'blocks/counter') %>
-<h1>Escolha um Episódio</h1>
 
+<div class="content">
+	<h1>Escolha um Episódio</h1>
+	<ul class="episodios">
+		<% @episodios.each do |episodio| %>
+		<li><%= link_to "<span>#"+episodio.numero.to_s+episodio.parte.to_s+ "</span> - " +episodio.titulo, episodio %></li>
+		<% end %>
+	</ul>
+</div>
 
-
-<ul>
-	<% @episodios.each do |episodio| %>
-	<li>
-		<b><%= link_to "#"+episodio.numero.to_s+episodio.parte.to_s, episodio %></b> <%= link_to episodio.titulo, episodio %>
-	 </li>
-	<% end %>
-</ul>
-
+<script type="text/javascript">
+	$('ul.episodios li:odd').addClass("odd");
+</script>

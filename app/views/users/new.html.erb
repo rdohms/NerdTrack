@@ -1,6 +1,7 @@
 <% content_for :title, " - Cadastro" %>
 
-<h2>Sign up</h2>
+<div class="contentfull">
+<h2>Cadastre-se</h2>
 
 <% semantic_form_for @user do |form| %>
   <%= form.error_messages %>
@@ -9,4 +10,4 @@
     <%= form.commit_button "Cadastrar" %>
   <% end %>
 <% end %>
-
+</div>
