@@ -6,6 +6,7 @@
 	<ul class="episodios">
 		<% @episodios.each do |episodio| %>
 		<li><%= link_to "<span>#"+episodio.numero.to_s+episodio.parte.to_s+ "</span> - " +episodio.titulo, episodio %></li>
+		<span class="ep_stats">(<%= episodio.tracks.count(:all) %> músicas / <%= episodio.quotes.count(:all) %> frases)</span>
 		<% end %>
 	</ul>
 </div>

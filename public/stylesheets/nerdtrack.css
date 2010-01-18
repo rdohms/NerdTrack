@@ -83,3 +83,9 @@ h1, h2, a {color: #0E3C61;}
 .time {color: #aaa; float: left; padding-right: 5px;}
 .song_list li, .quote_list li {margin: 1em 0;}
 .credit {padding-left: 68px;}
+
+
+/* unintegrated */
+.ep_stats{
+	font-size: 70%;
+}
