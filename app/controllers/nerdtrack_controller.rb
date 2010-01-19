@@ -1,7 +1,13 @@
 class NerdtrackController < ApplicationController
   def sobre
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # sobre.html.erb
+    end
+  end
+
+  def equipe
+    respond_to do |format|
+      format.html # equipe.html.erb
     end
   end
 

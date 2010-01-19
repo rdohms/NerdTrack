@@ -19,5 +19,5 @@ DO_NOT_REPLY = "noreply@rafaeldohms.com.br"
   
 #Email
 config.action_mailer.raise_delivery_errors = true
-config.action_mailer.delivery_method = :smtp
+config.action_mailer.delivery_method = :sendmail
 config.action_mailer.default_content_type = "text/html"
