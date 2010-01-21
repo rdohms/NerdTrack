@@ -91,10 +91,15 @@ class TracksController < ApplicationController
   # DELETE /tracks/1.xml
   def destroy
     @track = Track.find(params[:id])
+    
+    if current_user.nil? || current_user.id != @track.user.id
+      render_unauth
+    end
+    
     @track.destroy
 
     respond_to do |format|
-      format.html { redirect_to(tracks_url) }
+      format.html { redirect_to :controller => "episodios", :action => 'show', :id => @track.episodio.to_param }
       format.xml  { head :ok }
     end
   end

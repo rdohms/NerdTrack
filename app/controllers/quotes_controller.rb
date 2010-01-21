@@ -90,10 +90,15 @@ class QuotesController < ApplicationController
   # DELETE /quotes/1.xml
   def destroy
     @quote = Quote.find(params[:id])
+    
+    if current_user.nil? || current_user.id != @quote.user.id
+      render_unauth
+    end
+    
     @quote.destroy
 
     respond_to do |format|
-      format.html { redirect_to(quotes_url) }
+      format.html { redirect_to :controller => "episodios", :action => 'show', :id => @quote.episodio.to_param }
       format.xml  { head :ok }
     end
   end

@@ -25,6 +25,7 @@
 			<div class="quote">
 				<strong>"<%=h q.quote %>"</strong> (<%=h q.autor %>)
 				<span class="edit_link"><%= show_edit_quote_link(q) %></span>
+				<span class="edit_link"><%= show_del_quote_link(q) %></span>
 			</div>
 			<div class="credit"><em>Adicionado por:</em> 
 			<% if q.user.twitter.nil? %>
@@ -75,6 +76,7 @@
 				<strong><%=h t.song %></strong>
 				<% unless t.link.nil? || t.link.empty? %> (<a href="<%=h t.link %>"><%=h t.link %></a>)<% end -%>
 				<span class="edit_link"><%= show_edit_track_link(t) %></span>
+				<span class="edit_link"><%= show_del_track_link(t) %></span>
 			</div>
 			<div class="credit"><em>Adicionado por:</em> 
 				<% if t.user.twitter.nil? %>
