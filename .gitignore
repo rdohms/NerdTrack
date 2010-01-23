@@ -4,3 +4,4 @@
 /config/environments/sensible/*.rb
 /db/*.sqlite3
 /public/sitemap.xml
+db/*.sqlite3
