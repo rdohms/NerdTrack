@@ -2,22 +2,12 @@
 counts = Counter.get_counts  
 %>
 
-<div class="sidebar">
-	<div id="info">
-		<h1><a href="/about">O NerdTrack</a></h1>
-
-		<p>A proposta do <strong>NerdTrack</strong> é simples: reunir todas as músicas e as melhores frases que surgiram nestes anos todos no Nerdcast.</p>
-
-		<p>Com o número de ouvintes do Nerdcast, em teoria é possível identificar todas as músicas e frases utilizadas. Para participar é fácil, cadastre-se no site, escolha o episódio e mande sua contribuição. :)</p>
-	</div>
-
-	<div id="stats">
-		<h1>NerdStats</h1>
-	<ul>
-		<li><b><%= counts[:users] %></b> Contribuidores</li>
-		<li><b><%= counts[:episodios] %></b> Episódios</li>
-		<li><b><%= counts[:quotes] %></b> Frases</li>
-		<li><b><%= counts[:tracks] %></b> Músicas</li>
-	</ul>
-	</div>
+<div id="stats">
+	<h1>NerdStats</h1>
+<ul>
+	<li><b><%= counts[:users] %></b> Contribuidores</li>
+	<li><b><%= counts[:episodios] %></b> Episódios</li>
+	<li><b><%= counts[:quotes] %></b> Frases</li>
+	<li><b><%= counts[:tracks] %></b> Músicas</li>
+</ul>
 </div>
