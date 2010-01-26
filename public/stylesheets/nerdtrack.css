@@ -26,6 +26,7 @@ p {margin: 1em 0;}
 
 .centerSite {width: 1000px; margin: 0px auto; position: relative;}
 .float-right {float: right;}
+.float-left {float: left;}
 
 #top {background:url(../images/top.gif) repeat-x; height:10px;}
 #header {background: #171a1f;}
@@ -88,4 +89,13 @@ h1, h2, a {color: #0E3C61;}
 /* unintegrated */
 .ep_stats{
 	font-size: 70%;
+}
+.add_form {
+	width: 350px;
+	position: absolute;
+	left: 0;
+}
+.add_form .content {
+	margin-bottom: 0;
+	width: auto;
 }

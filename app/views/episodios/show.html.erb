@@ -42,7 +42,7 @@
 <% if signed_in? %>
 	<% render(:layout => 'blocks/container',
 		:locals => {:id => "addquotes",
-					:xclass => "add_form" ,
+					:xclass => "add_form",
 					:skin => "white",
 					:buttons => "c",
 					:icon => "comment-edit-48x48.png",
@@ -56,8 +56,8 @@
 
 	<% end %>
 	
-	<p>Adicione sua Frase: <%= link_to image_tag("icons/comment_add.png", :alt => "Adicionar Frase"), 'javascript:;', :onclick => "$('#addquotes').mb_open(); $('#addquotes').mb_centerOnWindow()" %></p>
-	
+	<p>Adicione sua Frase: <%= link_to image_tag("icons/comment_add.png", :alt => "Adicionar Frase"), 'javascript:;', :onclick => "$('#addquotes').mb_open();$('#addquotes').mb_centerOnWindow(false)" %></p>
+
 <% else %>
 	
 	<p><%= link_to "Cadastre-se", sign_up_path %> ou <%= link_to "faça login", sign_up_path %> para enviar sua frase</p>
@@ -107,8 +107,7 @@
 		<%= render :partial => 'tracks/embed_new', :locals => {:op => "Cadastrar"} %>
 
 	<% end %>
-	<p>Adicione sua música: <%= link_to image_tag("icons/music_add.png", :alt => "Adicionar Música"), 'javascript:;', :onclick => "$('#addtracks').mb_open(); $('#addtracks').mb_centerOnWindow()" %></p>
-
+	<p>Adicione sua música: <%= link_to image_tag("icons/music_add.png", :alt => "Adicionar Música"), 'javascript:;', :onclick => "$('#addtracks').mb_open();$('#addtracks').mb_centerOnWindow(false)" %></p>
 <% else %>
 
 	<p><%= link_to "Cadastre-se", sign_up_path %> ou <%= link_to "faça login", sign_up_path %> para enviar sua música</p>
