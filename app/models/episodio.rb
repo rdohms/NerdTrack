@@ -2,6 +2,10 @@ class Episodio < ActiveRecord::Base
   include Permissions
   
   def to_param  # overridden
+    self.full_id
+  end
+  
+  def full_id
     if parte.nil?
       numero.to_s
     else

@@ -1,0 +1,74 @@
+<div class="sidebar">
+	<div id="info">
+		<%= image_tag @user.gravatar_url(:size => 80), :style => 'float:right' %>
+		<h1><%= @user.name %></h1>
+		
+		<p>
+			Twitter: <%= link_to @user.twitter, "http://www.twitter.com/"+@user.twitter %><br>
+		</p>
+		<p><%= @user.bio%></p>
+		
+		<% if signed_in? && @user.id == current_user.id %>
+			<div>
+				<%= link_to "Editar meus dados", :controller => 'users', :action => 'edit' %> | 
+				<%= link_to "Alterar minha senha", :controller => 'users', :action => "editpasswd" %>
+			</div>
+		<% end -%>
+		
+	</div>
+<%= render(:layout => 'blocks/counter') %>
+<%= render(:layout => 'blocks/topcontrib') %>
+</div>
+
+<div class="content">
+
+
+	
+	<h2>Frases enviadas (<%= @user.quotes.count %>)</h2>
+	<ul class="quote_list">
+	<% if @user.quotes.length > 0%>
+		<% @user.quotes.each do |q| %>  
+			<% unless q.quote.nil? %>
+				<li>
+					<div class="time">[<%=h q.time %>]</div>
+					<div class="quote">
+						<strong>"<%=h q.quote %>"</strong> (<%=h q.autor %>)
+						<span class="edit_link"><%= show_edit_quote_link(q) %></span>
+						<span class="edit_link"><%= show_del_quote_link(q) %></span>
+					</div>
+					<div class="credit"><em>Episódio:</em> 
+						<%= link_to q.episodio.full_id + " - " + q.episodio.titulo, q.episodio %>
+					</div>
+				</li>  
+			<% end -%>
+		<% end %>
+	<% else %>
+		<li>Nenhuma frase.</li>
+	<% end -%> 
+	</ul>
+	
+	<h2>Músicas enviadas (<%= @user.tracks.count %>)</h2>
+	<ul class="song_list">
+	<% if @user.tracks.length > 0 %>
+		<% @user.tracks.each do |t| %> 
+			<% unless t.song.nil? %>
+				<li>
+					<div class="time">[<%=h t.time %>]</div>
+					<div class="song">
+						<strong><%=h t.song %></strong>
+						<% unless t.link.nil? || t.link.empty? %> (<a href="<%=h t.link %>"><%=h t.link %></a>)<% end -%>
+						<span class="edit_link"><%= show_edit_track_link(t) %></span>
+						<span class="edit_link"><%= show_del_track_link(t) %></span>
+					</div>
+					<div class="credit"><em>Episódio:</em> 
+						<%= link_to t.episodio.full_id + " - " + t.episodio.titulo, t.episodio %>
+					</div>
+					<!-- <div class="cmd">[contestar]</div> -->
+				</li>
+			<% end -%>
+		<% end %>
+	<% else %>
+		<li>Nenhuma música.</li>
+	<% end -%> 
+	</ul>
+</div>

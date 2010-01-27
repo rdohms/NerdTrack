@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
+  before_filter :username_warn
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
@@ -21,5 +22,9 @@ class ApplicationController < ActionController::Base
   
   def render_unauth
     render :text => 'Unauthorized', :status => :unauthorized
+  end
+  
+  def username_warn
+    flash[:notice] = 'Você não possui <b>login</b> ainda, visite seu perfil, altere seus dados e cadastre um novo login.'
   end
 end

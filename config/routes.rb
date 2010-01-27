@@ -59,6 +59,10 @@ ActionController::Routing::Routes.draw do |map|
     :controller => 'nerdtrack',
     :action     => 'sobre'
 
+  map.user_profile 'u/:id',
+    :controller => 'profile',
+    :action    => 'show'
+
   
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should

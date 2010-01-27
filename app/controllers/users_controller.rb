@@ -43,15 +43,16 @@ class UsersController < Clearance::UsersController
   def update
     #redirect if not logged in
     logged_in?
-
+    @user = current_user
+    
     respond_to do |format|
-      if current_user.update_attributes(params[:user])
+      if @user.update_attributes(params[:user])
         flash[:notice] = 'Seu Perfil foi editado com sucesso!'
         format.html { redirect_to(root_url) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => current_user.errors, :status => :unprocessable_entity }
+        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -86,5 +87,14 @@ class UsersController < Clearance::UsersController
     end
   end
   
+  def check_username
+    if User.count(:conditions =>  ['username = ?', params[:uname]]) > 0
+      @ok = false
+    else
+      @ok = true
+    end
+    
+    
+  end
   
 end

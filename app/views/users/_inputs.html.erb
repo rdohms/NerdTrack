@@ -1,8 +1,17 @@
 <% form.inputs do %>
+	<% if op == "add" || @user.username.nil? || @user.username.empty? %>
+		<%= form.input :username, :label => "Login" %>
+	<% else %>
+		<%= form.input :username, :label => "Login", :input_html => { :disabled => true } %>
+	<% end -%>
+	<!-- div para mostrar imagem de "em uso" ou livre do username, posicionar ao lado do campo username -->
+	<div id="uname_unique"><%= image_tag "icons/textfield.png"%></div>
+	
 	<%= form.input :name, :label => "Nome" %>
 	<%= form.input :email, :label => "Email" %>
-	<%= form.input :twitter, :required => false, :label => "Username no Twitter" %>
+	<%= form.input :twitter, :required => false, :label => "Username no Twitter", :hint => "Example: nerdtrack" %>
 
+	<%= form.input :bio, :required => false, :label => "Sobre Você (bio)" %>
 
 	<% if op == "edit"%>
 		<%= link_to "Alterar minha senha", :action => "editpasswd" %>
@@ -12,4 +21,11 @@
 	<% end -%>
 
 <% end %>
+
+<!-- Observer para validar campo username -->
+<%= observe_field :user_username,
+     :url => { :action => :check_username },
+     :frequency => 0.5,
+     :with => 'uname'
+     %>
 

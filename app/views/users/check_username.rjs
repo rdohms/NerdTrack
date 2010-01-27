@@ -1,0 +1,5 @@
+if !@ok 
+  page.replace_html 'uname_unique', image_tag("icons/exclamation.png")
+else
+  page.replace_html 'uname_unique', image_tag("icons/accept.png")
+end

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100104013419) do
+ActiveRecord::Schema.define(:version => 20100124120140) do
 
   create_table "episodios", :force => true do |t|
     t.integer  "numero"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(:version => 20100104013419) do
     t.datetime "updated_at"
   end
 
+  add_index "quotes", ["user_id"], :name => "index_quotes_on_user_id"
+
   create_table "tracks", :force => true do |t|
     t.string   "time"
     t.string   "song"
@@ -41,6 +43,8 @@ ActiveRecord::Schema.define(:version => 20100104013419) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "tracks", ["user_id"], :name => "index_tracks_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email"
@@ -54,10 +58,13 @@ ActiveRecord::Schema.define(:version => 20100104013419) do
     t.boolean  "admin"
     t.string   "name"
     t.string   "twitter"
+    t.string   "username"
+    t.text     "bio"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"
   add_index "users", ["id", "confirmation_token"], :name => "index_users_on_id_and_confirmation_token"
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
+  add_index "users", ["username"], :name => "index_users_on_username", :unique => true
 
 end

@@ -38,7 +38,7 @@
 			
 			<% if signed_in? %>
 			<div class="logado">
-				Olá, <%=h current_user.name %> | <%= link_to "Meu Perfil", :controller => 'users', :action => 'edit' %> | <%= link_to 'Logout', sign_out_path %> 
+				Olá, <%=h current_user.name %> | <%= link_to "Meu Perfil", current_user.profile_url %> | <%= link_to 'Logout', sign_out_path %> 
 			</div>
 			<% else %>
 				<ul class="botoes">
