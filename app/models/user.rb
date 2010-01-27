@@ -17,4 +17,10 @@ class User < ActiveRecord::Base
       self.twitter = self.twitter.scan(/(?:http\:\/\/)?(?:www\.)?(?:twitter\.com)?[\/]?(?:@)?([A-Za-z0-9_-]*)?/)[0].to_s
     end
   end
+  
+  def profile_url
+    unless self.twitter.nil?
+      "http://www.twitter.com/"+self.twitter
+    end
+  end
 end

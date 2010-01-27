@@ -28,11 +28,7 @@
 				<span class="edit_link"><%= show_del_quote_link(q) %></span>
 			</div>
 			<div class="credit"><em>Adicionado por:</em> 
-			<% if q.user.twitter.nil? %>
-				<%=h q.user.name %>
-			<% else %>
-				<%= link_to q.user.name, "http://www.twitter.com/"+q.user.twitter %>
-			<% end -%>
+				<%= link_to q.user.name, q.user.profile_url %>
 			</div>
 		</li>  
 	<% end -%>
@@ -79,11 +75,7 @@
 				<span class="edit_link"><%= show_del_track_link(t) %></span>
 			</div>
 			<div class="credit"><em>Adicionado por:</em> 
-				<% if t.user.twitter.nil? %>
-					<%=h t.user.name %>
-				<% else %>
-					<%= link_to t.user.name, "http://www.twitter.com/"+t.user.twitter %>
-				<% end -%>
+				<%= link_to t.user.name, t.user.profile_url %>
 			</div>
 			<!-- <div class="cmd">[contestar]</div> -->
 		</li>

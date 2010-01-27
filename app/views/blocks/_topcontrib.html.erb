@@ -4,7 +4,7 @@
 <div id="stats">
 	<h1>Maiores Contribuidores</h1>
 <ul>
-	<li><b><%= tops[:quotes][:user].name%></b> contribuiu <b><%= tops[:quotes][:count] %></b> frases</li>
-	<li><b><%= tops[:tracks][:user].name%></b> contribuiu <b><%= tops[:tracks][:count] %></b> músicas</li>
+	<li><b><%= link_to	tops[:quotes][:user].name, tops[:quotes][:user].profile_url %></b> contribuiu <b><%= tops[:quotes][:count] %></b> frases</li>
+	<li><b><%= link_to	tops[:quotes][:user].name, tops[:quotes][:user].profile_url %></b> contribuiu <b><%= tops[:tracks][:count] %></b> músicas</li>
 </ul>
 </div>
