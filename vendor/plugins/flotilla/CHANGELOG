@@ -1,0 +1,13 @@
+v0.2.2 - 07 May 2008
+* Correctly handle graph-wide options <Mathias Sulser>
+
+v0.2.1 - 05 May 2008
+* Encode values as strings for json/pure compatibility
+
+v0.2 - 02 May 2008
+
+* Upgraded to Flot v0.4
+* Now using built-in Flot date-handling
+* Using json/ext for JS generation
+* NOTE: unknown bug using json/pure
+* Generally easier-to-read code

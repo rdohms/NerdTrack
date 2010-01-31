@@ -1,32 +1,33 @@
 <div class="contentfull">
-<h1>Usuários</h1>
+	<h1>Usuários</h1>
+	<%= render :partial => 'admin/admin_menu' %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Admin</th>
+	<table>
+	  <tr>
+	    <th>Name</th>
+	    <th>Admin</th>
 
-  </tr>
+	  </tr>
 
-<% @users.each do |user| %>
-  <tr>
-    <td>
-		<% unless (user.name.nil?) %>
-				<%=h user.name %>
-		<% else %> 
-				<%=h user.email %>
-		 <% end -%>
-	</td>
+	<% @users.each do |user| %>
+	  <tr>
+	    <td>
+			<% unless (user.name.nil?) %>
+					<%=h user.name %>
+			<% else %> 
+					<%=h user.email %>
+			 <% end -%>
+		</td>
 		
-    <td>
-		<% if (user.admin?) %>
-				<%= link_to image_tag("icons/tick.png"), :action => "admintoggle", :id => user %>
-		<% else %> 
-				<%= link_to image_tag("icons/cross.png"), :action => "admintoggle", :id => user %>
-		 <% end -%>
-	</td>
+	    <td>
+			<% if (user.admin?) %>
+					<%= link_to image_tag("icons/tick.png"), :action => "admintoggle", :id => user %>
+			<% else %> 
+					<%= link_to image_tag("icons/cross.png"), :action => "admintoggle", :id => user %>
+			 <% end -%>
+		</td>
 
-  </tr>
-<% end %>
-</table>
+	  </tr>
+	<% end %>
+	</table>
 </div>

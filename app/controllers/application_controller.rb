@@ -25,6 +25,8 @@ class ApplicationController < ActionController::Base
   end
   
   def username_warn
-    flash[:notice] = 'Você não possui <b>login</b> ainda, visite seu perfil, altere seus dados e cadastre um novo login.'
+    unless current_user.nil? || !current_user.username.nil?
+      flash[:notice] = 'Você não possui <b>login</b> ainda, visite seu perfil, altere seus dados e cadastre um novo login.'
+    end
   end
 end

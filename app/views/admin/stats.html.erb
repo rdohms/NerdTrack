@@ -1,0 +1,18 @@
+<div class="contentfull">
+	
+	<h1>Admin#stats</h1>
+	<%= render :partial => 'admin_menu' %>
+
+
+	<div id="tgph" style="width:800px;height:300px;"></div>
+	<%= chart_hash("tgph", { 
+		"Músicas" => { :collection => @tracks}, 
+		"Frases" => { :collection => @quotes}, 
+	}, {}, true, false ) %>
+
+	<div id="ugph" style="width:800px;height:250px;"></div>
+	<%= chart_hash("ugph", { 
+		"Usuários" => { :collection => @users}, 
+	}, {}, true, false ) %>	
+
+</div>

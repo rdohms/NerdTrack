@@ -1,24 +1,23 @@
-<h1>Listing tracks</h1>
+<div class="contentfull">
+	<h1>Músicas</h1>
+	<%= render :partial => 'admin/admin_menu' %>
 
-<table>
-  <tr>
-    <th>Time</th>
-    <th>Song</th>
-    <th>Link</th>
-  </tr>
+	<table>
+	  <tr>
+	    <th>Tempo</th>
+	    <th>Música</th>
+	    <th>Link</th>
+	  </tr>
 
-<% @tracks.each do |track| %>
-  <tr>
-    <td><%=h track.time %></td>
-    <td><%=h track.song %></td>
-    <td><%=h track.link %></td>
-    <td><%= link_to 'Show', track %></td>
-    <td><%= link_to 'Edit', edit_track_path(track) %></td>
-    <td><%= link_to 'Destroy', track, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New track', new_track_path %>
+	<% @tracks.each do |track| %>
+	  <tr>
+	    <td><%=h track.time %></td>
+	    <td><%=h track.song %></td>
+	    <td><%=h track.link %></td>
+	    <td><%= link_to 'Show', track %></td>
+	    <td><%= link_to 'Edit', edit_track_path(track) %></td>
+	    <td><%= link_to 'Destroy', track, :confirm => 'Are you sure?', :method => :delete %></td>
+	  </tr>
+	<% end %>
+	</table>
+</div>

@@ -1,9 +1,4 @@
-<% if !current_user.nil? && current_user.admin? %>
-	<p class="footer_icons">
-			<%= link_to image_tag("icons/page_add.png"), new_episodio_path %>
-			<%= link_to image_tag("icons/group.png"), users_path %>
-	</p>
-<% end -%>
+
 <p class="disclaimer">Este site não pertence ao Grupo Jovem Nerd, é um projeto independente criado por fãs do nerdcast.</p>
 
 <p class="copy">&copy; 2009-2010 <%= link_to "Danilo Martins", "http://ovodeyoshi.wordpress.com/" %> &amp; <%= link_to "Rafael Dohms", "http://www.rafaeldohms.com.br" %> - Versão <%= NERDTRACK_VERSION %></p>

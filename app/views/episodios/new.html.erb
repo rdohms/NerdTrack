@@ -1,35 +1,38 @@
-<h1>New episodio</h1>
+<div class="contentfull">
+	<h1>Novo Episódio</h1>
+	<%= render :partial => 'admin/admin_menu' %>
 
-<% form_for(@episodio) do |f| %>
-  <%= f.error_messages %>
+	<% form_for(@episodio) do |f| %>
+	  <%= f.error_messages %>
 
-  <p>
-    <%= f.label :numero %><br />
-    <%= f.text_field :numero %>
-  </p>
-  <p>
-    <%= f.label :parte %><br />
-    <%= f.text_field :parte %>
-  </p>
-  <p>
-    <%= f.label :titulo %><br />
-    <%= f.text_field :titulo %>
-  </p>
-  <p>
-    <%= f.label :imagem %><br />
-    <%= f.text_field :imagem %>
-  </p>
-  <p>
-    <%= f.label :desc %><br />
-    <%= f.text_area :desc %>
-  </p>
-  <p>
-    <%= f.label :link %><br />
-    <%= f.text_field :link %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
+	  <p>
+	    <%= f.label :numero %><br />
+	    <%= f.text_field :numero %>
+	  </p>
+	  <p>
+	    <%= f.label :parte %><br />
+	    <%= f.text_field :parte %>
+	  </p>
+	  <p>
+	    <%= f.label :titulo %><br />
+	    <%= f.text_field :titulo %>
+	  </p>
+	  <p>
+	    <%= f.label :imagem %><br />
+	    <%= f.text_field :imagem %>
+	  </p>
+	  <p>
+	    <%= f.label :desc %><br />
+	    <%= f.text_area :desc %>
+	  </p>
+	  <p>
+	    <%= f.label :link %><br />
+	    <%= f.text_field :link %>
+	  </p>
+	  <p>
+	    <%= f.submit 'Create' %>
+	  </p>
+	<% end %>
 
-<%= link_to 'Back', episodios_path %>
+	<%= link_to 'Back', episodios_path %>
+<div class="contentfull">
