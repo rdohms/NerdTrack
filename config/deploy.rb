@@ -10,7 +10,11 @@ set :default_env,  'staging'
 set :rails_env,     ENV['rails_env'] || ENV['RAILS_ENV'] || default_env
 
 # version control config
-set :repository, "https://rdohms@svn.rafaeldohms.com.br/nerdtracker/tags/current"
+if rails_env == "staging"
+  set :repository, "https://rdohms@svn.rafaeldohms.com.br/nerdtracker/tags/demo"
+else
+  set :repository, "https://rdohms@svn.rafaeldohms.com.br/nerdtracker/tags/current"
+end
 
 # roles (servers)
 role :web, domain
