@@ -1,30 +1,27 @@
 <% content_for :title, " - Episódios" %>
 
 <div class="sidebar">
-	<div id="info">
-		<h1><a href="/about">O NerdTrack</a></h1>
-
-		<p>A proposta do <strong>NerdTrack</strong> é simples: reunir todas as músicas e as melhores frases que surgiram nestes anos todos no Nerdcast.</p>
-
-		<p>Com o número de ouvintes do Nerdcast, em teoria é possível identificar todas as músicas e frases utilizadas. Para participar é fácil, cadastre-se no site, escolha o episódio e mande sua contribuição. :)</p>
-	</div>
+<%= render :partial => 'blocks/info' %>
 <%= render(:layout => 'blocks/counter') %>
 <%= render(:layout => 'blocks/topcontrib') %>
 </div>
 
 <div class="content">
-	<h1>Escolha um Episódio</h1>
-	<div>
-		<% semantic_form_for :episodio, @episodio, :url => {:action => 'quick_load'} do |form| %>
-		  <%= form.input :full_id, :label => "Episódio #" %>
-		  <%= form.commit_button "ir" %>
+	<div class="quickaccess">
+		<% semantic_form_for :episodio, @episodio, :url => {:action => 'quick_load'}, :html => { :class => "quickload" } do |form| %>
+			<% form.buttons do %>
+			  <%= form.input :full_id, :label => "Episódio #", :input_html => { :size => "5" } %>
+			  <%= form.commit_button "ir" %>
+			<% end -%>
 		<% end %>
 	</div>
+	<h1>Escolha um Episódio</h1>
+
 	<ul class="episodios">
 		<% @episodios.each do |episodio| %>
 		<li>
-			<%= link_to "<span>#"+episodio.numero.to_s+episodio.parte.to_s+ "</span> - " +episodio.titulo, episodio %>
-			<em class="ep_stats">(<%= episodio.tracks.count(:all) %> músicas / <%= episodio.quotes.count(:all) %> frases)</em>
+			<%= link_to "<span>#"+episodio.numero.to_s+episodio.parte.to_s+ "</span> - " +episodio.titulo + ' <em class="ep_stats">('+ episodio.tracks.count(:all).to_s + 'músicas / '+ episodio.quotes.count(:all).to_s + ' frases)</em>', episodio %>
+			
 		</li>
 		<% end %>
 	</ul>

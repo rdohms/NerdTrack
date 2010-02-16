@@ -86,9 +86,10 @@ h1, h2, a {color: #0E3C61;}
 .credit {padding-left: 68px;}
 
 
-/* unintegrated */
+/* unintegrated  - created by rdohms - please adjust and move to proper place*/
 .ep_stats{
 	font-size: 70%;
+	padding-left:4px;
 }
 .add_form {
 	width: 350px;
@@ -99,3 +100,20 @@ h1, h2, a {color: #0E3C61;}
 	margin-bottom: 0;
 	width: auto;
 }
+
+.pagination { margin-top: 30px; width:100%; text-align: center;}
+.pagination .current { font-size: 150%; font-weight: bold; }
+.pagination .disabled { color: #AAA; }
+
+form.quickload { width: 200px; float:right;}
+form.quickload fieldset.buttons { padding-left: 0%;  }
+form.quickload .buttons li { width: 25px; margin: 0px;}
+form.quickload .buttons li.string { width: 130px; }
+form.quickload .buttons label { display: inline; }
+form.quickload .buttons label abbr { display: none; }
+form.quickload .buttons li.string input { width: 50px; }
+
+.doar { width: 100%; text-align: center; margin-top: 15px; border-top: 1px dashed #CCC;}
+.doar .list { vertical-align: middle;}
+.doar .list li { display: inline; padding: 8px;}
+.doar .list li form { display: inline;}
