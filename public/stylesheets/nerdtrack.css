@@ -80,11 +80,19 @@ h1, h2, a {color: #0E3C61;}
 .episodios li a:hover {text-decoration: none; background: #2f353c; color: #fff;}
 .episodios li span {display: block; float: left; text-align: right; width: 50px; padding-right: 5px;}
 
+#episodio_full_id {margin-left: 10px;}
+
 /* detalhe */
 .time {color: #aaa; float: left; padding-right: 5px;}
 .song_list li, .quote_list li {margin: 1em 0;}
 .credit {padding-left: 68px;}
 
+/* edit profile */
+li#user_username_input {width: 74%;}
+li#user_username_input input {width:100%;}
+#user_username_input, #uname_unique {float: left; }
+#uname_unique {width: 10%; padding: 1.8em 1em 0;}
+#user_name_input {clear: both;}
 
 /* unintegrated  - created by rdohms - please adjust and move to proper place*/
 .ep_stats{
@@ -106,7 +114,7 @@ h1, h2, a {color: #0E3C61;}
 .pagination .disabled { color: #AAA; }
 
 form.quickload { width: 200px; float:right;}
-form.quickload fieldset.buttons { padding-left: 0%;  }
+form.quickload fieldset.buttons { padding-left: 0%; float: right; }
 form.quickload .buttons li { width: 25px; margin: 0px;}
 form.quickload .buttons li.string { width: 130px; }
 form.quickload .buttons label { display: inline; }
