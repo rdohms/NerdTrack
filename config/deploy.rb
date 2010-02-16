@@ -50,6 +50,15 @@ namespace :deploy do
   end
 end
 
+#Install Gems DB
+after 'deploy:symlink_config', 'deploy:migrate_db'
+namespace :deploy do
+  desc "Alter the environment according to plan"
+  task :migrate_db  do
+    run "cd #{release_path} && rake gems:install"
+  end
+end
+
 #Migrate DB
 after 'deploy:symlink_config', 'deploy:migrate_db'
 namespace :deploy do
