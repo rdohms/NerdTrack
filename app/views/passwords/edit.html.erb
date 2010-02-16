@@ -1,3 +1,4 @@
+<div class="contentfull">
 <h2>Change your password</h2>
 
 <p>
@@ -10,12 +11,13 @@
   <%= form.error_messages %>
   <% form.inputs do -%>
     <%= form.input :password, :as => :password,
-                   :label => "Choose password" %>
+                   :label => "Senha" %>
     <%= form.input :password_confirmation, :as => :password,
-                   :label => "Confirm password" %>
+                   :label => "Confirmar senha" %>
   <% end -%>
   <% form.buttons do -%>
-    <%= form.commit_button "Save this password" %>
+    <%= form.commit_button "Salvar" %>
   <% end -%>
 <% end %>
+</div>
 

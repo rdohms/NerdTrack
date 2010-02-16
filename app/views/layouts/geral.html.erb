@@ -34,8 +34,8 @@
 			<ul id="nav">
 				<li><%= link_to "Sobre", sobre_path %></li>
 				<li><%= link_to "Contato", contato_path %></li>
-				<li><%= link_to "Blog", "http://blog.nerdtrack.com.br" %></li>
 				<li><%= link_to "Equipe", equipe_path %></li>
+				<!-- <li><%= link_to "Blog", "http://blog.nerdtrack.com.br" %></li> -->
 				<% if !current_user.nil? && current_user.admin? %>
 					<li><%= link_to "Admin", :controller => 'admin', :action => 'stats' %></li>
 				<% end -%>
@@ -90,7 +90,7 @@ pageTracker._trackPageview();
 
   feedback_widget_options.display = "overlay";  
   feedback_widget_options.company = "dms";
-  feedback_widget_options.placement = "left";
+  feedback_widget_options.placement = "right";
   feedback_widget_options.color = "#171A1F";
   feedback_widget_options.style = "idea";
 

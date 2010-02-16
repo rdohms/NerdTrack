@@ -64,6 +64,7 @@ p {margin: 1em 0;}
 h1, h2, h3, h4, h5, h6 {font-family: 'Trebuchet MS','Lucida Grande',Verdana,Arial,Sans-Serif; font-weight: bolder;}
 
 h1, h2 {text-transform: uppercase; font-size: 16px; }
+h1, h2 { padding: 10px 0;}
 h2 {font-size: 14px;}
 h1, h2, a {color: #0E3C61;}
 
@@ -80,12 +81,14 @@ h1, h2, a {color: #0E3C61;}
 .episodios li a:hover {text-decoration: none; background: #2f353c; color: #fff;}
 .episodios li span {display: block; float: left; text-align: right; width: 50px; padding-right: 5px;}
 
-#episodio_full_id {margin-left: 10px;}
-
 /* detalhe */
 .time {color: #aaa; float: left; padding-right: 5px;}
 .song_list li, .quote_list li {margin: 1em 0;}
 .credit {padding-left: 68px;}
+
+/*
+#frases, #musicas {position: relative;}
+*/
 
 /* edit profile */
 li#user_username_input {width: 74%;}
@@ -93,6 +96,9 @@ li#user_username_input input {width:100%;}
 #user_username_input, #uname_unique {float: left; }
 #uname_unique {width: 10%; padding: 1.8em 1em 0;}
 #user_name_input {clear: both;}
+
+/* equipe */
+.equipe li {padding: 0.5em 0;}
 
 /* unintegrated  - created by rdohms - please adjust and move to proper place*/
 .ep_stats{
@@ -115,13 +121,23 @@ li#user_username_input input {width:100%;}
 
 form.quickload { width: 200px; float:right;}
 form.quickload fieldset.buttons { padding-left: 0%; float: right; }
-form.quickload .buttons li { width: 25px; margin: 0px;}
-form.quickload .buttons li.string { width: 130px; }
-form.quickload .buttons label { display: inline; }
+form.quickload fieldset.buttons li { width: 25px; margin: 0px; float: left; padding-right: 0;}
+form.quickload .buttons li.string { width: auto; padding: 0; float: left;}
+form.quickload .buttons label { display: inline; float: left; width: auto;}
 form.quickload .buttons label abbr { display: none; }
-form.quickload .buttons li.string input { width: 50px; }
+form.quickload .buttons li.string input { width: 50px; background: #EBEBEC; border: 1px inset #ebebec; color:#333; margin: 0 10px; float: left;}
+form.quickload .buttons li.string input:focus {background:#d5d7d8;}
+form.quickload fieldset.inputs, form.quickload fieldset.buttons {width: auto;}
 
 .doar { width: 100%; text-align: center; margin-top: 15px; border-top: 1px dashed #CCC;}
 .doar .list { vertical-align: middle;}
 .doar .list li { display: inline; padding: 8px;}
 .doar .list li form { display: inline;}
+
+/* admin */
+.users thead {background:#2F353C; color:#fff;}
+.users td {padding: 3px 5px;}
+.users th {padding: 5px; text-align: left;}
+.users td:last-child, .users th:last-child {text-align: center;}
+.users tr:nth-child(2n+1) td {background: #eee;}
+.users tr:hover td {background: #ccc;}

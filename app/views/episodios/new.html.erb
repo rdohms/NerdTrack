@@ -2,37 +2,47 @@
 	<h1>Novo Episódio</h1>
 	<%= render :partial => 'admin/admin_menu' %>
 
+	<div class="formtastic">
 	<% form_for(@episodio) do |f| %>
 	  <%= f.error_messages %>
 
-	  <p>
-	    <%= f.label :numero %><br />
+	<fieldset class="inputs">
+	<ol>
+	  <li class="string">
+	    <%= f.label :numero %>
 	    <%= f.text_field :numero %>
-	  </p>
-	  <p>
-	    <%= f.label :parte %><br />
+	  </li>
+	  <li class="string">
+	    <%= f.label :parte %>
 	    <%= f.text_field :parte %>
-	  </p>
-	  <p>
-	    <%= f.label :titulo %><br />
+	  </li>
+	  <li class="string">
+	    <%= f.label :titulo %>
 	    <%= f.text_field :titulo %>
-	  </p>
-	  <p>
-	    <%= f.label :imagem %><br />
+	  </li>
+	  <li class="string">
+	    <%= f.label :imagem %>
 	    <%= f.text_field :imagem %>
-	  </p>
-	  <p>
-	    <%= f.label :desc %><br />
+	  </li>
+	  <li class="text">
+	    <%= f.label :desc %>
 	    <%= f.text_area :desc %>
-	  </p>
-	  <p>
-	    <%= f.label :link %><br />
+	  </li>
+	  <li class="string">
+	    <%= f.label :link %>
 	    <%= f.text_field :link %>
-	  </p>
-	  <p>
+	  </li>
+	</ol>
+	</fieldset>
+	<fieldset class="buttons">
+	  <ol>
+		<li>
 	    <%= f.submit 'Create' %>
-	  </p>
+	  </li>
+	</ol>
+	</fieldset>
 	<% end %>
+	</div>
 
 	<%= link_to 'Back', episodios_path %>
-<div class="contentfull">
+</div>

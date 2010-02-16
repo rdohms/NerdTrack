@@ -2,13 +2,15 @@
 	<h1>Usuários</h1>
 	<%= render :partial => 'admin/admin_menu' %>
 
-	<table>
+	<table class="users">
+		<thead>
 	  <tr>
 	    <th>Name</th>
 	    <th>Admin</th>
 
 	  </tr>
-
+	</thead>
+	<tbody>
 	<% @users.each do |user| %>
 	  <tr>
 	    <td>
@@ -29,5 +31,6 @@
 
 	  </tr>
 	<% end %>
+	</tbody>
 	</table>
 </div>

@@ -1,15 +1,17 @@
-<h2>Reset your password</h2>
+<div class="contentfull">
+<h2>Esqueci a senha</h2>
 
 <p>
-  We will email you a link to reset your password.
+Preecha o campo abaixo e você receberá um email com link para criar uma nova senha.
 </p>
 
 <% semantic_form_for :password, :url => passwords_path do |form| -%>
   <% form.inputs do -%>
-    <%= form.input :email, :label => "Email address" %>
+    <%= form.input :email, :label => "Email" %>
   <% end -%>
   <% form.buttons do -%>
-    <%= form.commit_button "Reset password" %>
+    <%= form.commit_button "Enviar" %>
   <% end -%>
 <% end -%>
+</div>
 
