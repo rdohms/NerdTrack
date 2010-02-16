@@ -5,7 +5,14 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :episodios
 
-  map.resources :users, :only => [:index, :admintoggle, :new, :create] 
+  map.resources :users, :only => [:index, :admintoggle, :new, :create]  do |user|
+    
+    user.resource :password,
+      :controller => 'clearance/passwords',
+      :only       => [:create, :edit, :update]
+
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
 
