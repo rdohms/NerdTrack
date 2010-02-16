@@ -20,6 +20,19 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def only_owner(obj)
+    
+    if current_user.nil?
+      render_unauth
+    else
+      unless current_user.admin?
+        if current_user.id != obj.user.id
+          render_unauth
+        end
+      end
+    end
+  end
+  
   def render_unauth
     render :text => 'Unauthorized', :status => :unauthorized
   end

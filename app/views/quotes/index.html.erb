@@ -4,19 +4,21 @@
 
 	<table>
 	  <tr>
-	    <th>Frase</th>
 	    <th>Tempo</th>
-	    <th>Autor</th>
+		<th>Tempo</th>
+		<th>Frase</th>
+	    <th>Contribuidor</th>
 	  </tr>
 
 	<% @quotes.each do |quote| %>
 	  <tr>
-	    <td><%=h quote.quote %></td>
-	    <td><%=h quote.time %></td>
-	    <td><%=h quote.autor %></td>
-	    <td><%= link_to 'Show', quote %></td>
-	    <td><%= link_to 'Edit', edit_quote_path(quote) %></td>
-	    <td><%= link_to 'Destroy', quote, :confirm => 'Are you sure?', :method => :delete %></td>
+		<td><%= link_to quote.episodio.full_id, quote.episodio %></td>    
+		<td><%=h quote.time %></td>
+		<td><%=h quote.quote %> (<%=h quote.autor %>)</td>
+	    <td><%= link_to quote.user.name, quote.user.profile_url %></td>
+
+	    <td><%= link_to image_tag("icons/pencil.png"), edit_quote_path(quote) %></td>
+	    <td><%= link_to image_tag("icons/delete.png"), quote, :confirm => 'Are you sure?', :method => :delete %></td>
 	  </tr>
 	<% end %>
 	</table>

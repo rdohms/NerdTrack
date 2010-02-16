@@ -41,9 +41,7 @@ class QuotesController < ApplicationController
   def edit
     @quote = Quote.find(params[:id])
     
-    if current_user.nil? || current_user.id != @quote.user.id
-      render_unauth
-    end
+    only_owner(@quote)
   end
 
   # POST /quotes
@@ -70,9 +68,7 @@ class QuotesController < ApplicationController
   def update
     @quote = Quote.find(params[:id])
     
-    if current_user.nil? || current_user.id != @quote.user.id
-      render_unauth
-    end
+    only_owner(@quote)
 
     respond_to do |format|
       if @quote.update_attributes(params[:quote])
@@ -91,9 +87,7 @@ class QuotesController < ApplicationController
   def destroy
     @quote = Quote.find(params[:id])
     
-    if current_user.nil? || current_user.id != @quote.user.id
-      render_unauth
-    end
+    only_owner(@quote)
     
     @quote.destroy
 

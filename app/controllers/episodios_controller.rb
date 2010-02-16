@@ -5,7 +5,7 @@ class EpisodiosController < ApplicationController
   # GET /episodios
   # GET /episodios.xml
   def index
-    @episodios = Episodio.all(:order => "numero DESC, parte DESC")
+    @episodios = Episodio.paginate :page => params[:page], :order => "numero DESC, parte DESC"
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,6 +13,14 @@ class EpisodiosController < ApplicationController
     end
   end
 
+
+  def quick_load
+    
+    respond_to do |format|
+      format.html { redirect_to(episodio_path(:id => params[:episodio][:full_id])) }
+    end
+    
+  end
   # GET /episodios/1
   # GET /episodios/1.xml
   def show

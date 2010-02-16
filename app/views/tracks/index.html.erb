@@ -4,19 +4,20 @@
 
 	<table>
 	  <tr>
-	    <th>Tempo</th>
+	    <th>Ep.</th>
+		<th>Tempo</th>
 	    <th>Música</th>
-	    <th>Link</th>
+	    <th>Contribuidor</th>
 	  </tr>
 
 	<% @tracks.each do |track| %>
 	  <tr>
+	    <td><%= link_to track.episodio.full_id, track.episodio %></td>
 	    <td><%=h track.time %></td>
 	    <td><%=h track.song %></td>
-	    <td><%=h track.link %></td>
-	    <td><%= link_to 'Show', track %></td>
-	    <td><%= link_to 'Edit', edit_track_path(track) %></td>
-	    <td><%= link_to 'Destroy', track, :confirm => 'Are you sure?', :method => :delete %></td>
+	    <td><%= link_to track.user.name, track.user.profile_url %></td>
+	    <td><%= link_to image_tag("icons/pencil.png"), edit_track_path(track) %></td>
+	    <td><%= link_to image_tag("icons/delete.png"), track, :confirm => 'Are you sure?', :method => :delete %></td>
 	  </tr>
 	<% end %>
 	</table>

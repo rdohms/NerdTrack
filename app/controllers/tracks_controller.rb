@@ -41,9 +41,7 @@ class TracksController < ApplicationController
   def edit
     @track = Track.find(params[:id])
     
-    if current_user.nil? || current_user.id != @track.user.id
-      render_unauth
-    end
+    only_owner(@track)
     
   end
 
@@ -71,9 +69,7 @@ class TracksController < ApplicationController
   def update
     @track = Track.find(params[:id])
 
-    if current_user.nil? || current_user.id != @track.user.id
-      render_unauth
-    end
+    only_owner(@track)
 
     respond_to do |format|
       if @track.update_attributes(params[:track])
@@ -92,12 +88,10 @@ class TracksController < ApplicationController
   def destroy
     @track = Track.find(params[:id])
     
-    if current_user.nil? || current_user.id != @track.user.id
-      render_unauth
-    end
+    only_owner(@track)
     
     @track.destroy
-
+    
     respond_to do |format|
       format.html { redirect_to :controller => "episodios", :action => 'show', :id => @track.episodio.to_param }
       format.xml  { head :ok }

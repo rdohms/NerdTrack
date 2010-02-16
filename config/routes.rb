@@ -59,6 +59,10 @@ ActionController::Routing::Routes.draw do |map|
     :controller => 'nerdtrack',
     :action     => 'sobre'
 
+  map.equipe 'equipe',
+    :controller => 'nerdtrack',
+    :action     => 'equipe'
+
   map.user_profile 'u/:id',
     :controller => 'profile',
     :action    => 'show'
