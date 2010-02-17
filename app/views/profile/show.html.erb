@@ -3,9 +3,11 @@
 		<%= image_tag @user.gravatar_url(:size => 80), :style => 'float:right' %>
 		<h1><%= @user.name %></h1>
 		
+		<% unless @user.twitter.nil? %>
 		<p>
 			Twitter: <%= link_to @user.twitter, "http://www.twitter.com/"+@user.twitter %><br>
 		</p>
+		<% end -%>
 		<p><%= @user.bio%></p>
 		
 		<% if signed_in? && @user.id == current_user.id %>
