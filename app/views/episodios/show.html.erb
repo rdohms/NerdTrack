@@ -22,7 +22,7 @@
 	<% unless q.quote.nil? %>
 		<li>
 			<div class="time">
-				[<%=h q.time %>] <br> <%= q.votes_total %>
+				[<%=h q.time %>]
 			</div>
 			<%= render :partial => 'quotes/ratequote', :locals => {:q => q, :total => false} %>
 
