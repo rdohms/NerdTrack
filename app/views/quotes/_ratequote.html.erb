@@ -1,0 +1,20 @@
+<div class="rate">
+	
+	<% unless !total %>
+	<span class="total"><%= q.votes_total %></span>
+	<% end -%>
+	
+	<%= link_to_remote image_tag("icons/thumb_up2.png"), 
+			:url => { :controller => "quotes", :action => 'voteup', :id => q.id}, 
+			:update => "tvfor_"+q.id.to_s,
+			:failure => "eval('response = '+request.responseText);alert(response.message)"
+	 %>
+	<span id="tvfor_<%= q.id.to_s %>"><%= q.votes_for %></span>
+	
+	<%= link_to_remote image_tag("icons/thumb_down2.png"), 
+			:url => { :controller => "quotes", :action => 'votedown', :id => q.id}, 
+			:update => "tvagainst_"+q.id.to_s,
+			:failure => "eval('response = '+request.responseText);alert(response.message)" 
+	%>
+	<span id="tvagainst_<%= q.id.to_s %>"><%= q.votes_against %></span>
+</div>

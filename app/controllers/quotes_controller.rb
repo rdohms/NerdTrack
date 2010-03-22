@@ -96,4 +96,46 @@ class QuotesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def voteup
+    @quote = Quote.find(params[:id])
+    
+    if !current_user.nil?
+        if current_user.vote_for(@quote)
+           render :text => @quote.votes_for.to_s
+        else
+          render :json => {:op => "failure", :message => "Você já votou!"}.to_json, :status => 403
+        end
+    else
+      render :json => {:op => "failure", :message => "É necessário estar logado para votar"}.to_json, :status => 401
+    end
+  end
+  
+  def votedown
+    @quote = Quote.find(params[:id])
+    
+    if !current_user.nil?
+      if current_user.vote_against(@quote)
+         render :text => @quote.votes_against.to_s
+      else
+        render :json => {:op => "failure", :message => "Você já votou!"}.to_json, :status => 403
+      end
+    else
+      render :json => {:op => "failure", :message => "É necessário estar logado para votar"}.to_json, :status => 401
+    end
+  end
+  
+  def top
+    
+    @quotes = Quote.tally(
+      {
+          :limit => 10,
+          :order => "total desc"
+      })
+    
+    respond_to do |format|
+      format.html # top.html.erb
+      format.xml  { render :xml => @quote }
+    end
+  end
 end

@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   validates_format_of :username, :with => /\A[a-zA-Z0-9_]*\Z/, :message => "somente são aceitos letras, numeros e '_'"
   
   is_gravtastic :secure => true, :rating => 'G'
+  acts_as_voter
 
   before_save :cleanup_twitter
   

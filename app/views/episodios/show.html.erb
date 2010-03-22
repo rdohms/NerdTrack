@@ -21,7 +21,11 @@
 <% @episodio.quotes.each do |q| %>  
 	<% unless q.quote.nil? %>
 		<li>
-			<div class="time">[<%=h q.time %>]</div>
+			<div class="time">
+				[<%=h q.time %>] <br> <%= q.votes_total %>
+			</div>
+			<%= render :partial => 'quotes/ratequote', :locals => {:q => q, :total => false} %>
+
 			<div class="quote">
 				<strong>"<%=h q.quote %>"</strong> (<%=h q.autor %>)
 				<span class="edit_link"><%= show_edit_quote_link(q) %></span>

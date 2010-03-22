@@ -1,0 +1,23 @@
+<div class="contentfull">
+	<h1>Melhores Momentos</h1>
+
+	<ul class="topfrases">
+	<% @quotes.each_with_index do |quote,i| %>
+		<li>  
+			<div class="count">
+				#<%= (i+1).to_s %>
+			</div>
+			<%= render :partial => 'quotes/ratequote', :locals => {:q => quote, :total => true} %>
+			<div class="origin">
+				<%= link_to "Episódio "+quote.episodio.full_id+": "+quote.episodio.titulo, quote.episodio %> <i><%=h quote.time %></i>
+			</div>
+			<div class="quote">
+				"<%=h quote.quote %>" <i>(<%=h quote.autor %>)</i>
+			</div>
+			<div class="credit">
+				<%= link_to quote.user.name, quote.user.profile_url %>
+			</div>
+		</li>
+	<% end %>
+	</ul>
+</div>
