@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   include Clearance::User
   include ActionController::UrlWriter
   
-  validates_uniqueness_of :username, :message => "já esta sendo usado."
+  validates_uniqueness_of :username, :message => "já esta sendo usado.", :allow_blank => true, :allow_nil => true
   
   is_gravtastic :secure => true, :rating => 'G'
 
