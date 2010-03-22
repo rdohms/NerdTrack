@@ -2,7 +2,7 @@ class TracksController < ApplicationController
   layout "geral"
   
   #Block other pages for now
-  before_filter :authorize, :only => [:index, :show, :destroy]
+  before_filter :authorize, :only => [:index, :show]
   
   # GET /tracks
   # GET /tracks.xml
