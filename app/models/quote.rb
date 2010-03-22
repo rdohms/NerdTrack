@@ -1,6 +1,12 @@
 class Quote < ActiveRecord::Base
 
+  acts_as_voteable
+
   validates_presence_of :quote, :time, :episodio, :user, :message => "não pode ficar em branco."
+  
+  validates_numericality_of :timeh, :less_than_or_equal_to => 2, :allow_nil => true, :message => "O campo Hora não deve ser maior que 2"
+  validates_numericality_of :timem, :less_than_or_equal_to => 59, :allow_nil => true, :message => "O campo Minutos não deve ser maior que 59"
+  validates_numericality_of :times, :less_than_or_equal_to => 59, :allow_nil => true, :message => "O campo Segundos não deve ser maior que 59"
   
   belongs_to :episodio
   belongs_to :user
