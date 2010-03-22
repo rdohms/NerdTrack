@@ -3,7 +3,11 @@ class Track < ActiveRecord::Base
   acts_as_url :link
 
   validates_presence_of :time, :song, :episodio, :user , :message => "não pode ficar em branco."
-   
+  
+  validates_numericality_of :timeh, :less_than_or_equal_to => 2, :allow_nil => true, :message => "O campo Hora não deve ser maior que 2"
+  validates_numericality_of :timem, :less_than_or_equal_to => 59, :allow_nil => true, :message => "O campo Minutos não deve ser maior que 59"
+  validates_numericality_of :times, :less_than_or_equal_to => 59, :allow_nil => true, :message => "O campo Segundos não deve ser maior que 59"
+  
   
   belongs_to :episodio
   belongs_to :user
@@ -19,7 +23,7 @@ class Track < ActiveRecord::Base
         self[:timeh] = time.to_i
   end
   def timem=(time)
-        self[:timem] = time.to_i
+      self[:timem] = time.to_i
   end
   def times=(time)
         self[:times] = time.to_i
