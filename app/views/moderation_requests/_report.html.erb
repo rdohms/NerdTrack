@@ -1,0 +1,10 @@
+<div class="report">
+<%= link_to "denunciar", 'javascript:;', :alt => "Adicionar Frase",
+						 :onclick => "$('#reportdiv').mb_open();
+									  $('#reportdiv').mb_centerOnWindow();
+									  $('#reportdiv #moderation_request_target_type').val('#{target.class}')
+									  $('#reportdiv #moderation_request_target_id').val('#{target.id}')
+						  "
+
+%>
+</div>

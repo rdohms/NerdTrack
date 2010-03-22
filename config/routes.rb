@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :moderation_requests
+
 
 
   map.resources :users, :only => [:index, :admintoggle, :new, :create]  do |user|
@@ -89,6 +91,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :quotes
 
   map.resources :episodios
+  
+
     
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should

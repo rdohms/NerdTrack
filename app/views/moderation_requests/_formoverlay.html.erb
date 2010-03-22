@@ -1,0 +1,14 @@
+<% render(:layout => 'blocks/container',
+	:locals => {:id => "reportdiv",
+				:xclass => "add_form",
+				:skin => "white",
+				:buttons => "c",
+				:icon => "comment-edit-48x48.png",
+				:collapsed => "false",
+				:width => "350",
+				:title => "Denunciar",
+				:closed => "true"
+				}) do %>
+
+		<%= render :partial => 'moderation_requests/embed_report' %>
+<% end %>

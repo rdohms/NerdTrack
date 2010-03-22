@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  target_id: 1
+  target_type: MyString
+  reason: MyText
+  category: MyString
+
+two:
+  target_id: 1
+  target_type: MyString
+  reason: MyText
+  category: MyString

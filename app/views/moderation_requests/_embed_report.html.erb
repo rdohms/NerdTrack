@@ -1,0 +1,27 @@
+<% @moderation_request = ModerationRequest.new %>
+
+<% semantic_form_for(@moderation_request) do |f| %>
+  <%= f.error_messages %>
+
+   <%= f.hidden_field :target_id %>
+   <%= f.hidden_field :target_type %>
+
+  <p>
+    <%= f.label :category, :label => "Motivo" %><br />
+    <%= f.select :category, {
+			"Conteúdo Incorreto" => "erro",
+			"Conteúdo Vulgar/Sexual" => "vulgar",
+			"Conteúdo Racial/Inpropriado" => "racial",
+			"SPAM" => "spam",
+
+		} %>
+  </p>
+  <p>
+    <%= f.label :reason, :label => "Observação" %><br />
+    <%= f.text_area :reason,  :cols => 30, :rows => 5 %>
+  </p>
+
+  <p>
+    <%= f.submit 'Denunciar' %>
+  </p>
+<% end -%>

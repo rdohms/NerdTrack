@@ -1,0 +1,28 @@
+<h1>Editing moderation_request</h1>
+
+<% form_for(@moderation_request) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :target_id %><br />
+    <%= f.text_field :target_id %>
+  </p>
+  <p>
+    <%= f.label :target_type %><br />
+    <%= f.text_field :target_type %>
+  </p>
+  <p>
+    <%= f.label :reason %><br />
+    <%= f.text_area :reason %>
+  </p>
+  <p>
+    <%= f.label :category %><br />
+    <%= f.text_field :category %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @moderation_request %> |
+<%= link_to 'Back', moderation_requests_path %>

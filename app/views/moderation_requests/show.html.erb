@@ -1,0 +1,23 @@
+<p>
+  <b>Target:</b>
+  <%=h @moderation_request.target_id %>
+</p>
+
+<p>
+  <b>Target type:</b>
+  <%=h @moderation_request.target_type %>
+</p>
+
+<p>
+  <b>Reason:</b>
+  <%=h @moderation_request.reason %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%=h @moderation_request.category %>
+</p>
+
+
+<%= link_to 'Edit', edit_moderation_request_path(@moderation_request) %> |
+<%= link_to 'Back', moderation_requests_path %>

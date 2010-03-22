@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100228123041) do
+ActiveRecord::Schema.define(:version => 20100301123034) do
 
   create_table "episodios", :force => true do |t|
     t.integer  "numero"
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(:version => 20100228123041) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "parte"
+  end
+
+  create_table "moderation_requests", :force => true do |t|
+    t.integer  "target_id"
+    t.string   "target_type"
+    t.text     "reason"
+    t.string   "category"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "quotes", :force => true do |t|

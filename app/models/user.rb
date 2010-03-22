@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   
   has_many :quotes
   has_many :tracks
+  has_many :moderation_requests
   
   #Custom attributes
   attr_accessible :name

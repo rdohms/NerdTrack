@@ -28,9 +28,9 @@
 .mb-resize-resizable-s { cursor: s-resize; width: 100% !important; height: 10px !important; bottom: -10px !important; left: 0 !important;z-index:auto !important; }
 .mb-resize-resizable-se { cursor: se-resize; width: 30px !important; height: 30px !important; right:0 !important; bottom: -10px !important; z-index:auto !important;}
 
-.mbproxy{border:1px dotted gray;background: url(/elements/proxy.png)}
+.mbproxy{border:1px dotted gray;background: url(../elements/proxy.png)}
 
-.containerPlus {visibility:hidden;};
+.containerPlus {font-family:Verdana; font-size:13px; visibility:hidden;};
 .containerPlus .spacer {margin-top:10px}
 .containerPlus .buttonBar { position:relative;top:0;float:right;margin-top:-23px; margin-right:15px}
 .containerPlus .buttonBar img {margin-left:5px}
@@ -43,77 +43,77 @@
 /*
 * default
 */
-.containerPlus .no	{ background: url('/elements/default/no.png') top left no-repeat; }
-.containerPlus .ne	{ background: url('/elements/default/ne.png') top right no-repeat; margin-left: 21px;}
+.containerPlus .no	{ background: url('../elements/default/no.png') top left no-repeat; }
+.containerPlus .ne	{ background: url('../elements/default/ne.png') top right no-repeat; margin-left: 21px;}
 .containerPlus .ne img	{left:-10px; top:-10px}
-.containerPlus .n	{ background: url('/elements/default/n.png') top center repeat-x; margin-right: 20px; -moz-user-select: none; -khtml-user-select: none}
+.containerPlus .n	{ background: url('../elements/default/n.png') top center repeat-x; margin-right: 20px; -moz-user-select: none; -khtml-user-select: none}
 .containerPlus .n	{ padding-top:8px;height:26px; font-size:15px; white-space:nowrap;overflow:hidden;}
 .containerPlus .n	a{ text-decoration:none;color:#000; font-size:15px;}
 
-.containerPlus .o	{ background: url('/elements/default/o.png') top left repeat-y;}
-.containerPlus .e	{ background: url('/elements/default/e.png') top right repeat-y; margin-left: 21px;}
-.containerPlus .c { background: url('/elements/default/c.png'); margin-right: 23px; padding-top: 1px; padding-bottom: 1px; }
+.containerPlus .o	{ background: url('../elements/default/o.png') top left repeat-y;}
+.containerPlus .e	{ background: url('../elements/default/e.png') top right repeat-y; margin-left: 21px;}
+.containerPlus .c { background: url('../elements/default/c.png'); margin-right: 23px; padding-top: 1px; padding-bottom: 1px; }
 
-.containerPlus .so	{ background: url('/elements/default/so.png') bottom left no-repeat;}
-.containerPlus .se	{ background: url('/elements/default/se.png') bottom right no-repeat; margin-left: 21px;}
-.containerPlus .s { background: url('/elements/default/s.png') bottom repeat-x; padding-top: 20px; margin-right: 23px;}
+.containerPlus .so	{ background: url('../elements/default/so.png') bottom left no-repeat;}
+.containerPlus .se	{ background: url('../elements/default/se.png') bottom right no-repeat; margin-left: 21px;}
+.containerPlus .s { background: url('../elements/default/s.png') bottom repeat-x; padding-top: 20px; margin-right: 23px;}
 
 
 /*
 * black
 */
-.containerPlus.black .no	{ background: url('/elements/black/no.png') top left no-repeat}
-.containerPlus.black .ne	{ background: url('/elements/black/ne.png') top right no-repeat; margin-left: 21px;}
-.containerPlus.black .n	{ background: url('/elements/black/n.png') top center repeat-x; margin-right: 25px;height:26px;}
+.containerPlus.black .no	{ background: url('../elements/black/no.png') top left no-repeat}
+.containerPlus.black .ne	{ background: url('../elements/black/ne.png') top right no-repeat; margin-left: 21px;}
+.containerPlus.black .n	{ background: url('../elements/black/n.png') top center repeat-x; margin-right: 25px;height:26px;}
 .containerPlus.black .n	{ padding-top:8px;font-size:15px; color:white;-moz-user-select: none; -khtml-user-select: none}
 .containerPlus.black .n	a{ text-decoration:none;color:#fff; font-size:15px; white-space:nowrap;overflow:hidden;}
 
-.containerPlus.black .o	{ background: url('/elements/black/o.png') top left repeat-y;}
-.containerPlus.black .e	{ background: url('/elements/black/e.png') top right repeat-y; margin-left: 21px;}
-.containerPlus.black .c { background: url('/elements/black/c.png'); margin-right: 25px; padding-top: 1px; padding-bottom: 1px; }
+.containerPlus.black .o	{ background: url('../elements/black/o.png') top left repeat-y;}
+.containerPlus.black .e	{ background: url('../elements/black/e.png') top right repeat-y; margin-left: 21px;}
+.containerPlus.black .c { background: url('../elements/black/c.png'); margin-right: 25px; padding-top: 1px; padding-bottom: 1px; }
 .containerPlus.black .c .mbcontainercontent {color:white;}
 .containerPlus.black .c .mbcontainercontent a {color:white;}
 
-.containerPlus.black .so	{ background: url('/elements/black/so.png') bottom left no-repeat;}
-.containerPlus.black .se	{ background: url('/elements/black/se.png') bottom right no-repeat; margin-left: 21px;}
-.containerPlus.black .s { background: url('/elements/black/s.png') bottom repeat-x; padding-top: 20px; margin-right: 25px;}
+.containerPlus.black .so	{ background: url('../elements/black/so.png') bottom left no-repeat;}
+.containerPlus.black .se	{ background: url('../elements/black/se.png') bottom right no-repeat; margin-left: 21px;}
+.containerPlus.black .s { background: url('../elements/black/s.png') bottom repeat-x; padding-top: 20px; margin-right: 25px;}
 
 /*
 * white
 */
-.containerPlus.white .no	{ background: url('/elements/white/no.png') top left no-repeat;}
-.containerPlus.white .ne	{ background: url('/elements/white/ne.png') top right no-repeat; margin-left: 21px;}
-.containerPlus.white .n	{ background: url('/elements/white/n.png') top center repeat-x; margin-right: 25px;height:26px;}
+.containerPlus.white .no	{ background: url('../elements/white/no.png') top left no-repeat;}
+.containerPlus.white .ne	{ background: url('../elements/white/ne.png') top right no-repeat; margin-left: 21px;}
+.containerPlus.white .n	{ background: url('../elements/white/n.png') top center repeat-x; margin-right: 25px;height:26px;}
 .containerPlus.white .n	{ padding-top:8px; font-size:16px;-moz-user-select: none; -khtml-user-select: none}
 
-.containerPlus.white .o	{ background: url('/elements/white/o.png') top left repeat-y;}
-.containerPlus.white .e	{ background: url('/elements/white/e.png') top right repeat-y; margin-left: 21px;}
-.containerPlus.white .c { background: url('/elements/white/c.png'); margin-right: 25px; padding-top: 1px; padding-bottom: 1px; }
+.containerPlus.white .o	{ background: url('../elements/white/o.png') top left repeat-y;}
+.containerPlus.white .e	{ background: url('../elements/white/e.png') top right repeat-y; margin-left: 21px;}
+.containerPlus.white .c { background: url('../elements/white/c.png'); margin-right: 25px; padding-top: 1px; padding-bottom: 1px; }
 .containerPlus.white .c .mbcontainercontent {color:#000;}
 .containerPlus.white .n	a{}
 .containerPlus.white .n	a:hover{ text-decoration:underline}
 
-.containerPlus.white .so	{ background: url('/elements/white/so.png') bottom left no-repeat;}
-.containerPlus.white .se	{ background: url('/elements/white/se.png') bottom right no-repeat; margin-left: 21px;}
-.containerPlus.white .s { background: url('/elements/white/s.png') bottom repeat-x; padding-top: 20px; margin-right: 25px;}
+.containerPlus.white .so	{ background: url('../elements/white/so.png') bottom left no-repeat;}
+.containerPlus.white .se	{ background: url('../elements/white/se.png') bottom right no-repeat; margin-left: 21px;}
+.containerPlus.white .s { background: url('../elements/white/s.png') bottom repeat-x; padding-top: 20px; margin-right: 25px;}
 
 
 /*
 * alert
 */
-.containerPlus.alert .no	{ background: url('/elements/alert/no.png') top left no-repeat;}
-.containerPlus.alert .ne	{ background: url('/elements/alert/ne.png') top right no-repeat; margin-left: 21px;}
-.containerPlus.alert .n	{ background: url('/elements/alert/n.png') top center repeat-x; margin-right: 25px;height:26px;}
+.containerPlus.alert .no	{ background: url('../elements/alert/no.png') top left no-repeat;}
+.containerPlus.alert .ne	{ background: url('../elements/alert/ne.png') top right no-repeat; margin-left: 21px;}
+.containerPlus.alert .n	{ background: url('../elements/alert/n.png') top center repeat-x; margin-right: 25px;height:26px;}
 .containerPlus.alert .n	{ padding-top:8px; font-size:16px;-moz-user-select: none; -khtml-user-select: none}
 
-.containerPlus.alert .o	{ background: url('/elements/alert/o.png') top left repeat-y;}
-.containerPlus.alert .e	{ background: url('/elements/alert/e.png') top right repeat-y; margin-left: 21px;}
-.containerPlus.alert .c { background: url('/elements/alert/c.png'); margin-right: 25px; padding-top: 1px; padding-bottom: 1px; }
+.containerPlus.alert .o	{ background: url('../elements/alert/o.png') top left repeat-y;}
+.containerPlus.alert .e	{ background: url('../elements/alert/e.png') top right repeat-y; margin-left: 21px;}
+.containerPlus.alert .c { background: url('../elements/alert/c.png'); margin-right: 25px; padding-top: 1px; padding-bottom: 1px; }
 .containerPlus.alert .c .mbcontainercontent {color:#000;}
 .containerPlus.alert .n	a{}
 .containerPlus.alert .n	a:hover{ text-decoration:underline}
 
-.containerPlus.alert .so	{ background: url('/elements/alert/so.png') bottom left no-repeat;}
-.containerPlus.alert .se	{ background: url('/elements/alert/se.png') bottom right no-repeat; margin-left: 21px;}
-.containerPlus.alert .s { background: url('/elements/alert/s.png') bottom repeat-x; padding-top: 20px; margin-right: 25px;}
+.containerPlus.alert .so	{ background: url('../elements/alert/so.png') bottom left no-repeat;}
+.containerPlus.alert .se	{ background: url('../elements/alert/se.png') bottom right no-repeat; margin-left: 21px;}
+.containerPlus.alert .s { background: url('../elements/alert/s.png') bottom repeat-x; padding-top: 20px; margin-right: 25px;}
 

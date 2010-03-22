@@ -25,6 +25,7 @@
 				[<%=h q.time %>]
 			</div>
 			<%= render :partial => 'quotes/ratequote', :locals => {:q => q, :total => false} %>
+			
 
 			<div class="quote">
 				<strong>"<%=h q.quote %>"</strong> (<%=h q.autor %>)
@@ -34,6 +35,7 @@
 			<div class="credit"><em>Adicionado por:</em> 
 				<%= link_to q.user.name, q.user.profile_url %>
 			</div>
+			<%= render :partial => 'moderation_requests/report', :locals => {:target => q} %>
 		</li>  
 	<% end -%>
 <% end %> 
@@ -81,6 +83,7 @@
 			<div class="credit"><em>Adicionado por:</em> 
 				<%= link_to t.user.name, t.user.profile_url %>
 			</div>
+			<%= render :partial => 'moderation_requests/report', :locals => {:target => t} %>
 			<!-- <div class="cmd">[contestar]</div> -->
 		</li>
 	<% end -%>
@@ -114,6 +117,8 @@
 <div class="contentfull">
 <%= link_to 'Voltar', episodios_path %>
 </div>
+
+<%= render :partial => 'moderation_requests/formoverlay' %>
 
 <script type="text/javascript">
 	var tallest = ($('#frases').height() > $('#musicas').height())? $('#frases').height(): $('#musicas').height();

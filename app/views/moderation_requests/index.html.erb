@@ -1,0 +1,21 @@
+<div class="contentfull">
+	<h1>Denuncias</h1>
+	<%= render :partial => 'admin/admin_menu' %>
+
+
+<ul class="denuncias">
+<% @moderation_requests.each do |d| %>
+  <li class="all-round">
+  	<p class="float-right"><%= link_to image_tag('icons/tick.png', :alt => "Aceitar denúncia"), :action => 'accept', :id => d, :confirm => 'Are you sure?' %>&nbsp;&nbsp;<%= link_to image_tag('icons/cross.png', :alt => 'Rejeitar denúncia'), d, :confirm => 'Are you sure?', :method => :delete %></p>
+	<p class="float-right"><%= time_ago_in_words(d.created_at) %> ago&nbsp;&nbsp;</p>
+	<p>Denunciante: <%= link_to d.user.name, d.user.profile_url  %></p>
+	<p>Denunciado: <%= reportTarget(d.target_type, d.target_id) %> </p>
+	<p>Motivo: <%=h d.category%></p>
+	<p>Obs: <%=h d.reason %></p>
+  </li>
+<% end %>
+</ul>
+
+<br />
+
+<%= link_to 'New moderation_request', new_moderation_request_path %>
