@@ -16,9 +16,12 @@ class Counter
   end
   
   def self.get_top_contribs
-    
+
     top_t = Track.count(:group => 'user_id', :order => 'count_all ASC').sort {|a,b| b[1]<=>a[1]}.shift
     top_q = Quote.count(:group => 'user_id', :order => 'count_all ASC').sort {|a,b| b[1]<=>a[1]}.shift
+    
+    puts top_t.inspect
+    puts top_q.inspect
     
     tops = {
       :quotes => {:user => User.find(top_q[0]), :count => top_q[1] },

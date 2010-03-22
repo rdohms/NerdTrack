@@ -1,5 +1,5 @@
 <% form.inputs do %>
-	<% if op == "add" || @user.username.nil? || @user.username.empty? %>
+	<% if op == "add" || @user.username.nil? || @user.username.empty? || !@user.valid? %>
 		<%= form.input :username, :label => "Login" %>
 	<% else %>
 		<%= form.input :username, :label => "Login", :input_html => { :disabled => true } %>

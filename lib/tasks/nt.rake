@@ -7,6 +7,33 @@ namespace :nt do
         u.save
       end
     end
+    
+    desc "Fixes Invalid usernames set before validation as in place"
+    task :inv_username => :environment do
+      @users = User.find(:all, :conditions => 'username NOT NULL')
+      @users.each do |u|
+        
+        #check if username is valid
+        unless u.username.match(/\A[a-zA-Z0-9_]*\Z/)
+          
+          origname = u.username
+          
+          #translate to valid
+          u.username = u.username.mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').gsub(/[^a-zA-Z0-9_]/, '_')
+          
+          puts "Invalid Username: "+origname+" => "+u.username
+          
+          #save
+          if u.save
+            #send message?
+            if Notifications.deliver_username_change(u,origname)
+              puts "mail - OK"
+            end
+          end
+        end
+      
+      end
+    end
   end
   
   namespace :parse do

@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   include ActionController::UrlWriter
   
   validates_uniqueness_of :username, :message => "já esta sendo usado.", :allow_blank => true, :allow_nil => true
+  validates_format_of :username, :with => /\A[a-zA-Z0-9_]*\Z/, :message => "somente são aceitos letras, numeros e '_'"
   
   is_gravtastic :secure => true, :rating => 'G'
 

@@ -9,5 +9,13 @@ class Notifications < ActionMailer::Base
     body :message => email_params[:body], :name => email_params[:name]
   end
   
+  def username_change(user, origname)
+    subject "[NerdTrack] Alteração em seu username"
+    recipients user.email
+    from DO_NOT_REPLY
+    sent_on Time.now
+
+    body :user => user, :origname => origname
+  end
 
 end
