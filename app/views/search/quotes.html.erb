@@ -1,0 +1,43 @@
+<div class="sidebar">
+<%= render :partial => 'blocks/info' %>
+<%= render :partial => 'blocks/search' %>
+<%= render(:layout => 'blocks/counter') %>
+<%= render(:layout => 'blocks/topcontrib') %>
+</div>
+
+<div class="content">
+
+	<h1>Buscar > Frases</h1>
+
+	<% semantic_form_for :quote, :url => {:controller => 'search', :action => 'quotes'}, :html => { :class => "search_form" } do |form| %>
+		<% form.buttons do %>
+		  <%= form.input :term, :label => "Frase", :input_html => { :size => "85" } %>
+		  <%= form.commit_button "buscar" %>
+		<% end -%>
+	<% end %>
+
+
+	<h2>Frases encontradas:</h2> 
+	<% if @results %>
+	<ul class="search_ep_list">
+		<% curr_ep = "" %>	
+		<% @results.each_with_index do |r, i| %>  
+			<% if curr_ep != r.numero && i != 0 %>			
+					</ul>
+				</p>
+			</li>
+			<% end -%>
+			
+			<% if curr_ep != r.numero %>
+			<li>
+				<p><%= link_to "Episodio ##{r.numero}: #{r.titulo}", r %></p>
+				<p>
+					<ul class="search_quote_list">
+			<% end -%>
+						<li>"<%= r.quote %>" (<%= r.autor %>)</li>
+
+			<% curr_ep = r.numero %>
+		<% end %> 
+		</ul>
+	<% end -%>
+</div>

@@ -51,12 +51,12 @@ p {margin: 1em 0;}
 #nav a:hover {color: #fff; padding: 7px 10px 3px; margin: 2px 5px 0;}
 
 #container {background: #2f353c; padding: 10px; overflow: auto;}
-#info, #stats, #flash_msg  {background: #242A32;  width: 300px;}
+#info, #stats, #search, #flash_msg  {background: #242A32;  width: 300px;}
 .content, .contentfull, .contenthalf {background: #fff; width: 610px; color: #000; overflow: auto;}
 #flash_msg, .contentfull {width: 960px;}
 .contenthalf {width: 455px; float: left;}
 .m10 {margin-right: 10px;}
-#info, #stats, .content, .contentfull, .contenthalf, #flash_msg {padding: 20px; -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; margin-bottom: 10px;}
+#info, #stats, #search, .content, .contentfull, .contenthalf, #flash_msg {padding: 20px; -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; margin-bottom: 10px;}
 
 .content a, .contentfull a, .contenthalf a, #flash_msg a {color: #0E3C61;}
 
@@ -164,3 +164,30 @@ form.quickload fieldset.inputs, form.quickload fieldset.buttons {width: auto;}
 .denuncias {}
 .denuncias p {margin: 0px;}
 .denuncias li { border: 1px dashed #ccc; margin-bottom: 10px; padding: 10px; background-color:#eee; }
+
+
+
+/** by rdohms **/
+.search_form {}
+.search_form fieldset.inputs, .formtastic fieldset.buttons {width: 100%}
+.search_form fieldset.buttons label { display: none; }
+.search_form fieldset.buttons label abbr { display: none; }
+.search_form fieldset.buttons li {padding: 0px 0 0px 9px; float:left; width: auto; height: auto; margin:0;}
+.search_form fieldset.buttons li.string {padding: 0px; float:left; width: 85%;}
+form.search_form fieldset.inputs, form.search_form fieldset.buttons {width: auto;}
+.search_form input#quote_term {width: 99%; height: 18px;}
+.search_form input#quote_submit {margin: 0; }
+.search_ep_list { }
+.search_ep_list li { font-size: 15px;  }
+.search_quote_list { margin: -5px 0 1.2em 1.5em; }
+.search_quote_list li { font-size: 12px; margin-top: 2px; border-left: 3px solid #2f353c; padding: 5px 0 5px 10px;  -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px;}
+
+.search_form_sidebar {}
+.search_form_sidebar fieldset.inputs, .formtastic fieldset.buttons {width: 100%}
+.search_form_sidebar fieldset.buttons label { display: none; }
+.search_form_sidebar fieldset.buttons label abbr { display: none; }
+.search_form_sidebar fieldset.buttons li {padding: 0px 0 0px 9px; float:left; width: auto; height: auto; margin:0;}
+.search_form_sidebar fieldset.buttons li.string {padding: 0px; float:left; width: 70%; padding-right: 4px;}
+form.search_form_sidebar fieldset.inputs, form.search_form_sidebar fieldset.buttons {width: auto;}
+.search_form_sidebar input#quote_term {width: 99%; height: 18px; color: #FFD014;}
+.search_form_sidebar input#quote_submit {margin: 0; }

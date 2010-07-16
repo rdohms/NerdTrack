@@ -1,0 +1,11 @@
+<div id="search">
+	<h1><a href="/search/quotes">Buscar Frases</a></h1>
+
+	<% semantic_form_for :quote, :url => {:controller => 'search', :action => 'quotes'}, :html => { :class => "search_form_sidebar" } do |form| %>
+		<% form.buttons do %>
+		  <%= form.input :term %>
+		  <%= form.commit_button "buscar" %>
+		<% end -%>
+	<% end %>
+	
+</div>
