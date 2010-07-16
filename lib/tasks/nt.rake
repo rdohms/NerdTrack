@@ -135,7 +135,7 @@ namespace :nt do
 
       posts = ""
       # Grab feed
-      open("http://feed.nercast.com.br") do |jfeed|
+      open("http://feed.nerdcast.com.br") do |jfeed|
         response = jfeed.read
         result = RSS::Parser.parse(response, false)
         posts = result.items
