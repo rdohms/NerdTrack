@@ -11,6 +11,8 @@
 		<%= f.input :email, :label => 'Email'%>
 		<%= f.input :subject, :label => 'Assunto'%>
 		<%= f.input :body, :label => 'Mensagem', :as => :text %>
+		
+		<%= f.input :captcha, :label => 'Qual o resultado de: 3 + 5? (Para prevenir SPAM)'%>
 	<% end -%>
 	
 	<% f.buttons do %>
