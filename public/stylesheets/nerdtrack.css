@@ -165,7 +165,9 @@ form.quickload fieldset.inputs, form.quickload fieldset.buttons {width: auto;}
 .denuncias p {margin: 0px;}
 .denuncias li { border: 1px dashed #ccc; margin-bottom: 10px; padding: 10px; background-color:#eee; }
 
-
+/* RSS */
+.feed_icon { float:right; }
+.rss_icon { vertical-align: middle; }
 
 /** by rdohms **/
 .search_form {}

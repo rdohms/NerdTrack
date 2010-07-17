@@ -1,0 +1,15 @@
+<div class="contentfull">
+<h1>Feeds</h1>
+
+<p>Quer acompanhar todas as mudanças no NerdTrack direto no seu leitor de RSS? Use os feeds abaixo</p>
+
+<p>
+	<%= link_to(image_tag("rss.png", :alt => "Feed Frases", :class => 'rss_icon'), :controller => 'feeds', :action => 'frases') %> - Feed das últimas 100 frases adicionadas
+</p>
+<p>
+	<%= link_to(image_tag("rss.png", :alt => "Feed Frases", :class => 'rss_icon'), :controller => 'feeds', :action => 'musicas') %> - Feed das últimas 100 músicas adicionadas
+</p>
+<p>
+	<%= link_to(image_tag("rss.png", :alt => "Feed Frases", :class => 'rss_icon'), :controller => 'feeds', :action => 'episodios') %> - Feed dos últimos 100 episódios adicionados
+</p>
+</div>

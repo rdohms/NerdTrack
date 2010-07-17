@@ -1,0 +1,20 @@
+xml.instruct!
+
+xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
+ xml.channel do
+
+   xml.title       "NerdTrack - Episódios"
+   xml.link        url_for :only_path => false, :controller => ''
+   xml.description "Ultimas episódios disponíveis no NerdTrack"
+
+   @episodios.each do |e|
+     xml.item do
+       xml.title       "Episódio ##{e.full_id}: #{e.titulo}"
+       xml.link        polymorphic_url e, :only_path => false
+       xml.description link_to("Episódio " + "#"+e.full_id + ": #{e.titulo}", e) + "<br>" + e.desc
+       xml.guid        polymorphic_url e, :only_path => false
+     end
+   end
+
+ end
+end
