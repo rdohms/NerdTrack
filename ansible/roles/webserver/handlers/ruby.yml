@@ -1,0 +1,2 @@
+- name: rehash gems
+  command: RBENV_ROOT={{ ruby.rbenv_root}} rbenv rehash

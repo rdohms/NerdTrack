@@ -12,7 +12,16 @@ RAILS_ENV = "development"
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
-
+if Gem::VERSION >= "1.3.6"
+  module Rails 
+    class GemDependency 
+      def requirement 
+        r = super 
+        (r == Gem::Requirement.default) ? nil : r 
+      end 
+    end 
+  end 
+end
 
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.
@@ -22,7 +31,8 @@ Rails::Initializer.run do |config|
   # Add additional load paths for your own custom dirs
   config.load_paths += %W( #{RAILS_ROOT}/config/environments/ )
   config.load_paths += %W( #{RAILS_ROOT}/config/environments/sensible )
-
+  config.load_paths <<  "/usr/local/rbenv/versions/1.8.7-p357/lib/ruby/gems/1.8/gems/mysql-2.9.1/lib/"
+  
   # Specify gems that this application depends on and have them installed with rake gems:install
   # config.gem "bj"
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"

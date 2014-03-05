@@ -1,0 +1,4 @@
+- hosts: production
+  user: root
+  vars_files:
+    - vars/production.yml

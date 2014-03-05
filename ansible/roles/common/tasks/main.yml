@@ -1,0 +1,19 @@
+# Required for adding other apt repos downthe line
+# Update the repo, because most boxes are heavily outdated
+- name: apt-get | Update repository
+  apt: update_cache=yes
+
+- name: dependencies | python-software-properties
+  apt: pkg=python-software-properties state=installed
+
+- name: basics | cURL
+  apt: pkg=curl state=installed
+
+- name: basics | Install Git
+  apt: pkg=git-core state=installed
+
+- name: github | accept key
+  lineinfile: dest=/etc/ssh/ssh_known_hosts
+      line="{{lookup('pipe', 'ssh-keyscan github.com') }}"
+      state=present
+      create=yes mode=0644

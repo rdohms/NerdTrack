@@ -1,0 +1,17 @@
+## webapp
+
+hostname: nerdtrack
+webserver_name: spree.example.com
+deploy_directory: /var/www/nerdtrack
+app_name: nerdtrack
+
+database:
+    name: nerdtrack
+    user: root
+    passwd: root
+
+ruby:
+    version: 1.8.7-p375
+    rbenv_root: /usr/local/rbenv
+
+

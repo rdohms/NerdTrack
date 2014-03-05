@@ -1,0 +1,9 @@
+- hosts: vagrant
+  user: vagrant
+  sudo: true
+  vars_files:
+    - vars/defaults.yml
+  roles:
+    - common
+    - webserver
+    - database

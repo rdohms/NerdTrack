@@ -15,3 +15,5 @@ log/**/*
 tags
 tmp/*
 tmp/**/*
+
+.vagrant

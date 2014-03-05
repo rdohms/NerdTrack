@@ -1,0 +1,43 @@
+---
+- name: ruby | check ruby ruby_version installed
+  shell: RBENV_ROOT={{ ruby.rbenv_root}} rbenv versions | grep {{ ruby.version }}
+  register: ruby_installed
+  ignore_errors: yes
+
+- name: ruby | build ruby version
+  command: RBENV_ROOT={{ ruby.rbenv_root}} rbenv install {{ ruby.version }}
+  when: ruby_installed|failed
+
+- name: ruby | set global version
+  command: RBENV_ROOT={{ ruby.rbenv_root}} rbenv global {{ ruby.version }}
+  when: ruby_installed|failed
+  notify:
+   - rehash gems
+
+- name: ruby | rehash
+  command: RBENV_ROOT={{ ruby.rbenv_root}} rbenv rehash
+  when: ruby_installed|failed
+
+- name: ruby | rails
+  gem: name=rails version=2.3.5 state=present user_install=no
+
+- name: ruby | clearance
+  gem: name=clearance version=0.8.2 state=present user_install=no
+
+- name: ruby | formtastic
+  gem: name=formtastic version=0.2.5 state=present user_install=no
+
+- name: ruby | gravtastic
+  gem: name=gravtastic version=2.1.3 state=present user_install=no
+
+- name: ruby | will_paginate
+  gem: name=will_paginate version=2.3.11 state=present user_install=no
+
+- name: ruby | json
+  gem: name=json version= state=present user_install=no
+
+- name: ruby | mysql
+  gem: name=mysql version= state=present user_install=no
+
+- name: ruby | rake
+  gem: name=rake version=0.8.3 state=present user_install=no

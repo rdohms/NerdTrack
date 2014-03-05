@@ -1,0 +1,23 @@
+# Storage
+- name: MySQL | Install Packages
+  apt: pkg=mysql-server state=installed
+  with_items:
+    - mysql-server
+    - python-mysqldb
+    - libmysqlclient-dev
+
+# 'localhost' needs to be the last item for idempotency, see
+# http://ansible.cc/docs/modules.html#mysql-user
+- name: MySQL | Set Root Password
+  mysql_user: name={{ database.user }} host={{ item }} password={{ database.passwd }} priv=*.*:ALL,GRANT
+  with_items:
+    - 127.0.0.1
+    - ::1
+    - "%"
+    - localhost
+
+- name: MySQL | Copy Config File
+  template: src=../templates/my.cnf.j2 dest=/{{ database.user }}/.my.cnf owner={{ database.user }} mode=0600
+
+- name: MySQL | Create App DB
+  mysql_db: name={{ database.name }} state=present login_password={{ database.passwd }} login_user={{ database.user }}

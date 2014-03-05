@@ -1,0 +1,26 @@
+---
+- name: passenger | Ensure the passenger apt repository is added
+  apt_repository: state=present repo='deb https://oss-binaries.phusionpassenger.com/apt/passenger precise main'
+
+- name: passenger | Ensure passenger is installed
+  apt: pkg=passenger state=present update_cache=yes
+  notify:
+    - restart nginx
+
+- name: passenger | enable passenger_root in config
+  lineinfile: dest=/etc/nginx/nginx.conf
+              regexp='(^[^#])#[\s]?passenger_root(.*)$'
+              line="\1passenger_root /usr/lib/ruby/vendor_ruby/phusion_passenger/locations.ini;"
+              state=present
+              backrefs=yes
+  notify:
+    - restart nginx
+
+- name: passenger | enable passenger_ruby in config
+  lineinfile: dest=/etc/nginx/nginx.conf
+              regexp='(^[^#])#[\s]?passenger_ruby(.*)$'
+              line="\1passenger_ruby {{ ruby.rbenv_root }}/shims/ruby;"
+              state=present
+              backrefs=yes
+  notify:
+    - restart nginx
