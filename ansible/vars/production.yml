@@ -1,0 +1,9 @@
+- include: defaults.yml
+
+## webapp
+database:
+    name: nerdtrack
+    user: root
+    passwd: root
+    host:
+

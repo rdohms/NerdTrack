@@ -1,6 +1,6 @@
 # Storage
 - name: MySQL | Install Packages
-  apt: pkg=mysql-server state=installed
+  apt: pkg={{ item }} state=installed
   with_items:
     - mysql-server
     - python-mysqldb

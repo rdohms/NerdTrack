@@ -1,4 +1,7 @@
 ---
+- name: rbenv | create directory
+  file: path={{ rbenv_root }} owner=vagrant mode=0777 state=directory
+
 - name: rbenv | install build depends
   apt: pkg={{ item }} state=latest install_recommends=no
   with_items:
@@ -14,10 +17,10 @@
     - subversion
 
 - name: rbenv | setup rbenv
-  git: repo=https://github.com/sstephenson/rbenv.git dest={{ ruby.rbenv_root }}
+  git: repo=https://github.com/sstephenson/rbenv.git dest={{ rbenv_root }}
 
 - name: rbenv | add rbenv to path
-  file: path=/usr/local/bin/rbenv src={{ ruby.rbenv_root }}/bin/rbenv state=link
+  file: path=/usr/local/bin/rbenv src={{ rbenv_root }}/bin/rbenv state=link
 
 - name: rbenv | add rbenv initialization to profile
   template: src=rbenv.sh.j2 dest=/etc/profile.d/rbenv.sh owner=root group=root mode=0755
@@ -45,4 +48,4 @@
   when: rbuild_present|failed
 
 - name: rbenv | add rbenv/gem to path
-  file: path=/usr/local/bin/gem src={{ ruby.rbenv_root }}/shims/gem state=link
+  file: path=/usr/local/bin/gem src={{ rbenv_root }}/shims/gem state=link

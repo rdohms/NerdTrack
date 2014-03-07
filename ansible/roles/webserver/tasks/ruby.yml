@@ -1,21 +1,21 @@
 ---
 - name: ruby | check ruby ruby_version installed
-  shell: RBENV_ROOT={{ ruby.rbenv_root}} rbenv versions | grep {{ ruby.version }}
+  shell: "{{ rbenv_bin }} versions | grep {{ ruby.version }}"
   register: ruby_installed
   ignore_errors: yes
 
 - name: ruby | build ruby version
-  command: RBENV_ROOT={{ ruby.rbenv_root}} rbenv install {{ ruby.version }}
+  shell: "{{ rbenv_bin }} install {{ ruby.version }}"
   when: ruby_installed|failed
 
 - name: ruby | set global version
-  command: RBENV_ROOT={{ ruby.rbenv_root}} rbenv global {{ ruby.version }}
+  shell: "{{ rbenv_bin }} global {{ ruby.version }}"
   when: ruby_installed|failed
   notify:
    - rehash gems
 
 - name: ruby | rehash
-  command: RBENV_ROOT={{ ruby.rbenv_root}} rbenv rehash
+  shell: "{{ rbenv_bin }} rehash"
   when: ruby_installed|failed
 
 - name: ruby | rails
@@ -35,6 +35,9 @@
 
 - name: ruby | json
   gem: name=json version= state=present user_install=no
+
+- name: ruby | mysql-dev library
+  apt: pkg=libmysqlclient-dev state=installed
 
 - name: ruby | mysql
   gem: name=mysql version= state=present user_install=no

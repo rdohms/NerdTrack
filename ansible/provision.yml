@@ -2,3 +2,6 @@
   user: root
   vars_files:
     - vars/production.yml
+  roles:
+    - common
+    - webserver

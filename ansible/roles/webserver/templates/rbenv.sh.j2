@@ -1,2 +1,4 @@
-export RBENV_ROOT="{{ ruby.rbenv_root }}"
+export RBENV_ROOT="{{ rbenv_root }}"
+export PATH="/usr/local/bin:$RBENV_ROOT/shims:$RBENV_ROOT/bin:$PATH"
+
 eval "$(rbenv init -)"

@@ -1,0 +1,8 @@
+---
+- name: nt | checkout repo
+  git:
+    repo=git@github.com:rdohms/NerdTrack.git
+    version={{ deploy.version|default(master) }}
+    dest={{ deploy.work_dir }}/{{ ansible_date_time.date }}
+
+
