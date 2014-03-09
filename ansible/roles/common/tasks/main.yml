@@ -16,4 +16,5 @@
   lineinfile: dest=/etc/ssh/ssh_known_hosts
       line="{{lookup('pipe', 'ssh-keyscan github.com') }}"
       state=present
-      create=yes mode=0644
+      create=yes
+      mode=0644

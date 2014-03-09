@@ -19,12 +19,13 @@
   notify:
     - restart nginx
 
+- name: nginx | configure host
+  template: src=nerdtrack.nginx.j2 dest=/etc/nginx/sites-enabled/nerdtrack
+  notify:
+    - restart nginx
+
 - name: nginx | ensure nginx is running
   service: name=nginx state=started
 
-- name: nginx | configure host
-  copy: src=../templates/nerdtrack.nginx.j2 dest=/etc/nginx/sites-enabled/nerdtrack
-  notify:
-    - restart nginx
 
 

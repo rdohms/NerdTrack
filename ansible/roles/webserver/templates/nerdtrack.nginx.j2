@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name nerdtrack.com.br;
-    root /var/www/nerdtrack/public;
+    server_name {{ webserver_name }} ;
+    root {{ deploy_directory }}/public;
     passenger_enabled on;
 }

@@ -1,7 +1,7 @@
 ## webapp
 
 hostname: nerdtrack
-webserver_name: spree.example.com
+webserver_name: nerdtrack.com.br
 deploy_directory: /var/www/nerdtrack
 app_name: nerdtrack
 

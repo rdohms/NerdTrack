@@ -1,6 +1,9 @@
+---
 - hosts: production
-  user: root
+  remote_user: root
+  sudo: true
   vars_files:
+    - vars/defaults.yml
     - vars/production.yml
   roles:
     - common

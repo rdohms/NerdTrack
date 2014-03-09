@@ -1,5 +1,5 @@
 [production]
-nerdtrack.com.br
+107.170.14.21 ansible_ssh_user=root
 
 [vagrant]
 192.168.33.10

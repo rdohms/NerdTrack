@@ -2,6 +2,7 @@
   user: vagrant
   sudo: true
   vars_files:
+    - vars/defaults.yml
     - vars/vagrant.yml
   roles:
     - common

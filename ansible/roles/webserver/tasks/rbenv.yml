@@ -1,6 +1,6 @@
 ---
 - name: rbenv | create directory
-  file: path={{ rbenv_root }} owner=vagrant mode=0777 state=directory
+  file: path={{ rbenv_root }} owner={{ ansible_ssh_user }} mode=0777 state=directory
 
 - name: rbenv | install build depends
   apt: pkg={{ item }} state=latest install_recommends=no
