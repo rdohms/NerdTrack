@@ -5,6 +5,9 @@ webserver_name: nerdtrack.com.br
 deploy_directory: /var/www/nerdtrack
 app_name: nerdtrack
 
+app:
+    environment: development
+
 database:
     name: nerdtrack
     user: root

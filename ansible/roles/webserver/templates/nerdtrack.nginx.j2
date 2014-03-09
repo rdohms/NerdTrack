@@ -3,4 +3,5 @@ server {
     server_name {{ webserver_name }} ;
     root {{ deploy_directory }}/public;
     passenger_enabled on;
+    passenger_app_env {{ app.environment }};
 }
