@@ -53,12 +53,15 @@ p {margin: 1em 0;}
 #container {background: #2f353c; padding: 10px; overflow: auto;}
 #info, #stats, #search, #flash_msg  {background: #242A32;  width: 300px;}
 .content, .contentfull, .contenthalf {background: #fff; width: 610px; color: #000; overflow: auto;}
-#flash_msg, .contentfull {width: 960px;}
+#flash_msg, .contentfull, .adfull {width: 960px;}
+.ad {width: 100%;}
 .contenthalf {width: 455px; float: left;}
 .m10 {margin-right: 10px;}
 #info, #stats, #search, .content, .contentfull, .contenthalf, #flash_msg {padding: 20px; -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; margin-bottom: 10px;}
 
 .content a, .contentfull a, .contenthalf a, #flash_msg a {color: #0E3C61;}
+
+.adfull, .ad { text-align:center; }
 
 #footer  {text-align: center; padding: 10px; clear: both;}
 #footer p, #header p {margin: 0;}

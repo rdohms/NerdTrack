@@ -44,3 +44,6 @@
 
 - name: ruby | rake
   gem: name=rake version=0.8.3 state=present user_install=no
+
+- name: ruby | rake
+  gem: name=rake version=10.1.1 state=absent user_install=no

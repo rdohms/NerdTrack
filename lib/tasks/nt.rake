@@ -142,11 +142,16 @@ namespace :nt do
       end
       
       #Loop Episodes
-      posts[0...5].each_with_index do |item, i|
+      posts[0...100].each_with_index do |item, i|
         
         # Parse Title
         info = item.title.scan(/(?:Nerdcast)[\s]{1}([0-9]{1,3})([a-z]?)[^A-Za-z]*(.*)/)[0]
-
+        
+        if info.nil?
+          puts "SKIP " + item.title
+          next
+        end
+        
         # Check if its in DB
         if Episodio.first(:conditions => ["numero = ? AND parte = ?", info[0].to_s, info[1].to_s]).nil?
           
